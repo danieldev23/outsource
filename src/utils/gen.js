@@ -1,7 +1,6 @@
 // Gen Login Sheet Database
 function doPost(e) {
   try {
-
     const data = JSON.parse(e.postData.contents);
     const sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
     if (data && data.AccountID && data.AccountPWD && data.phone) {
