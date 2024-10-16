@@ -1,0 +1,3398 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body {
+    font-family: Arial, Microsoft JhengHei, Helvetica, sans-serif;
+    background: url(../images/bg_PC.jpg) no-repeat center;
+    background-size: cover;
+}
+
+ul,
+li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+div:after {
+    content: "";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+input,
+select,
+textarea {
+    font-family: Arial, Microsoft JhengHei, Helvetica, sans-serif;
+    border: 0px;
+    outline: none;
+    -webkit-appearance: none;
+    /*Chrome*/
+    -moz-appearance: none;
+    /*FF*/
+    appearance: none;
+    /*CSS3*/
+    background-color: transparent;
+    border-radius: 0;
+}
+
+input[type=radio] {
+    -webkit-appearance: radio;
+    /*Chrome*/
+    -moz-appearance: radio;
+    /*FF*/
+}
+
+input[type=checkbox] {
+    -webkit-appearance: checkbox;
+    /*Chrome*/
+    -moz-appearance: checkbox;
+    /*FF*/
+}
+
+a {
+    border: 0;
+    /*取消a標籤的虛線*/
+    outline: none;
+    /* for Firefox */
+    hlbr: expression(this.onFocus=this.blur());
+    /* for IE */
+}
+
+img {
+    border: 0;
+}
+
+select {
+    background-image: url(../images/bg_select.png);
+    background-repeat: no-repeat;
+    background-position: right;
+}
+
+select::-ms-expand {
+    display: none;
+    /*IE*/
+}
+
+input[type="button"][disabled="disabled"],
+input[type="submit"][disabled="disabled"],
+input[type="reset"][disabled="disabled"] {
+    background-color: #aaa !important;
+    cursor: not-allowed;
+}
+
+input[type="text"][disabled="disabled"],
+input[type="password"][disabled="disabled"],
+select[disabled="disabled"],
+textarea[disabled="disabled"] {
+    background-color: #e5e5e5 !important;
+    cursor: not-allowed;
+    color: #000;
+}
+
+::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    color: #909090;
+}
+
+::-moz-placeholder {
+    /* Firefox 19+ */
+    color: #909090;
+    opacity: 1;
+}
+
+:-ms-input-placeholder {
+    /* IE 10+ */
+    color: #909090 !important;
+}
+
+:-moz-placeholder {
+    /* Firefox 18- */
+    color: #909090;
+    opacity: 1;
+}
+
+/*頁面标题*/
+
+.inpage_main {
+    margin: 0 auto;
+    width: 100%;
+}
+
+.inpage_mainT {
+    margin: 0 auto;
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    right: 50%;
+}
+
+.inpageTitle {
+    float: left;
+    margin-top: 28px;
+    font-size: 16px;
+    color: #fff;
+    font-weight: bold;
+}
+
+.inpage_menu_bg {
+    background-color: #0c5d91;
+    width: 100%;
+    position: fixed;
+    top: 0px;
+    z-index: 999;
+}
+
+.inpage_menu {
+    width: 850px;
+    margin: 0 auto;
+    background-color: #0c5d91;
+    height: 60px;
+    font-size: 13px;
+}
+
+.inpage_menu ul {
+    margin-left: 20px;
+    float: left;
+    margin-top: 20px;
+}
+
+.inpage_menu ul.memberMenu_R {
+    float: right;
+    margin-right: 5px;
+}
+
+.inpage_menu ul li {
+    float: left;
+    color: #6caed8;
+    line-height: 40px;
+    height: 40px;
+}
+
+.inpage_menu>img {
+    float: left;
+    margin: 14px 10px 0px 16px;
+    width: 80px;
+}
+
+/*會員彈跳視窗-BOX規範*/
+
+.inpage_in_member {
+    margin: 60px auto 0 auto;
+    width: 800px;
+}
+
+/*一般彈跳視窗-BOX規範*/
+
+.inpage_in {
+    max-width: 800px;
+    margin: 60px auto 0 auto;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.btn_inpageMenu {
+    cursor: pointer;
+    display: block;
+    position: relative;
+    min-width: 52px;
+    text-align: center;
+    padding: 0 10px;
+}
+
+.btn_inpageMenu a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+}
+
+.btn_inpageMenu span {
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #e5e5e5;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    margin: 0 auto;
+    display: none;
+}
+
+.btn_inpageMenu:hover a {
+    color: #fff;
+}
+
+.btn_inpageMenu.On {
+    line-height: 20px;
+}
+
+.btn_inpageMenu.On a {
+    color: #fff;
+}
+
+.btn_inpageMenu.On span {
+    display: block;
+}
+
+.inpage_menu .line {
+    color: #3480b1 !important;
+}
+
+.btn_inpageMenu a[class*="t_yellow"]:hover,
+.btn_inpageMenu.On a[class*="t_yellow"] {
+    color: #ffd200;
+}
+
+.btn_inpageMenu a[class*="t_yellow"] {
+    color: #ffd200;
+}
+
+/*頁碼*/
+
+.recPages {
+    display: table;
+    margin: 0 auto;
+    height: 35px;
+    font-size: 14px;
+}
+
+.recPages input[type=button] {
+    float: left;
+    margin: 0px 5px 0 5px;
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+    border-radius: 5px;
+    background-color: #999;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.recPages input[type=button]:hover {
+    background-color: #aaa;
+}
+
+.recPages ul {
+    float: left;
+    margin: 0px 10px;
+    line-height: 25px;
+    color: #333;
+}
+
+.recPages ul li {
+    float: left;
+    padding: 0 5px;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.recPages ul li:hover {
+    text-decoration: underline;
+}
+
+.recPages select {
+    float: left;
+}
+
+.pagesOn {
+    color: #0089c9;
+    text-decoration: underline;
+}
+
+.firstPages {
+    background-image: url(../images/btn_firstPages.png);
+}
+
+.prevPages {
+    background-image: url(../images/btn_prevPages.png);
+}
+
+.nextPages {
+    background-image: url(../images/btn_nextPages.png);
+}
+
+.lastPages {
+    background-image: url(../images/btn_lastPages.png);
+}
+
+/*-彈跳視窗-*/
+
+.fancybox-skin {
+    overflow: hidden;
+}
+
+.fancybox-inner {
+    overflow-x: hidden !important;
+}
+
+.popUp {
+    width: 400px;
+    display: none;
+}
+
+.popUp02 {
+    width: 360px;
+    display: none;
+}
+
+.popUp03 {
+    width: 675px;
+    display: none;
+}
+
+.BO_popUp03 {
+    width: 675px;
+    padding-top: 10px;
+}
+
+.popUp_bonusCode {
+    width: 300px;
+    display: none;
+}
+
+.popUp_Msg {
+    width: 500px;
+    display: none;
+}
+
+#callBack {
+    width: 450px;
+}
+
+.popUp_prompt {
+    text-align: center;
+    padding: 20px 20px 5px 20px;
+    position: relative;
+}
+
+.fancybox-close {
+    top: 3px !important;
+}
+
+.popUp_title {
+    font-size: 18px;
+    color: #5aaaf3;
+    font-weight: bold;
+    border-bottom: 2px solid #e5e5e5;
+    line-height: 34px;
+    height: 38px;
+    text-align: center;
+    margin: 0 auto;
+    width: 93%;
+}
+
+.popUp_title02 {
+    font-size: 20px;
+    color: #5aaaf3;
+    font-weight: bold;
+    border-bottom: 2px solid #e5e5e5;
+    line-height: 40px;
+    height: 45px;
+    text-align: center;
+    margin: 0 auto;
+    width: 93%;
+}
+
+.popUp_title03 {
+    font-size: 20px;
+    color: #5aaaf3;
+    font-weight: bold;
+    border-bottom: 2px solid #e5e5e5;
+    line-height: 19px;
+    height: 45px;
+    text-align: center;
+    margin: 0 auto;
+    width: 93%;
+}
+
+.BO_popUp_title03 {
+    font-size: 20px;
+    color: #5aaaf3;
+    font-weight: bold;
+    border-bottom: 2px solid #e5e5e5;
+    line-height: 19px;
+    height: 45px;
+    text-align: center;
+    margin: 0 auto;
+    width: 93%;
+}
+
+.bewrite {
+    font-size: 14px;
+    color: #ff9600;
+}
+
+.BO_bewrite {
+    font-size: 14px;
+    color: #ff9600;
+}
+
+BO_bewrite {
+    font-size: 14px;
+    color: #ff9600;
+}
+
+.popUp_in {
+    overflow-x: hidden;
+}
+
+.popList {
+    list-style: none;
+    color: #2e2e2e;
+    font-size: 14px;
+    margin: 0 auto;
+}
+
+.popList li {
+    min-height: 40px;
+    margin-bottom: 20px;
+    text-align: left;
+    position: relative;
+}
+
+.popList li span {
+    line-height: 35px;
+    float: left;
+}
+
+.popList li>span {
+    color: #000;
+}
+
+.popList_T {
+    width: 70px;
+    color: #000;
+    line-height: 35px;
+    float: left;
+}
+
+.popList_T2 {
+    width: 90px;
+    color: #000;
+    line-height: 35px;
+    float: left;
+    margin-right: -20px;
+}
+
+.popList_T.TBig {
+    font-size: 16px;
+}
+
+.popList_noT {
+    margin-left: 70px;
+}
+
+.popList input[type=text],
+.popList input[type=password] {
+    margin: 0;
+    padding: 0px;
+    border: 0px;
+    width: 284px;
+    height: 35px;
+    background-color: #f3f3f3;
+    padding: 0 10px;
+    margin-left: 20px;
+    float: left;
+    font-size: 14px;
+    color: #000;
+    box-sizing: border-box;
+}
+
+.popList input[type=password] {
+    padding-right: 35px;
+}
+
+.popList select {
+    margin: 0;
+    padding: 0px;
+    border: 0px;
+    width: 284px;
+    height: 35px;
+    color: #000;
+    background-color: #f3f3f3;
+    padding-left: 10px;
+    margin-left: 20px;
+    float: left;
+    font-size: 14px;
+}
+
+.popList textarea {
+    margin: 0;
+    padding: 10px;
+    border: 0px;
+    width: 264px;
+    height: 100px;
+    color: #000;
+    background-color: #f3f3f3;
+    margin-left: 20px;
+    margin-bottom: 5px;
+    float: left;
+    font-size: 14px;
+    resize: none;
+    overflow: auto;
+}
+
+.personal li {
+    margin-bottom: 10px !important;
+}
+
+.msg_textarea.personal {
+    width: 90% !important;
+    height: 200px !important;
+    margin-top: 15px !important;
+    margin-bottom: 0px !important;
+}
+
+.checkBox {
+    background-color: #dadada;
+    width: 35px;
+    height: 35px;
+    float: left;
+    cursor: pointer;
+}
+
+.checkBoxIn {
+    background-color: #eee;
+    width: 35px;
+    height: 35px;
+    float: left;
+    cursor: pointer;
+}
+
+.checkBoxIn.on,
+.checkBox.on {
+    background-image: url(../images/icon_check.png);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.sentOut,
+.sentOut02,
+.sentOut03 {
+    border: 0px;
+    border-radius: 3px;
+    height: 45px;
+    background-color: #32abff;
+    font-size: 16px;
+    color: #fff;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+.sentOut {
+    width: 100%;
+}
+
+.sentOut02 {
+    width: 138px;
+    margin-top: 5px;
+}
+
+.sentOut02.gray,
+.sentOut03.gray {
+    background-color: #ababab;
+    margin-right: 7px;
+}
+
+.sentOut02.red {
+    background-color: #eb463c;
+    margin-right: 7px;
+}
+
+.sentOut:hover,
+.sentOut02:hover {
+    background-color: #38b8ff;
+}
+
+.sentOut02.gray:hover {
+    background-color: #bbb;
+}
+
+.sentOut02.red:hover {
+    background-color: #f05950;
+}
+
+.sentOut.next {
+    background-color: #aaa;
+}
+
+.popUp02 .sentOut02 {
+    width: 144px;
+}
+
+.popList_line+.sentOut02,
+.popList_line+.sentOut02+.sentOut02 {
+    margin-top: 0;
+}
+
+.sentL,
+.sentR {
+    border: 0px;
+    border-radius: 3px;
+    width: 49%;
+    height: 45px;
+    font-size: 16px;
+    color: #fff;
+    cursor: pointer;
+    margin: 0;
+    float: left;
+    margin-top: 5px;
+}
+
+.sentL_Msg,
+.sentR_Msg {
+    border: 0px;
+    border-radius: 3px;
+    width: 30%;
+    height: 45px;
+    font-size: 16px;
+    color: #fff;
+    cursor: pointer;
+    margin: 0;
+    margin-top: 5px;
+}
+
+.sentL,
+.sentL_Msg {
+    background-color: #ababab;
+    margin-right: 1%;
+}
+
+.sentL:hover,
+.sentL_Msg:hover {
+    background-color: #bbb;
+}
+
+.sentR,
+.sentR_Msg {
+    background-color: #32abff;
+    margin-left: 1%;
+}
+
+.sentR:hover,
+.sentR_Msg:hover {
+    background-color: #38b8ff;
+}
+
+.errorHint {
+    position: absolute;
+    color: #f00;
+    font-size: 13px;
+    line-height: 20px !important;
+    bottom: -15px;
+    width: 274px;
+    right: 0px;
+    text-align: left;
+    box-sizing: border-box;
+}
+
+.mainTain {
+    width: 360px;
+    margin: 0 auto 40px auto;
+    position: relative;
+    font-size: 14px;
+}
+
+.mainTainM {
+    text-align: left;
+    line-height: 22px;
+    color: #000;
+    font-size: 14px;
+}
+
+.mainTainMT {
+    font-size: 17px;
+    line-height: 40px;
+    display: block;
+    font-weight: bold;
+}
+
+.mainTainMT span {
+    display: block;
+}
+
+.sentTime {
+    color: #888;
+    text-align: center;
+    display: block;
+}
+
+.sentCellCode {
+    float: left;
+    text-align: center;
+    width: 113px;
+    height: 35px;
+    line-height: 35px;
+    text-decoration: none;
+    background-color: #00b2b9;
+    color: #fff;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.sentCellCode:hover {
+    background-color: #15d2d9;
+}
+
+.sentCellCode.off {
+    cursor: default;
+    background-color: #eeeded;
+    color: #555;
+}
+
+.sentCellCode .second {
+    color: #f00;
+    margin: 0 2px;
+    float: none;
+    line-height: inherit;
+}
+
+.sentCellCode.again {
+    background-color: #149300;
+}
+
+.sentCellCode.again:hover {
+    background-color: #22a70d;
+}
+
+.verified_OK {
+    float: left;
+    text-align: center;
+    width: 113px;
+    line-height: 35px;
+    color: #019000;
+}
+
+.verified_OK img {
+    width: 20px;
+    height: auto;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+.selectAC {
+    position: absolute;
+    border-radius: 3px;
+    color: #555;
+    font-size: 13px;
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.5) 2px 2px 5px;
+    border: 1px solid #ddd;
+    padding: 8px;
+    z-index: 1;
+    top: 38px;
+    left: 90px;
+    width: 200px;
+    line-height: 20px;
+    display: none;
+}
+
+.selectAC:before {
+    content: "";
+    border-style: solid;
+    border-color: transparent transparent #ccc transparent;
+    border-width: 0 7px 8px 7px;
+    position: absolute;
+    left: 8px;
+    top: -9px;
+    visibility: visible;
+}
+
+.selectAC:after {
+    content: "";
+    border-style: solid;
+    border-color: transparent transparent #fff transparent;
+    border-width: 0 7px 8px 7px;
+    position: absolute;
+    left: 8px;
+    top: -8px;
+    visibility: visible;
+}
+
+.selectAC_T {
+    margin-bottom: 3px;
+}
+
+.selectAC a {
+    text-decoration: none;
+    color: #3b83c3;
+    cursor: pointer;
+    line-height: 22px;
+    display: table;
+}
+
+.selectAC a:hover {
+    text-decoration: underline;
+}
+
+.memberACInput::-ms-clear {
+    display: none;
+}
+
+.memberACHint_OK {
+    padding-left: 20px;
+    line-height: 35px;
+    background-image: url(../images/icon_memberACHint_OK.png);
+    background-position: left;
+    background-repeat: no-repeat;
+    color: #00a517;
+    position: absolute;
+    right: 12px;
+}
+
+.memberACHint_NG {
+    padding-left: 20px;
+    line-height: 35px;
+    background-image: url(../images/icon_memberACHint_NG.png);
+    background-position: left;
+    background-repeat: no-repeat;
+    color: #f00;
+    position: absolute;
+    right: 12px;
+}
+
+.memberACHint_WT {
+    padding-left: 20px;
+    line-height: 35px;
+    background-image: url(../images/icon_memberACHint_WT.png);
+    background-position: left;
+    background-repeat: no-repeat;
+    color: #aaa;
+    position: absolute;
+    right: 12px;
+}
+
+#addBankNO .popList li {
+    text-align: center;
+    line-height: 25px;
+}
+
+#addBankNO .checkBank {
+    float: none;
+}
+
+/*彈跳視窗-註冊*/
+
+.popList_register {}
+
+.popList_register input[type=text],
+.popList_register input[type=password],
+.popList_register textarea {
+    width: 268px;
+}
+
+.popList_register input[type=text][disabled="disabled"],
+.popList_register input[type=password][disabled="disabled"],
+.popList_register textarea[disabled="disabled"] {
+    background-color: #e5e5e5 !important;
+    cursor: not-allowed;
+    color: #909090;
+}
+
+.popList_register select {
+    width: 268px;
+}
+
+.popList_register .errorHint {
+    width: 260px;
+    letter-spacing: -1px;
+}
+
+.popList_register .popList_in {
+    width: 268px;
+}
+
+.popList_line {
+    width: 100%;
+    height: 1px;
+    background-color: #e5e5e5;
+    margin: -5px 0 20px 0;
+}
+
+.popUp02 .popList_line {
+    margin: 0 0 18px 0;
+}
+
+.popList_verify {
+    float: left;
+    margin-left: 20px;
+    display: table;
+    width: 268px;
+    background-color: #f3f3f3;
+}
+
+.popList_verify.off {
+    background-color: #e5e5e5;
+}
+
+.popList_verify:after,
+.popList_verify div:after {
+    display: none;
+}
+
+.popList_verL,
+.popList_verR {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.popList_verR {
+    padding-right: 4px;
+    text-align: right;
+    width: 1%;
+    white-space: nowrap;
+}
+
+.popList_verW100,
+.popList_verW100_ok {
+    width: 100% !important;
+    box-sizing: border-box;
+    margin: 0 !important;
+}
+
+.popList_verW100_ok {
+    background: url(../images/icon_verCode_ok.png) no-repeat 231px center;
+}
+
+.verCode_Msg,
+.verCode_Rep {
+    height: 27px;
+    border-radius: 2px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.verCode_Msg {
+    background-color: #32abfe;
+    padding: 0 13px;
+}
+
+.verCode_Msg:hover {
+    background-color: #38b8ff;
+}
+
+.verCode_Rep {
+    background-color: #149300;
+    width: 114px;
+}
+
+.verCode_Rep:hover {
+    background-color: #22a70d;
+}
+
+.verCode_Sec {
+    line-height: 27px;
+    color: #000;
+    background-color: #e5e5e5;
+    border: 1px solid #cacaca;
+    border-radius: 2px;
+    padding: 0 5px;
+    width: 114px;
+    box-sizing: border-box;
+}
+
+.verCode_Sec span {
+    color: #f00;
+    line-height: 27px !important;
+    float: none !important;
+}
+
+.verCode_ok {
+    color: #009e02;
+    padding: 0 5px;
+}
+
+.joinCheckHint {
+    float: left;
+    margin-left: 15px;
+}
+
+.joinCheckHint div {
+    line-height: 18px;
+}
+
+.joinCheckHint span {
+    display: block;
+    line-height: 20px !important;
+    font-size: 13px;
+    color: #1675a3;
+}
+
+.icon_joinCell {
+    background: url(../images/icon_indexImg.png) no-repeat left -658px;
+    width: 70px;
+    height: 77px;
+    float: left;
+}
+
+.cellHint {
+    float: left;
+    margin-left: 15px;
+}
+
+.cellHint div {
+    font-size: 16px;
+    margin-top: 15px;
+    color: #1675a3;
+    font-weight: bold;
+}
+
+.cellHint span {
+    display: block;
+    line-height: 30px !important;
+}
+
+/*安全驗證*/
+
+.mask_popUpSafe {
+    background-color: rgba(0, 0, 0, 0.3);
+    display: table;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10000;
+}
+
+.mask_popUpSafe_In {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.popUpSafe {
+    width: 350px;
+    border-radius: 8px;
+    background-color: #fff;
+    margin: 0 auto;
+    box-shadow: rgba(0, 0, 0, 0.7) 0px 0px 25px;
+    padding: 0 30px 20px;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.popUpSafe_cloes {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    background: url(../images/icon_close.png) no-repeat center;
+    background-size: 20px 20px;
+    top: 7px;
+    right: 20px;
+}
+
+.popUpSafe_cloes:before {
+    width: 2px;
+}
+
+.popUpSafe_T {
+    font-size: 18px;
+    color: #5aaaf3;
+    font-weight: bold;
+    border-bottom: 2px solid #e5e5e5;
+    line-height: 54px;
+    height: 50px;
+    text-align: center;
+}
+
+.popUpSafe_In {
+    font-size: 14px;
+}
+
+.popUpSafe_list {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.popUpSafe_list .errorHint {
+    width: 100%;
+    bottom: -23px;
+    text-align: center;
+}
+
+.errorHint_img {
+    vertical-align: middle;
+    margin: -2px 4px 0 0;
+}
+
+.popUpSafe_text {
+    text-align: center;
+    margin: 40px 0 23px;
+}
+
+.popUpMSG_text {
+    text-align: left;
+    margin: 20px 0;
+    line-height: 20px;
+}
+
+.popUpSafe_text2 {
+    text-align: center;
+    margin: 20px 0 12px;
+    line-height: 25px;
+}
+
+.popUpSafe_text3 {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.popUpSafe_code {
+    display: table;
+    width: 100%;
+    background-color: #f3f3f3;
+}
+
+.popUpSafe_code:after,
+.popUpSafe_code div:after {
+    display: none;
+}
+
+.popUpSafe_codeL,
+.popUpSafe_codeR {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.popUpSafe_codeR {
+    padding-right: 4px;
+}
+
+.popUpSafe_Input,
+.popUpSafe_Input2 {
+    margin: 0;
+    padding: 0px;
+    border: 0px;
+    width: 100%;
+    height: 35px;
+    background-color: #f3f3f3;
+    padding: 0 10px;
+    color: #000;
+    box-sizing: border-box;
+}
+
+.popUpSafe_Input2 {
+    text-align: center;
+}
+
+.popUpSafe_codeImg {
+    vertical-align: middle;
+}
+
+/*請綁定銀行卡+彈跳視窗*/
+
+.checkBank {
+    float: right;
+    color: #009cff;
+    text-decoration: underline;
+    margin-bottom: 10px;
+    margin-right: 2px;
+    position: relative;
+}
+
+.checkBank:before {
+    position: absolute;
+    left: -20px;
+    top: 0px;
+    bottom: 0;
+    margin: auto;
+    content: '';
+    background: url(../images/icon_prompt.png) no-repeat top center;
+    background-size: 100%;
+    width: 15px;
+    height: 15px;
+}
+
+.checkBank:hover {
+    color: #7dcdff;
+}
+
+.Chk_bankList {
+    margin: 10px auto;
+    background-color: #bbbbbb;
+    width: 490px;
+    table-layout: fixed;
+    font-size: 15px;
+}
+
+.Chk_bankList th {
+    height: 74px;
+    background-color: #f3f3f3;
+    font-size: 18px;
+}
+
+.Chk_bankList span {
+    display: block;
+    font-size: 15px;
+    color: #cb2222;
+    margin-top: 5px;
+}
+
+.Chk_bankList td {
+    height: 67px;
+    text-align: center;
+    background-color: #fff;
+    font-weight: bold;
+}
+
+/*請綁定銀聯卡*/
+
+.checkBoxIn_even {
+    float: left;
+}
+
+.checkBoxIn_evenText {
+    margin: 0 10px;
+    float: left;
+    line-height: 35px;
+}
+
+.receivePW {
+    float: left;
+    font-size: 12px;
+    color: #f00;
+    line-height: 35px;
+}
+
+.bankName {
+    color: #000 !important;
+}
+
+.bankName::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    color: #000;
+}
+
+.bankName::-moz-placeholder {
+    /* Firefox 19+ */
+    color: #000;
+    opacity: 1;
+}
+
+.bankName:-ms-input-placeholder {
+    /* IE 10+ */
+    color: #000 !important;
+}
+
+.bankName:-moz-placeholder {
+    /* Firefox 18- */
+    color: #000;
+    opacity: 1;
+}
+
+/*信息*/
+
+.bankMsg_check {
+    display: table;
+    margin: 27px auto 10px;
+}
+
+.bankMsg_check_T {
+    margin-bottom: 10px;
+}
+
+.bankMsg_check_list {
+    margin: 0 0 10px -5px;
+}
+
+.bankMsg_check_list .t_blue {
+    color: #236298;
+}
+
+/*投诉箱*/
+
+.complaint_prompt {
+    color: #000;
+    padding: 15px 10px;
+    background-color: #f3f3f3;
+    border: 1px solid #e5e5e5;
+    border-radius: 3px;
+}
+
+.icon_complaint {
+    background: url(../images/icon_indexImg.png) no-repeat -245px -658px;
+    float: left;
+    width: 55px;
+    height: 55px;
+}
+
+.complaint_prompt_text {
+    margin-left: 78px;
+    font-size: 13px;
+}
+
+.complaint_prompt_text p {
+    margin: 0;
+    margin-top: 7px;
+    color: #ff9600;
+}
+
+/*未读邮件通知*/
+
+.unread_mail {
+    margin: 0 auto;
+    display: table;
+    position: relative;
+    text-align: left;
+    min-height: 70px;
+    vertical-align: middle;
+    margin-bottom: 30px;
+}
+
+.icon_unread {
+    background: url(../images/icon_indexImg.png) no-repeat -305px -658px;
+    margin-right: 15px;
+    width: 67px;
+    height: 67px;
+}
+
+.unread_mail_text {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+/*快速转帐*/
+
+.popList_in {
+    margin-left: 20px;
+    width: 250px;
+    float: left;
+    line-height: 30px;
+    position: relative;
+}
+
+.popList_in input[type=text],
+.popList_in input[type=password] {
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.popList_in .errorHint {
+    width: 100%;
+    padding-left: 10px;
+    box-sizing: border-box;
+    bottom: -20px;
+}
+
+.FT_Money {
+    color: #1ba200;
+    border: 1px solid #dadada;
+    position: relative;
+    width: 100%;
+    float: left;
+    font-size: 16px;
+    box-sizing: border-box;
+    padding-left: 10px;
+    font-weight: bold;
+}
+
+.btn_FT_Refresh {
+    width: 11%;
+    height: 30px;
+    position: relative;
+    float: right;
+    cursor: pointer;
+    width: 30px;
+}
+
+.btn_FT_Refresh:after {
+    content: "";
+    background-image: url(../images/btn_FT_Refresh.png);
+    background-position: center top;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    height: 20px;
+    visibility: visible;
+}
+
+.btn_FT_Refresh:hover:after {
+    background-position: center bottom;
+}
+
+.FT_button_bg {
+    display: table;
+    width: 100%;
+    margin: 15px auto 0 auto;
+}
+
+.FT_button_w50L,
+.FT_button_w50R {
+    border: 0px;
+    border-radius: 3px;
+    width: 48%;
+    height: 45px;
+    font-size: 16px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.FT_button_w50L {
+    float: left;
+    background-color: #ffa800;
+}
+
+.FT_button_w50L:hover {
+    background-color: #ffb21b;
+}
+
+.FT_button_w50R {
+    float: right;
+    background-color: #32abff;
+}
+
+.FT_button_w50R:hover {
+    background-color: #38b8ff;
+}
+
+.w400px {
+    width: 400px;
+}
+
+.w800px {
+    width: 800px;
+}
+
+.popListBottom {
+    border-bottom: 2px solid #e5e5e5;
+    margin-bottom: 20px;
+    margin-left: -6px;
+    margin-right: -6px;
+    padding: 0 6px;
+}
+
+.popListBottom li:last-child {
+    margin-bottom: 15px;
+}
+
+.popListBottom+.FT_button_bg {
+    margin-bottom: 5px;
+}
+
+.txt_transfer {
+    width: 160px !important;
+}
+
+.btn_transfer {
+    width: 80px;
+    height: 35px;
+    border-radius: 3px;
+    font-size: 16px;
+    margin-left: 10px;
+    color: #fff;
+    background-color: #35b0c0;
+    cursor: pointer;
+}
+
+.btn_transfer:hover {
+    opacity: 0.8;
+}
+
+/*维护*/
+
+.subMenu_maintain,
+.subMenu_maintain a {
+    cursor: not-allowed;
+}
+
+.subMenu_maintain a {
+    color: #8b8b8b;
+}
+
+.subMenu_maintain:hover a {
+    color: #8b8b8b;
+}
+
+.icon_maintainSubTop {
+    position: absolute;
+    width: 20px;
+    margin: 0 auto;
+    left: 0px;
+    right: 0px;
+    top: -12px;
+}
+
+.icon_maintain_deposit {
+    display: block;
+    margin: 0 auto;
+    margin-top: 5px;
+}
+
+/*存款專區維護樣式*/
+
+.pay_maintain {
+    background-color: #f1f1f1 !important;
+    color: #909090 !important;
+    border: 1px solid #ccc !important;
+    cursor: not-allowed !important;
+}
+
+/*存款專區維護樣式---end*/
+
+.menu_maintain a {
+    border-bottom: 0px;
+    color: #a2a2a2;
+}
+
+.icon_maintainIndexTop {
+    width: 18px;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.subList_maintain {
+    background-color: rgba(29, 29, 29, 0.70) !important;
+    position: absolute;
+    text-align: center;
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    font-size: 15px;
+    cursor: not-allowed;
+}
+
+.subList_maintain>div {
+    position: absolute;
+    width: 80px;
+    height: 88px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.icon_maintainBig {
+    background: url(../images/icon_indexImg.png) no-repeat -377px -658px;
+    width: 60px;
+    height: 55px;
+    display: table;
+    margin: 5px auto;
+}
+
+.subList_maintain .listGameCover {
+    background-color: rgba(119, 119, 119, 0);
+}
+
+/*敬请期待*/
+
+.subList_Notice {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: 1;
+    width: 145px;
+    height: 40px;
+    line-height: 40px;
+    color: #fff;
+    text-align: center;
+    border: 2px solid #fff;
+    font-size: 24px;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+/*综合电子*/
+
+.AGIN {
+    display: none;
+}
+
+.mask {
+    background-color: rgba(0, 0, 0, 0.6);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: 99;
+    display: table;
+    width: 100%;
+    height: 100%;
+}
+
+.bg_AGINpopUp {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.AGINpopUp {
+    display: table;
+    background-color: rgba(0, 0, 0, 0.8);
+    border: 5px solid rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    margin: 0 auto;
+    z-index: 101;
+    position: relative;
+}
+
+.AGINpopUp_T {
+    font-size: 16px;
+    color: #fff;
+    font-weight: bold;
+    line-height: 50px;
+    text-align: center;
+}
+
+.btn_AGINclose {
+    background: url(../images/icon_close.png) no-repeat center;
+    background-size: 20px 20px;
+    margin-top: 5px;
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.AGINpopUp_in {
+    padding: 0 35px 20px 35px;
+    margin: 0 auto;
+    text-align: center;
+    min-width: 600px;
+}
+
+.AGINimg_list {
+    display: inline-block;
+    margin: 0 2px;
+    cursor: pointer;
+    position: relative;
+    background-color: #000;
+    width: 256.5px;
+}
+
+.AGINimg_label {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 0;
+}
+
+.AGINimg_label:before {
+    content: "";
+    border-color: transparent #9a7133 transparent transparent;
+    border-width: 0 60px 80px 0;
+    border-style: solid;
+    display: block;
+}
+
+.AGINimg_label span {
+    color: #fff;
+    position: absolute;
+    top: 19px;
+    right: 4px;
+    font-size: 15px;
+    font-family: Arial;
+    transform: rotate(53deg);
+    -ms-transform: rotate(53deg);
+    /* IE 9 */
+    -moz-transform: rotate(53deg);
+    /* Firefox */
+    -webkit-transform: rotate(53deg);
+    /* Safari 和 Chrome */
+    -o-transform: rotate(53deg);
+}
+
+.btn_AGINimg {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.AGINCover {
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 0px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.AGINimg_list:hover .AGINCover {
+    display: none;
+}
+
+/*维护中*/
+
+.AGIN_maintain {
+    background-color: rgba(0, 0, 0, 0.85);
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    cursor: not-allowed;
+    font-size: 15px;
+}
+
+.AGIN_maintain div {
+    position: absolute;
+    width: 80px;
+    height: 88px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.AGIN_maintain img {
+    display: table;
+    margin: 5px auto;
+}
+
+.AGIN_maintain .AGINCover {
+    background-color: rgba(119, 119, 119, 0);
+}
+
+/*綁定支付宝-fancybox說明文*/
+
+.bindAlipay_text {
+    border-top: 1px dashed #ccc;
+    padding: 20px 10px 15px;
+    text-align: left;
+    margin-top: 10px;
+    color: #006db3;
+    font-size: 14px;
+}
+
+.w850 {
+    width: 850px;
+}
+
+.passwordHint {
+    float: left;
+    width: 250px;
+    margin-left: 20px;
+    text-align: left;
+    margin-top: 25px;
+    color: #888;
+}
+
+.icon_keyForget {
+    background: url(../images/icon_indexImg.png) no-repeat -160px -658px;
+    width: 80px;
+    height: 80px;
+    float: left;
+}
+
+.icon_keyCode {
+    background: url(../images/icon_indexImg.png) no-repeat -75px -658px;
+    width: 80px;
+    height: 80px;
+    float: left;
+}
+
+.t_red {
+    color: #f00 !important;
+}
+
+.input_box {
+    position: relative;
+}
+
+.btn_bankEye {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    cursor: pointer;
+}
+
+.btn_bankEye.r20 {
+    right: 30px;
+}
+
+.btn_bankEye.top13 {
+    top: 13px;
+}
+
+.icon_bankEye {
+    width: 20px;
+    height: 20px;
+    background-image: url(../images/icon_pwON.svg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    float: left;
+    opacity: 0.7;
+}
+
+.icon_bankEye:hover {
+    opacity: 1;
+}
+
+.icon_bankEye.off {
+    background-image: url(../images/icon_pwOFF.svg);
+}
+
+.icon_bankEye.off:hover {
+    opacity: 1;
+}
+
+/*彈跳視窗-修改密碼*/
+
+#forgetPassWord .popList li:first-child {
+    height: 90px;
+    text-align: center;
+}
+
+#fStep01 .sentOut {
+    margin-top: 20px;
+}
+
+#fStep02 {
+    display: none;
+}
+
+#fStep02 input[type="text"] {
+    width: 270px;
+    float: right;
+}
+
+#fStep02 .errorHint {
+    width: 260px;
+    float: right;
+}
+
+/*彈跳視窗-綁定銀行卡*/
+
+#bankCard {}
+
+#bankCard .popList li {
+    min-height: 35px;
+}
+
+#bankCard .errorHint {
+    bottom: -20px;
+}
+
+#bankCard .popUp_prompt {
+    padding: 7px 20px 5px 20px;
+}
+
+#bankCard .popList_line {
+    margin: 0 0 20px 0;
+}
+
+.popList_noError {
+    margin-bottom: 0 !important;
+}
+
+.popList_multiRow {
+    margin-top: 5px !important;
+}
+
+/*彈跳視窗-人民银行支付系统维护公告*/
+
+.popUpShow {
+    background-color: rgba(0, 0, 0, 0.6);
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: 9999;
+    width: auto;
+    height: auto;
+    display: block;
+}
+
+.popUpShow>div {
+    width: 390px;
+    height: auto;
+    position: absolute;
+    box-sizing: border-box;
+    padding: 15px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background: #fff;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    -webkit-box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+.popUpShow .w345 {
+    width: 320px;
+    height: auto;
+    position: absolute;
+    box-sizing: border-box;
+    padding: 15px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background: #fff;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    -webkit-box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+.popUpShow .popUp_in {
+    padding: 15px;
+    padding-bottom: 10px;
+    line-height: 24px;
+    font-size: 15px;
+}
+
+.popUpShow .sentOut {
+    margin-top: 20px;
+}
+
+.popUpClose {
+    background-image: url(../images/icon_close.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20px 20px;
+    margin-top: 8px;
+    position: absolute;
+    top: 5px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    z-index: 8040;
+}
+
+/*支持銀行卡*/
+
+.BO_bankList {
+    padding: 10px 0 10px;
+    box-sizing: border-box;
+    max-height: 344px;
+    overflow: hidden;
+}
+
+.bankList_wrap {
+    width: 621px;
+    margin: 0 auto;
+}
+
+.BO_bankList_wrap {
+    width: 621px;
+    margin: 0 auto;
+}
+
+.bankList_wrap .btn_selectbank:nth-child(4n+1) {
+    margin-left: 0;
+}
+
+.BO_bankList_wrap .btn_selectbank:nth-child(4n+1) {
+    margin-left: 0;
+}
+
+.btn_selectbank {
+    width: 144px;
+    height: 44px;
+    float: left;
+    margin: 5px 0 5px 15px;
+}
+
+.btn_bank_CCB {
+    background: url(../images/btn_bank_CCB_02.jpg) no-repeat;
+}
+
+.btn_bank_ICBC {
+    background: url(../images/btn_bank_ICBC_02.jpg) no-repeat;
+}
+
+.btn_bank_ABC {
+    background: url(../images/btn_bank_ABC_02.jpg) no-repeat;
+}
+
+.btn_bank_BOCM {
+    background: url(../images/btn_bank_BOCM_02.jpg) no-repeat;
+}
+
+.btn_bank_CMerB {
+    background: url(../images/btn_bank_CMerB_02.jpg) no-repeat;
+}
+
+.btn_bank_PAB {
+    background: url(../images/btn_bank_PAB_02.jpg) no-repeat;
+}
+
+.btn_bank_BC {
+    background: url(../images/btn_bank_BC_02.jpg) no-repeat;
+}
+
+.btn_bank_PSBC {
+    background: url(../images/btn_bank_PSBC_02.jpg) no-repeat;
+}
+
+.btn_bank_CEB {
+    background: url(../images/btn_bank_CEB_02.jpg) no-repeat;
+}
+
+.btn_bank_SDP {
+    background: url(../images/btn_bank_SDP_02.jpg) no-repeat;
+}
+
+.btn_bank_HB {
+    background: url(../images/btn_bank_HB_02.jpg) no-repeat;
+}
+
+.btn_bank_CGB {
+    background: url(../images/btn_bank_CGB_02.jpg) no-repeat;
+}
+
+.btn_bank_CNCB {
+    background: url(../images/btn_bank_CNCB_02.jpg) no-repeat;
+}
+
+.btn_bank_CIB {
+    background: url(../images/btn_bank_CIB_02.jpg) no-repeat;
+}
+
+.btn_bank_CMB {
+    background: url(../images/btn_bank_CMB_02.jpg) no-repeat;
+}
+
+.btn_bank_BOB {
+    background: url(../images/btn_bank_BOB_02.jpg) no-repeat;
+}
+
+.btn_bank_BOS {
+    background: url(../images/btn_bank_BOS_02.jpg) no-repeat;
+}
+
+.btn_bank_HFB {
+    background: url(../images/btn_bank_HFB_02.jpg) no-repeat;
+}
+
+.btn_bank_CBHB {
+    background: url(../images/btn_bank_CBHB_02.jpg) no-repeat;
+}
+
+.btn_bank_GZCB {
+    background: url(../images/btn_bank_GZCB_02.jpg) no-repeat;
+}
+
+.btn_bank_CZCB {
+    background: url(../images/btn_bank_CZCB_02.jpg) no-repeat;
+}
+
+.btn_bank_BOS {
+    background: url(../images/btn_bank_BOS_02.jpg) no-repeat;
+}
+
+/*彈跳視窗-信 息*/
+
+.info_newIn {
+    display: block;
+    text-align: center;
+    margin: 10px 0;
+}
+
+.RWD_service {
+    background: url(../images/ku_logo.svg)no-repeat center top;
+    background-size: 56%;
+    position: absolute;
+    width: 420px;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 22%;
+    margin: auto;
+}
+
+.RWD_wrong {
+    width: 100%;
+    display: table;
+    min-height: 56px;
+    margin: 90px auto 30px;
+    color: #ffffff;
+    font-size: 20px;
+    position: relative;
+    text-align: center;
+}
+
+.RWD_wrong span {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+/*聯絡資訊-按鈕*/
+
+.info_all {
+    width: 100%;
+}
+
+.info_all a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.info_phone {
+    display: block;
+    width: 160px;
+    padding-left: 50px;
+    line-height: 40px;
+    margin: 0 auto;
+    background: url(../images/icon_phone.png) no-repeat left top;
+    background-size: 40px;
+    font-size: 24px;
+    color: #fff;
+}
+
+.info_service {
+    display: block;
+    width: 60%;
+    height: 60px;
+    line-height: 60px;
+    margin: 0 auto 30px;
+    cursor: pointer;
+    text-align: center;
+    border: 2px solid #fff;
+    box-sizing: border-box;
+    border-radius: 50px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff !important;
+}
+
+.info_service:hover {
+    border: 2px solid #70fafd;
+    color: #70fafd !important;
+}
+
+@media screen and (max-width:1030px) {
+    .RWD_service {
+        left: 10%;
+    }
+    .info_service:hover {
+        border: 2px solid #fff;
+        color: #fff !important;
+    }
+    .info_service:active {
+        -webkit-tap-highlight-color: transparent;
+        border: 2px solid #70fafd;
+        color: #70fafd !important;
+    }
+}
+
+@media screen and (max-width:835px) {
+    body {
+        background: url(../images/bg_M.jpg)#030416 no-repeat center bottom;
+        background-size: 100%;
+    }
+    .RWD_service {
+        left: 0;
+        right: 0;
+        top: 30%;
+        transform: translateY(-50%);
+        width: 70%;
+        background-size: 50%;
+    }
+    .RWD_wrong {
+        margin: 105px auto 30px;
+        font-size: 1.4em;
+    }
+    .info_service {
+        width: 52%;
+        font-size: 1.4em;
+    }
+    .info_phone {
+        display: table;
+        width: auto;
+        font-size: 1.5em;
+        line-height: 35px;
+        background-size: 35px;
+        padding-left: 8%;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .RWD_service {
+        top: 25%;
+        transform: translateY(-40%);
+    }
+    .RWD_wrong {
+        margin: 95px auto 25px;
+        font-size: 1.3em;
+    }
+    .info_service {
+        margin: 0 auto 25px;
+        height: 50px;
+        line-height: 47px;
+        font-size: 1.3em;
+    }
+    .info_phone {
+        display: table;
+        width: auto;
+        font-size: 1.4em;
+        line-height: 30px;
+        background-size: 30px;
+    }
+}
+
+@media screen and (max-width:630px) {
+    .RWD_wrong {
+        margin: 80px auto 20px;
+        font-size: 1.2em;
+    }
+    .info_service {
+        font-size: 1.2em;
+    }
+    .info_phone {
+        font-size: 1.3em;
+        line-height: 30px;
+        background-size: 30px;
+        padding-left: 10%;
+    }
+}
+
+@media screen and (max-width:540px) {
+    .RWD_wrong {
+        margin: 75px auto 30px;
+        font-size: 1.1em;
+    }
+    .info_service {
+        height: 45px;
+        line-height: 43px;
+        font-size: 1.1em;
+    }
+    .info_phone {
+        font-size: 1.2em;
+        line-height: 26px;
+        background-size: 26px;
+    }
+}
+
+@media screen and (max-width:440px) {
+    body {
+        background-size: 110%;
+    }
+    .RWD_service {
+        top: 23%;
+        width: 80%;
+        transform: translateY(-25%);
+    }
+    .RWD_wrong {
+        margin: 65px auto 20px;
+        font-size: 1em;
+    }
+    .info_service {
+        height: 45px;
+        line-height: 43px;
+        margin: 0 auto 20px;
+        font-size: 1em;
+    }
+    .info_phone {
+        padding-left: 11%;
+        font-size: 1.1em;
+    }
+}
+
+@media screen and (max-width:420px) {
+    .RWD_service {
+        width: 82%;
+    }
+}
+
+@media screen and (max-width:400px) {
+    .RWD_service {
+        width: 84%;
+    }
+    .RWD_wrong {
+        min-height: 45px;
+        margin: 65px auto 20px;
+        font-size: 0.95em;
+    }
+    .info_service {
+        height: 40px;
+        line-height: 38px;
+        font-size: 0.95em;
+    }
+    .info_phone {
+        line-height: 24px;
+        background-size: 24px;
+    }
+}
+
+@media screen and (max-width:375px) {
+    .RWD_service {
+        top: 22%;
+        width: 86%;
+    }
+}
+
+@media screen and (max-width:360px) {
+    .RWD_service {
+        top: 21%;
+    }
+}
+
+@media screen and (max-width:320px) {
+    .RWD_wrong {
+        margin: 52px auto 15px;
+        min-height: 35px;
+        font-size: 0.8em;
+    }
+    .info_service {
+        width: 55%;
+        height: 35px;
+        line-height: 32px;
+        margin: 0 auto 15px;
+        font-size: 0.8em;
+    }
+    .info_phone {
+        font-size: 0.95em;
+        line-height: 18px;
+        background-size: 18px;
+    }
+}
+
+/*scrollbar*/
+
+.scrollBody {
+    display: flex;
+    overflow: hidden;
+}
+
+.scrollBody>.scrollbar-macosx {
+    width: 100%;
+}
+
+.scrollBody>.scrollbar-macosx>.scroll-element.scroll-y .scroll-bar {
+    background-color: transparent;
+}
+
+.scrollBody>.scrollbar-macosx>.scroll-element.scroll-x .scroll-bar {
+    height: 17px;
+    top: -17px;
+    opacity: .5;
+    box-shadow: 0 0 2px gray;
+    z-index: 999;
+}
+
+.scrollBody .RWD_service {
+    position: relative;
+    margin: 0;
+}
+
+.scrollBody .RWD_wrong {
+    margin-top: 0 !important;
+    padding-top: 89px;
+}
+
+@media (max-width: 835px) {
+    .scrollBody .RWD_service {
+        margin: auto;
+    }
+    .scrollBody .RWD_wrong {
+        padding-top: 105px;
+    }
+}
+
+@media (max-width:768px) {
+    .scrollBody .RWD_wrong {
+        padding-top: 95px;
+    }
+}
+
+@media (max-width:630px) {
+    .scrollBody .RWD_wrong {
+        padding-top: 80px;
+    }
+}
+
+@media (max-width:540px) {
+    .scrollBody .RWD_wrong {
+        padding-top: 75px;
+    }
+}
+
+@media (max-width:440px) {
+    .scrollBody .RWD_wrong {
+        padding-top: 65px;
+    }
+}
+
+@media (max-width:320px) {
+    .scrollBody .RWD_wrong {
+        padding-top: 52px;
+    }
+}
+
+@media (max-height: 305px) {
+    .scrollBody .RWD_service {
+        top: auto;
+        transform: none;
+    }
+}
+
+/*************** SCROLLBAR BASE CSS ***************/
+
+.scroll-wrapper {
+    overflow: hidden !important;
+    padding: 0 !important;
+    position: relative;
+}
+
+.scroll-wrapper>.scroll-content {
+    border: none !important;
+    box-sizing: content-box !important;
+    height: auto;
+    left: 0;
+    margin: 0;
+    max-height: none;
+    max-width: none !important;
+    overflow: scroll !important;
+    padding: 0;
+    position: relative !important;
+    top: 0;
+    width: auto !important;
+    overflow-x: hidden !important;
+    -ms-overflow-x: hidden !important;
+}
+
+.scroll-wrapper>.scroll-content::-webkit-scrollbar {
+    height: 0;
+    width: 0;
+}
+
+.scroll-element {
+    display: none;
+}
+
+.scroll-element,
+.scroll-element div {
+    box-sizing: content-box;
+}
+
+.scroll-element.scroll-x.scroll-scrollx_visible,
+.scroll-element.scroll-y.scroll-scrolly_visible {
+    display: block;
+}
+
+.scroll-element .scroll-bar,
+.scroll-element .scroll-arrow {
+    cursor: default;
+}
+
+/*Òò‚€ÈËÓÏ¢—´°¶øÐèÒªë[²Ø*/
+
+/*.scroll-textarea {
+    border: 1px solid #cccccc;
+    border-top-color: #999999;
+}*/
+
+.scroll-textarea>.scroll-content {
+    overflow: hidden !important;
+}
+
+/*Òò‚€ÈËÓÏ¢—´°¶øÐèÒªë[²Ø*/
+
+/*.scroll-textarea > .scroll-content > textarea {
+    border: none !important;
+    box-sizing: border-box;
+    height: 100% !important;
+    margin: 0;
+    max-height: none !important;
+    max-width: none !important;
+    overflow: scroll !important;
+    outline: none;
+    padding: 2px;
+    position: relative !important;
+    top: 0;
+    width: 100% !important;
+}*/
+
+.scroll-textarea>.scroll-content>textarea::-webkit-scrollbar {
+    height: 0;
+    width: 0;
+}
+
+/*************** SIMPLE INNER SCROLLBAR ***************/
+
+.scrollbar-inner>.scroll-element,
+.scrollbar-inner>.scroll-element div {
+    border: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    z-index: 10;
+}
+
+.scrollbar-inner>.scroll-element div {
+    display: block;
+    height: 100%;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+
+.scrollbar-inner>.scroll-element.scroll-x {
+    bottom: 2px;
+    height: 8px;
+    left: 0;
+    width: 100%;
+}
+
+.scrollbar-inner>.scroll-element.scroll-y {
+    height: 100%;
+    right: 2px;
+    top: 0;
+    width: 8px;
+}
+
+.scrollbar-inner>.scroll-element .scroll-element_outer {
+    overflow: hidden;
+}
+
+.scrollbar-inner>.scroll-element .scroll-element_outer,
+.scrollbar-inner>.scroll-element .scroll-element_track,
+.scrollbar-inner>.scroll-element .scroll-bar {
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+}
+
+.scrollbar-inner>.scroll-element .scroll-element_track,
+.scrollbar-inner>.scroll-element .scroll-bar {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
+    filter: alpha(opacity=40);
+    opacity: 0.4;
+}
+
+.scrollbar-inner>.scroll-element .scroll-element_track {
+    background-color: #e0e0e0;
+}
+
+.scrollbar-inner>.scroll-element .scroll-bar {
+    background-color: #c2c2c2;
+}
+
+.scrollbar-inner>.scroll-element:hover .scroll-bar {
+    background-color: #919191;
+}
+
+.scrollbar-inner>.scroll-element.scroll-draggable .scroll-bar {
+    background-color: #919191;
+}
+
+/* update scrollbar offset if both scrolls are visible */
+
+.scrollbar-inner>.scroll-element.scroll-x.scroll-scrolly_visible .scroll-element_track {
+    left: -12px;
+}
+
+.scrollbar-inner>.scroll-element.scroll-y.scroll-scrollx_visible .scroll-element_track {
+    top: -12px;
+}
+
+.scrollbar-inner>.scroll-element.scroll-x.scroll-scrolly_visible .scroll-element_size {
+    left: -12px;
+}
+
+.scrollbar-inner>.scroll-element.scroll-y.scroll-scrollx_visible .scroll-element_size {
+    top: -12px;
+}
+
+/*************** SIMPLE OUTER SCROLLBAR ***************/
+
+.scrollbar-outer>.scroll-element,
+.scrollbar-outer>.scroll-element div {
+    border: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    z-index: 10;
+}
+
+.scrollbar-outer>.scroll-element {
+    background-color: #ffffff;
+}
+
+.scrollbar-outer>.scroll-element div {
+    display: block;
+    height: 100%;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+
+.scrollbar-outer>.scroll-element.scroll-x {
+    bottom: 0;
+    height: 12px;
+    left: 0;
+    width: 100%;
+}
+
+.scrollbar-outer>.scroll-element.scroll-y {
+    height: 100%;
+    right: 0;
+    top: 0;
+    width: 12px;
+}
+
+.scrollbar-outer>.scroll-element.scroll-x .scroll-element_outer {
+    height: 8px;
+    top: 2px;
+}
+
+.scrollbar-outer>.scroll-element.scroll-y .scroll-element_outer {
+    left: 2px;
+    width: 8px;
+}
+
+.scrollbar-outer>.scroll-element .scroll-element_outer {
+    overflow: hidden;
+}
+
+.scrollbar-outer>.scroll-element .scroll-element_track {
+    background-color: #eeeeee;
+}
+
+.scrollbar-outer>.scroll-element .scroll-element_outer,
+.scrollbar-outer>.scroll-element .scroll-element_track,
+.scrollbar-outer>.scroll-element .scroll-bar {
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+}
+
+.scrollbar-outer>.scroll-element .scroll-bar {
+    background-color: #d9d9d9;
+}
+
+.scrollbar-outer>.scroll-element .scroll-bar:hover {
+    background-color: #c2c2c2;
+}
+
+.scrollbar-outer>.scroll-element.scroll-draggable .scroll-bar {
+    background-color: #919191;
+}
+
+/* scrollbar height/width & offset from container borders */
+
+.scrollbar-outer>.scroll-content.scroll-scrolly_visible {
+    left: -12px;
+    margin-left: 12px;
+}
+
+.scrollbar-outer>.scroll-content.scroll-scrollx_visible {
+    top: -12px;
+    margin-top: 12px;
+}
+
+.scrollbar-outer>.scroll-element.scroll-x .scroll-bar {
+    min-width: 10px;
+}
+
+.scrollbar-outer>.scroll-element.scroll-y .scroll-bar {
+    min-height: 10px;
+}
+
+/* update scrollbar offset if both scrolls are visible */
+
+.scrollbar-outer>.scroll-element.scroll-x.scroll-scrolly_visible .scroll-element_track {
+    left: -14px;
+}
+
+.scrollbar-outer>.scroll-element.scroll-y.scroll-scrollx_visible .scroll-element_track {
+    top: -14px;
+}
+
+.scrollbar-outer>.scroll-element.scroll-x.scroll-scrolly_visible .scroll-element_size {
+    left: -14px;
+}
+
+.scrollbar-outer>.scroll-element.scroll-y.scroll-scrollx_visible .scroll-element_size {
+    top: -14px;
+}
+
+/*************** SCROLLBAR MAC OS X ***************/
+
+.scrollbar-macosx>.scroll-element,
+.scrollbar-macosx>.scroll-element div {
+    background: none;
+    border: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    z-index: 10;
+}
+
+.scrollbar-macosx>.scroll-element div {
+    display: block;
+    height: 100%;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+
+.scrollbar-macosx>.scroll-element .scroll-element_track {
+    display: none;
+}
+
+.scrollbar-macosx>.scroll-element .scroll-bar {
+    background-color: #d2d2d2;
+    display: block;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+    opacity: 0;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    -webkit-transition: opacity 0.2s linear;
+    -moz-transition: opacity 0.2s linear;
+    -o-transition: opacity 0.2s linear;
+    -ms-transition: opacity 0.2s linear;
+    transition: opacity 0.2s linear;
+}
+
+.scrollbar-macosx:hover>.scroll-element .scroll-bar,
+.scrollbar-macosx>.scroll-element.scroll-draggable .scroll-bar {
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    filter: alpha(opacity=100);
+    opacity: 1;
+}
+
+.scrollbar-macosx>.scroll-element.scroll-x {
+    bottom: 0px;
+    height: 0px;
+    left: 0;
+    min-width: 100%;
+    /*overflow: visible;*/
+    width: 100%;
+}
+
+.scrollbar-macosx>.scroll-element.scroll-y {
+    height: 100%;
+    min-height: 100%;
+    right: 0px;
+    top: 0;
+    width: 0px;
+}
+
+/* scrollbar height/width & offset from container borders */
+
+.scrollbar-macosx>.scroll-element.scroll-x .scroll-bar {
+    height: 4px;
+    min-width: 10px;
+    top: -5px;
+}
+
+.scrollbar-macosx>.scroll-element.scroll-y .scroll-bar {
+    left: -5px;
+    min-height: 10px;
+    width: 4px;
+}
+
+.scrollbar-macosx>.scroll-element.scroll-x .scroll-element_outer {
+    left: 2px;
+}
+
+.scrollbar-macosx>.scroll-element.scroll-x .scroll-element_size {
+    left: -4px;
+}
+
+.scrollbar-macosx>.scroll-element.scroll-y .scroll-element_outer {
+    top: 2px;
+}
+
+.scrollbar-macosx>.scroll-element.scroll-y .scroll-element_size {
+    top: -4px;
+}
+
+/* update scrollbar offset if both scrolls are visible */
+
+.scrollbar-macosx>.scroll-element.scroll-x.scroll-scrolly_visible .scroll-element_size {
+    left: -11px;
+}
+
+.scrollbar-macosx>.scroll-element.scroll-y.scroll-scrollx_visible .scroll-element_size {
+    top: -11px;
+}
+
+/*************** SCROLLBAR LIGHT ***************/
+
+.scrollbar-light>.scroll-element,
+.scrollbar-light>.scroll-element div {
+    border: none;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    z-index: 10;
+}
+
+.scrollbar-light>.scroll-element {
+    background-color: #ffffff;
+}
+
+.scrollbar-light>.scroll-element div {
+    display: block;
+    height: 100%;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+
+.scrollbar-light>.scroll-element .scroll-element_outer {
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+
+.scrollbar-light>.scroll-element .scroll-element_size {
+    background: #dbdbdb;
+    background: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2RiZGJkYiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNlOGU4ZTgiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+');
+    background: -moz-linear-gradient(left, #dbdbdb 0%, #e8e8e8 100%);
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%, #dbdbdb), color-stop(100%, #e8e8e8));
+    background: -webkit-linear-gradient(left, #dbdbdb 0%, #e8e8e8 100%);
+    background: -o-linear-gradient(left, #dbdbdb 0%, #e8e8e8 100%);
+    background: -ms-linear-gradient(left, #dbdbdb 0%, #e8e8e8 100%);
+    background: linear-gradient(to right, #dbdbdb 0%, #e8e8e8 100%);
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+
+.scrollbar-light>.scroll-element.scroll-x {
+    bottom: 0;
+    height: 17px;
+    left: 0;
+    min-width: 100%;
+    width: 100%;
+}
+
+.scrollbar-light>.scroll-element.scroll-y {
+    height: 100%;
+    min-height: 100%;
+    right: 0;
+    top: 0;
+    width: 17px;
+}
+
+.scrollbar-light>.scroll-element .scroll-bar {
+    background: #fefefe;
+    background: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZlZmVmZSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmNWY1ZjUiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+');
+    background: -moz-linear-gradient(left, #fefefe 0%, #f5f5f5 100%);
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%, #fefefe), color-stop(100%, #f5f5f5));
+    background: -webkit-linear-gradient(left, #fefefe 0%, #f5f5f5 100%);
+    background: -o-linear-gradient(left, #fefefe 0%, #f5f5f5 100%);
+    background: -ms-linear-gradient(left, #fefefe 0%, #f5f5f5 100%);
+    background: linear-gradient(to right, #fefefe 0%, #f5f5f5 100%);
+    border: 1px solid #dbdbdb;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+
+/* scrollbar height/width & offset from container borders */
+
+.scrollbar-light>.scroll-content.scroll-scrolly_visible {
+    left: -17px;
+    margin-left: 17px;
+}
+
+.scrollbar-light>.scroll-content.scroll-scrollx_visible {
+    top: -17px;
+    margin-top: 17px;
+}
+
+.scrollbar-light>.scroll-element.scroll-x .scroll-bar {
+    height: 10px;
+    min-width: 10px;
+    top: 0px;
+}
+
+.scrollbar-light>.scroll-element.scroll-y .scroll-bar {
+    left: 0px;
+    min-height: 10px;
+    width: 10px;
+}
+
+.scrollbar-light>.scroll-element.scroll-x .scroll-element_outer {
+    height: 12px;
+    left: 2px;
+    top: 2px;
+}
+
+.scrollbar-light>.scroll-element.scroll-x .scroll-element_size {
+    left: -4px;
+}
+
+.scrollbar-light>.scroll-element.scroll-y .scroll-element_outer {
+    left: 2px;
+    top: 2px;
+    width: 12px;
+}
+
+.scrollbar-light>.scroll-element.scroll-y .scroll-element_size {
+    top: -4px;
+}
+
+/* update scrollbar offset if both scrolls are visible */
+
+.scrollbar-light>.scroll-element.scroll-x.scroll-scrolly_visible .scroll-element_size {
+    left: -19px;
+}
+
+.scrollbar-light>.scroll-element.scroll-y.scroll-scrollx_visible .scroll-element_size {
+    top: -19px;
+}
+
+.scrollbar-light>.scroll-element.scroll-x.scroll-scrolly_visible .scroll-element_track {
+    left: -19px;
+}
+
+.scrollbar-light>.scroll-element.scroll-y.scroll-scrollx_visible .scroll-element_track {
+    top: -19px;
+}
+
+/*************** SCROLLBAR RAIL ***************/
+
+.scrollbar-rail>.scroll-element,
+.scrollbar-rail>.scroll-element div {
+    border: none;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    z-index: 10;
+}
+
+.scrollbar-rail>.scroll-element {
+    background-color: #ffffff;
+}
+
+.scrollbar-rail>.scroll-element div {
+    display: block;
+    height: 100%;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+
+.scrollbar-rail>.scroll-element .scroll-element_size {
+    background-color: #999;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.scrollbar-rail>.scroll-element .scroll-element_outer:hover .scroll-element_size {
+    background-color: #666;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.scrollbar-rail>.scroll-element.scroll-x {
+    bottom: 0;
+    height: 12px;
+    left: 0;
+    min-width: 100%;
+    padding: 3px 0 2px;
+    width: 100%;
+}
+
+.scrollbar-rail>.scroll-element.scroll-y {
+    height: 100%;
+    min-height: 100%;
+    padding: 0 2px 0 3px;
+    right: 0;
+    top: 0;
+    width: 12px;
+}
+
+.scrollbar-rail>.scroll-element .scroll-bar {
+    background-color: #d0b9a0;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.scrollbar-rail>.scroll-element .scroll-element_outer:hover .scroll-bar {
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+/* scrollbar height/width & offset from container borders */
+
+.scrollbar-rail>.scroll-content.scroll-scrolly_visible {
+    left: -17px;
+    margin-left: 17px;
+}
+
+.scrollbar-rail>.scroll-content.scroll-scrollx_visible {
+    margin-top: 17px;
+    top: -17px;
+}
+
+.scrollbar-rail>.scroll-element.scroll-x .scroll-bar {
+    height: 10px;
+    min-width: 10px;
+    top: 1px;
+}
+
+.scrollbar-rail>.scroll-element.scroll-y .scroll-bar {
+    left: 1px;
+    min-height: 10px;
+    width: 10px;
+}
+
+.scrollbar-rail>.scroll-element.scroll-x .scroll-element_outer {
+    height: 15px;
+    left: 5px;
+}
+
+.scrollbar-rail>.scroll-element.scroll-x .scroll-element_size {
+    height: 2px;
+    left: -10px;
+    top: 5px;
+}
+
+.scrollbar-rail>.scroll-element.scroll-y .scroll-element_outer {
+    top: 5px;
+    width: 15px;
+}
+
+.scrollbar-rail>.scroll-element.scroll-y .scroll-element_size {
+    left: 5px;
+    top: -10px;
+    width: 2px;
+}
+
+/* update scrollbar offset if both scrolls are visible */
+
+.scrollbar-rail>.scroll-element.scroll-x.scroll-scrolly_visible .scroll-element_size {
+    left: -25px;
+}
+
+.scrollbar-rail>.scroll-element.scroll-y.scroll-scrollx_visible .scroll-element_size {
+    top: -25px;
+}
+
+.scrollbar-rail>.scroll-element.scroll-x.scroll-scrolly_visible .scroll-element_track {
+    left: -25px;
+}
+
+.scrollbar-rail>.scroll-element.scroll-y.scroll-scrollx_visible .scroll-element_track {
+    top: -25px;
+}
+
+/*************** SCROLLBAR DYNAMIC ***************/
+
+.scrollbar-dynamic>.scroll-element,
+.scrollbar-dynamic>.scroll-element div {
+    background: none;
+    border: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    z-index: 10;
+}
+
+.scrollbar-dynamic>.scroll-element div {
+    display: block;
+    height: 100%;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+
+.scrollbar-dynamic>.scroll-element.scroll-x {
+    bottom: 2px;
+    height: 7px;
+    left: 0;
+    min-width: 100%;
+    width: 100%;
+}
+
+.scrollbar-dynamic>.scroll-element.scroll-y {
+    height: 100%;
+    min-height: 100%;
+    right: 2px;
+    top: 0;
+    width: 7px;
+}
+
+.scrollbar-dynamic>.scroll-element .scroll-element_outer {
+    opacity: 0.3;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    border-radius: 12px;
+}
+
+.scrollbar-dynamic>.scroll-element .scroll-element_size {
+    background-color: #cccccc;
+    opacity: 0;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    border-radius: 12px;
+    -webkit-transition: opacity 0.2s;
+    -moz-transition: opacity 0.2s;
+    -o-transition: opacity 0.2s;
+    -ms-transition: opacity 0.2s;
+    transition: opacity 0.2s;
+}
+
+.scrollbar-dynamic>.scroll-element .scroll-bar {
+    background-color: #6c6e71;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    border-radius: 7px;
+}
+
+/* scrollbar height/width & offset from container borders */
+
+.scrollbar-dynamic>.scroll-element.scroll-x .scroll-bar {
+    bottom: 0;
+    height: 7px;
+    min-width: 24px;
+    top: auto;
+}
+
+.scrollbar-dynamic>.scroll-element.scroll-y .scroll-bar {
+    left: auto;
+    min-height: 24px;
+    right: 0;
+    width: 7px;
+}
+
+.scrollbar-dynamic>.scroll-element.scroll-x .scroll-element_outer {
+    bottom: 0;
+    top: auto;
+    left: 2px;
+    -webkit-transition: height 0.2s;
+    -moz-transition: height 0.2s;
+    -o-transition: height 0.2s;
+    -ms-transition: height 0.2s;
+    transition: height 0.2s;
+}
+
+.scrollbar-dynamic>.scroll-element.scroll-y .scroll-element_outer {
+    left: auto;
+    right: 0;
+    top: 2px;
+    -webkit-transition: width 0.2s;
+    -moz-transition: width 0.2s;
+    -o-transition: width 0.2s;
+    -ms-transition: width 0.2s;
+    transition: width 0.2s;
+}
+
+.scrollbar-dynamic>.scroll-element.scroll-x .scroll-element_size {
+    left: -4px;
+}
+
+.scrollbar-dynamic>.scroll-element.scroll-y .scroll-element_size {
+    top: -4px;
+}
+
+/* update scrollbar offset if both scrolls are visible */
+
+.scrollbar-dynamic>.scroll-element.scroll-x.scroll-scrolly_visible .scroll-element_size {
+    left: -11px;
+}
+
+.scrollbar-dynamic>.scroll-element.scroll-y.scroll-scrollx_visible .scroll-element_size {
+    top: -11px;
+}
+
+/* hover & drag */
+
+.scrollbar-dynamic>.scroll-element:hover .scroll-element_outer,
+.scrollbar-dynamic>.scroll-element.scroll-draggable .scroll-element_outer {
+    overflow: hidden;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+    filter: alpha(opacity=70);
+    opacity: 0.7;
+}
+
+.scrollbar-dynamic>.scroll-element:hover .scroll-element_outer .scroll-element_size,
+.scrollbar-dynamic>.scroll-element.scroll-draggable .scroll-element_outer .scroll-element_size {
+    opacity: 1;
+}
+
+.scrollbar-dynamic>.scroll-element:hover .scroll-element_outer .scroll-bar,
+.scrollbar-dynamic>.scroll-element.scroll-draggable .scroll-element_outer .scroll-bar {
+    height: 100%;
+    width: 100%;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    border-radius: 12px;
+}
+
+.scrollbar-dynamic>.scroll-element.scroll-x:hover .scroll-element_outer,
+.scrollbar-dynamic>.scroll-element.scroll-x.scroll-draggable .scroll-element_outer {
+    height: 20px;
+    min-height: 7px;
+}
+
+.scrollbar-dynamic>.scroll-element.scroll-y:hover .scroll-element_outer,
+.scrollbar-dynamic>.scroll-element.scroll-y.scroll-draggable .scroll-element_outer {
+    min-width: 7px;
+    width: 20px;
+}
+
+/*************** SCROLLBAR GOOGLE CHROME ***************/
+
+.scrollbar-chrome>.scroll-element,
+.scrollbar-chrome>.scroll-element div {
+    border: none;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    z-index: 10;
+}
+
+.scrollbar-chrome>.scroll-element {
+    background-color: #ffffff;
+}
+
+.scrollbar-chrome>.scroll-element div {
+    display: block;
+    height: 100%;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+
+.scrollbar-chrome>.scroll-element .scroll-element_outer {}
+
+.scrollbar-chrome>.scroll-element .scroll-element_track {
+    background: #f1f1f1;
+    border: 1px solid #dbdbdb;
+}
+
+.scrollbar-chrome>.scroll-element.scroll-x {
+    bottom: 0;
+    height: 16px;
+    left: 0;
+    min-width: 100%;
+    width: 100%;
+}
+
+.scrollbar-chrome>.scroll-element.scroll-y {
+    height: 100%;
+    min-height: 100%;
+    right: 0;
+    top: 0;
+    width: 16px;
+}
+
+.scrollbar-chrome>.scroll-element .scroll-bar {
+    background-color: #d9d9d9;
+    border: 1px solid #bdbdbd;
+    cursor: default;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+}
+
+.scrollbar-chrome>.scroll-element .scroll-bar:hover {
+    background-color: #c2c2c2;
+    border-color: #a9a9a9;
+}
+
+.scrollbar-chrome>.scroll-element.scroll-draggable .scroll-bar {
+    background-color: #919191;
+    border-color: #7e7e7e;
+}
+
+/* scrollbar height/width & offset from container borders */
+
+.scrollbar-chrome>.scroll-content.scroll-scrolly_visible {
+    left: -16px;
+    margin-left: 16px;
+}
+
+.scrollbar-chrome>.scroll-content.scroll-scrollx_visible {
+    top: -16px;
+    margin-top: 16px;
+}
+
+.scrollbar-chrome>.scroll-element.scroll-x .scroll-bar {
+    height: 8px;
+    min-width: 10px;
+    top: 3px;
+}
+
+.scrollbar-chrome>.scroll-element.scroll-y .scroll-bar {
+    left: 3px;
+    min-height: 10px;
+    width: 8px;
+}
+
+.scrollbar-chrome>.scroll-element.scroll-x .scroll-element_outer {
+    border-left: 1px solid #dbdbdb;
+}
+
+.scrollbar-chrome>.scroll-element.scroll-x .scroll-element_track {
+    height: 14px;
+    left: -3px;
+}
+
+.scrollbar-chrome>.scroll-element.scroll-x .scroll-element_size {
+    height: 14px;
+    left: -4px;
+}
+
+.scrollbar-chrome>.scroll-element.scroll-y .scroll-element_outer {
+    border-top: 1px solid #dbdbdb;
+}
+
+.scrollbar-chrome>.scroll-element.scroll-y .scroll-element_track {
+    top: -3px;
+    width: 14px;
+}
+
+.scrollbar-chrome>.scroll-element.scroll-y .scroll-element_size {
+    top: -4px;
+    width: 14px;
+}
+
+/* update scrollbar offset if both scrolls are visible */
+
+.scrollbar-chrome>.scroll-element.scroll-x.scroll-scrolly_visible .scroll-element_size {
+    left: -19px;
+}
+
+.scrollbar-chrome>.scroll-element.scroll-y.scroll-scrollx_visible .scroll-element_size {
+    top: -19px;
+}
+
+.scrollbar-chrome>.scroll-element.scroll-x.scroll-scrolly_visible .scroll-element_track {
+    left: -19px;
+}
+
+.scrollbar-chrome>.scroll-element.scroll-y.scroll-scrollx_visible .scroll-element_track {
+    top: -19px;
+}

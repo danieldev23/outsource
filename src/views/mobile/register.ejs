@@ -1,0 +1,862 @@
+
+
+<!DOCTYPE html>
+<html ng-app="OBSMobileApp">
+
+<head>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <meta http-equiv="cache-control" content="no-siteapp">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="browsermode" content="application">
+    <meta name="apple-mobile-web-app-title" content="KU Web">
+    <link rel="shortcut icon" href="/mobile/images/favicon.ico" type="image/x-icon">
+    <meta name="apple-mobile-web-app-capable" content="no">
+    <meta name="mobile-web-app-capable" content="no">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" sizes="57x57" href="/images/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/images/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/images/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/images/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/images/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/images/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/images/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/images/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/images/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+    <title>KU Web</title>
+    <style>
+        [ng\:cloak],
+        [ng-cloak],
+        [data-ng-cloak],
+        [x-ng-cloak],
+        .ng-cloak,
+        .x-ng-cloak {
+            display: none !important;
+        }
+
+        html {
+            -webkit-text-size-adjust: none;
+            /* Never autoresize text */
+        }
+    </style>
+    <link href="/mobile/css/mobile_main.css" rel="stylesheet">
+    <link href="/mobile/css/mobile_form.css" rel="stylesheet">
+    <link href="/mobile/css/mobile_join.css" rel="stylesheet">
+    <link href="/mobile/css/mobile_aboutUs.css" rel="stylesheet">
+    <style>
+        .layer_Level2 {
+            z-index: 2;
+        }
+
+        .btn_confirm.AgreeWarn {
+            background-color: #FFD5D5;
+            background-size: auto 70%;
+            border: red 1px solid;
+        }
+
+        input[type=text],
+        input[type=password] {
+            line-height: 1 !important;
+        }
+
+        .error_hint {
+            position: absolute;
+            color: #006bc7;
+            font-size: 0.75em;
+            top: 51px;
+            left: 0;
+            right: 0;
+            line-height: 1em;
+        }
+
+        .container_main {
+            min-height: initial;
+        }
+
+        input[type="button"][disabled="disabled"],
+        input[type="submit"][disabled="disabled"],
+        input[type="reset"][disabled="disabled"] {
+            cursor: not-allowed !important;
+        }
+
+        button:disabled,
+        button[disabled="disabled"] {
+            cursor: not-allowed !important;
+        }
+
+        /* 因為art 給的版型文字跟現在的不一樣，先直接在這改*/
+        #CellPhone {
+            padding-right: 15px;
+        }
+
+        .sliderContainer .sliderText {
+            padding-left: 30px;
+        }
+
+        button {
+            outline: none;
+        }
+
+        .keySetting {
+            line-height: 29px;
+        }
+
+        @media (max-width: 400px) {
+            .keySetting {
+                line-height: 25px;
+            }
+        }
+
+        .btn_code {
+            background-color: #00b2b9;
+        }
+
+        .formPopup_prompt {
+            color: #000;
+        }
+
+        .formPopup_prompt_red {
+            color: red;
+        }
+
+        .form_In .keyboard {
+            display: unset;
+            line-height: 40px;
+        }
+    </style>
+    <script>
+        window.onpageshow = function (event) {
+            if (event.persisted) {
+                window.location.href = "/Mobile/Home/Login";
+            }
+        };
+    </script>
+</head>
+
+<body ontouchstart="">
+<a href="https://www.mykubet.com/" style="display:block;overflow:hidden;height:0;width:0"></a>
+<a href="https://www.kubetkubet.com/" style="display:block;overflow:hidden;height:0;width:0"></a>
+<a href="https://www.kubetnav.com/" style="display:block;overflow:hidden;height:0;width:0"></a>
+<a href="https://www.te7.com.tw/" style="display:block;overflow:hidden;height:0;width:0"></a>
+<a href="https://www.ex589.com/home/" style="display:block;overflow:hidden;height:0;width:0"></a>
+<a href="https://www.casino5168.com/" style="display:block;overflow:hidden;height:0;width:0"></a>
+<a href="https://www.ex5888.com/" style="display:block;overflow:hidden;height:0;width:0"></a>
+<ajax-anti-forgery-token
+        token="gloOVS3Qyjzo8C_8rpH4eBeISvc3qV2WB1DJbrGv-yBbZg2w8vXhLndcVVtLc0yT00AuC2r09L9h7AWdcLnDOQHiQBE1:XEqHol6gjpGES1kL3aHI4Du4djSwrmaMGN7qqTAbir3yo3yVyLaa1EUSpPPR5bHg1kSo9KmhLcnpjd4mBGmS--9O3Rs1"></ajax-anti-forgery-token>
+<!-- start Header -->
+<div ng-controller="HeaderCtrl as ctrl" class="bg_header">
+    <div>
+        <img src="/images/logo_KU.png" style="display:none;"
+             onload="IMG_ID = '29039ed48c7749aa8a4d7d7b0d3a0eb1';IMG_PG = 'e3f08305dF03m1Dp'">
+    </div>
+    <a class="btn_back" ng-click="ctrl.HeaderGoBack()"></a>
+    <h1 class="bg_header_name ">ĐĂNG KÝ HỘI VIÊN</h1>
+    <div style="display:none">
+        <div id="signout" class="btn_inforOut" ng-click="ctrl.DoSignOut()" data-signout="/Mobile/Home/login"></div>
+    </div>
+</div>
+<div id="inforMDropOUT" ng-controller="HeaderGamePointListCtrl as ctrl" class="inforMDropOUT">
+    <div class="inforMDrop">
+        <ul class="inforMDropT">
+            <li ng-repeat="row in ctrl.model.GameMenusBalanceList track by row.GameID">
+                <div ng-bind="row.ServiceName" ng-class="{true: 't_pink', false: ''}[row.Visible == '0']"></div>
+                <div ng-if="row.Balance !== null &amp;&amp; row.Visible == '1'">
+                        <span ng-bind="row.Balance | number">
+                        </span>
+                    <span class="returnP" ng-if="row.Balance >= 1"
+                          ng-click="ctrl.TransferPoint(row.GameID, ctrl.FindPlatform(row.GameID).Balance, row.ServiceName)"
+                          ng-disabled="!ctrl.isEnabled">Chuyển về</span>
+                </div>
+                <div ng-if="row.Balance === null &amp;&amp; row.Visible !== '0'"><img src="/images/spinner.svg">
+                </div>
+                <div class="t_pink" style="white-space:nowrap"
+                     ng-if="row.Balance == 0 &amp;&amp; row.Visible == '0'">
+                    Đang bảo trì
+                </div>
+            </li>
+        </ul>
+        <ul class="inforMDropB">
+            <li>
+                <div class="t_yellow">Tổng số điểm</div>
+                <div class="t_yellow" ng-bind="ctrl.model.LoginAreaPointsControlCenter.TotalBalance | number"></div>
+            </li>
+            <li ng-repeat="row in ctrl.model.GameMenusBottomList track by row.GameID">
+                <div ng-bind="row.ServiceName" class="t_purple"></div>
+                <div ng-if="row.Balance !== null &amp;&amp; row.Visible == '1'" ng-bind="row.Balance | number"
+                     style="color:#cb83ff"></div>
+                <div ng-if="row.Balance === null &amp;&amp; row.Visible !== '0'"><img src="/images/spinner.svg">
+                </div>
+                <div style="white-space:nowrap;color:#cb83ff"
+                     ng-if="row.Visible == '0' &amp;&amp; row.Balance !== null" ng-bind="row.Balance | number"></div>
+            </li>
+            <li class="btn_backAll">
+                    <span
+                            ng-if="ctrl.CheckTopMenuPermission('CanPlatfromTransfer') &amp;&amp; ctrl.NoneAvailableGame == false">
+                        <a ng-click="ctrl.TransferGamesPointToMain()" id="transferGamesPoint"
+                           style="border:none;font-size:1em">
+                            Chuyển hết về tài khoản chính
+                        </a>
+                    </span>
+                <span ng-if="!ctrl.CheckTopMenuPermission('CanPlatfromTransfer') || ctrl.NoneAvailableGame == true">
+                        <a class="returnMainP off" style="border:none;font-size:1em">
+                            Chuyển hết về tài khoản chính
+                            <div class="t_backAll_off">Đang bảo trì</div>
+                        </a>
+                    </span>
+            </li>
+        </ul>
+    </div>
+</div>
+<!-- end Header -->
+<div id="container_main" class="container_main noID noBottom" ng-cloak="">
+    <ajax-anti-forgery-token
+            token="MmA5bmezboaO8odwPvXMq_pZsGpSg_jM7d-kmnZVDdY6Wr4LpQcf56WqHxZsgGcbrmg4uY5RF4D0aNo0ZUW2G52v79M1:ZbHVHKlbb0eqFmy_OQhA3rV93kHz3qTSqcZQD19l-haE3Nf9GZyYf578Qy8Dj_ow_-wxyZFF3IjiH4w0l_XAIPGcelQ1"></ajax-anti-forgery-token>
+    <div class="" ng-controller="RegisterCtrl as ctrl" ng-cloak="" block-ui="checkSign">
+        <div class="bg_header">
+            <a class="btn_back" ng-click="ctrl.Back()"></a>
+            <h1 ng-show="ctrl.model.ShowPanel !== 'showRegisterRule'" class="bg_header_name">ĐĂNG KÝ HỘI VIÊN</h1>
+            <h1 ng-show="ctrl.model.ShowPanel === 'showRegisterRule'" class="bg_header_name">ĐIỀU KHOẢN</h1>
+        </div>
+        <!--頁面內容-->
+        <div class="form" id="joinStep02" ng-show="ctrl.model.ShowPanel == 'joinStep02'" block-ui="memberRegister">
+            <form method="post" name="RegisterService" id="RegisterService" form-validation-setting="false"
+                  as-name="ctrl" autocomplete="off">
+                <ul>
+                    <li
+                            ng-if="ctrl.model.CreateModel.InviteAccountID == undefined || ctrl.model.CreateModel.InviteAccountID.length == 0">
+                        <div class="form_T">Tài khoản đại lý</div>
+                        <div class="form_In">
+                            <input type="text" class="w100" id="AgentID" name="AgentID"
+                                   ng-if="ctrl.model.AgencyURLOriginal == ''"
+                                   placeholder="Bỏ qua nếu không có đại lý giới thiệu"
+                                   ng-model="ctrl.model.CreateModel.AgencyURL"
+                                   value="{{ctrl.model.CreateModel.AgencyURL}}"
+                                   validate-input-reg-custom="^[0-9A-Za-z]{0,10}$" ng-trim="false" focus-to-top=""
+                                   capitalize="">
+                            <select ng-if="ctrl.model.AgencyURLOriginal != ''"
+                                    ng-model="ctrl.model.CreateModel.AgencyURL">
+                                <option value="{{ctrl.model.AgencyURLOriginal}}">{{ctrl.model.AgencyURLOriginal}}
+                                </option>
+                                <option value="">Không chọn</option>
+                            </select>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="form_T">Tài khoản</div>
+                        <div class="form_In layer_Level2">
+                            <input type="text" class="w100" id="AccountID" name="AccountID"
+                                   ng-focus="ctrl.RegisterPWDOnFocus();ctrl.OpenMousemoveKeep()"
+                                   ng-blur="ctrl.RegisterPWDOnBlur();ctrl.VerifyAccountIDOnBlur();ctrl.CloseMousemoveKeep()"
+                                   ng-keyup="ctrl.VerifyAccountIDOnChange();ctrl.CheckButtonEnable($event)"
+                                   placeholder="4 ~ 10 ký tự chữ và số" ckspace="true" ckaccountrule="true"
+                                   ckaccountexist="true" validate-input-reg-custom="^[A-Za-z0-9]{0,10}$"
+                                   max-length="10" ng-model="ctrl.model.CreateModel.AccountID" ng-trim="false"
+                                   focus-to-top="" capitalize="">
+                            <a href="#" id="dummyLink" tabindex="999"></a>
+                            <div class="formPopup_prompt" id="dvRecommendAccounts"
+                                 bind-html-compile="ctrl.canUseAccount"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="form_T">Mật khẩu</div>
+                        <div class="form_In" id="RegisterPWD" style="z-index:0">
+                            <input type="password" class="w100" id="PWD" name="PWD"
+                                   ng-model="ctrl.model.CreateModel.PWD" placeholder="6 ~ 10 ký tự chữ và số"
+                                   ng-focus="ctrl.RegisterPWDOnFocus()" ng-blur="ctrl.RegisterPWDOnBlur()"
+                                   tips-content="Mật khẩu tối đa 10 ký tự !" tips-content-align-right="true"
+                                   tips-content-arrow-left="true" max-length="10" ckspace="true" cknewpassword="true"
+                                   cksamepassword="true" cksimplepassword="true" disableautocomplete=""
+                                   autocomplete="off" validate-input-reg-custom="^[0-9a-zA-Z]{0,10}$"
+                                   validate-input-reg-custom-call-back="ctrl.CheckButtonEnable($event)"
+                                   allow-trim-space="true" focus-to-top="" password-eye="true">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="form_T">Biệt danh</div>
+                        <div class="form_In" style="z-index:0">
+                            <input type="text" class="w100" id="NickName" name="NickName"
+                                   ng-model="ctrl.model.CreateModel.NickName" ng-keyup="ctrl.CheckButtonEnable($event)"
+                                   placeholder="Nhập tối đa 8 ký tự" focus-to-top="" cknickname="true" ng-trim="false"
+                                   allow-trim-space="false" ng-disabled="ctrl.NickNameDisabled"
+                                   on-blur-trim-and-replace-double-space="" view-culture-maxlength="10"
+                                   validate-input-reg-custom="^$|^[·a-zA-Z0-9_ÁĂẮẶẰẲẴǍÂẤẬẦẨẪÄǞȦǠẠȀÀẢȂĀĄÅǺḀȺÃꜲÆǼǢꜴꜶꜸꜺꜼḂḄƁḆɃƂĆČÇḈĈĊƇȻĎḐḒḊḌƊḎǲǅĐƋǱǄÉĔĚȨḜÊẾỆỀỂỄḘËĖẸȄÈẺȆĒḖḔĘɆẼḚꝪḞƑǴĞǦĢĜĠƓḠǤḪȞḨĤⱧḦḢḤĦÍĬǏÎÏḮİỊȈÌỈȊĪĮƗĨḬꝹꝻꝽꞂꞄꞆꝬĴɈḰǨĶⱩꝂḲƘḴꝀꝄĹȽĽĻḼḶḸⱠꝈḺĿⱢǈŁǇḾṀṂⱮŃŇŅṊṄṆǸƝṈȠǋÑǊÓŎǑÔỐỘỒỔỖÖȪȮȰỌŐȌÒỎƠỚỢỜỞỠȎꝊꝌŌṒṐƟǪǬØǾÕṌṎȬƢꝎƐƆȢṔṖꝒƤꝔⱣꝐꝘꝖŔŘŖṘṚṜȐȒṞɌⱤꜾƎŚṤŠṦŞŜȘṠṢṨŤŢṰȚȾṪṬƬṮƮŦⱯꞀƜɅꜨÚŬǓÛṶÜǗǙǛǕṲỤŰȔÙỦƯỨỰỪỬỮȖŪṺŲŮŨṸṴꝞṾƲṼꝠẂŴẄẆẈẀⱲẌẊÝŶŸẎỴỲƳỶỾȲɎỸŹŽẐⱫŻẒȤẔƵĲŒᴀᴁʙᴃᴄᴅᴇꜰɢʛʜɪʁᴊᴋʟᴌᴍɴᴏɶᴐᴕᴘʀᴎᴙꜱᴛⱻᴚᴜᴠᴡʏᴢáăắặằẳẵǎâấậầẩẫäǟȧǡạȁàảȃāąᶏẚåǻḁⱥãꜳæǽǣꜵꜷꜹꜻꜽḃḅɓḇᵬᶀƀƃɵćčçḉĉɕċƈȼďḑḓȡḋḍɗᶑḏᵭᶁđɖƌıȷɟʄǳǆéĕěȩḝêếệềểễḙëėẹȅèẻȇēḗḕⱸęᶒɇẽḛꝫḟƒᵮᶂǵğǧģĝġɠḡᶃǥḫȟḩĥⱨḧḣḥɦẖħƕíĭǐîïḯịȉìỉȋīįᶖɨĩḭꝺꝼᵹꞃꞅꞇꝭǰĵʝɉḱǩķⱪꝃḳƙḵᶄꝁꝅĺƚɬľļḽȴḷḹⱡꝉḻŀɫᶅɭłǉſẜẛẝḿṁṃɱᵯᶆńňņṋȵṅṇǹɲṉƞᵰᶇɳñǌóŏǒôốộồổỗöȫȯȱọőȍòỏơớợờởỡȏꝋꝍⱺōṓṑǫǭøǿõṍṏȭƣꝏɛᶓɔᶗȣṕṗꝓƥᵱᶈꝕᵽꝑꝙʠɋꝗŕřŗṙṛṝȑɾᵳȓṟɼᵲᶉɍɽↄꜿɘɿśṥšṧşŝșṡṣṩʂᵴᶊȿɡᴑᴓᴝťţṱțȶẗⱦṫṭƭṯᵵƫʈŧᵺɐᴂǝᵷɥʮʯᴉʞꞁɯɰᴔɹɻɺⱹʇʌʍʎꜩúŭǔûṷüǘǚǜǖṳụűȕùủưứựừửữȗūṻųᶙůũṹṵᵫꝸⱴꝟṿʋᶌⱱṽꝡẃŵẅẇẉẁⱳẘẍẋᶍýŷÿẏỵỳƴỷỿȳẙɏỹźžẑʑⱬżẓȥẕᵶᶎʐƶɀﬀﬃﬄﬁﬂĳœﬆₐₑᵢⱼₒᵣᵤᵥₓ][·a-zA-Z0-9_ÁĂẮẶẰẲẴǍÂẤẬẦẨẪÄǞȦǠẠȀÀẢȂĀĄÅǺḀȺÃꜲÆǼǢꜴꜶꜸꜺꜼḂḄƁḆɃƂĆČÇḈĈĊƇȻĎḐḒḊḌƊḎǲǅĐƋǱǄÉĔĚȨḜÊẾỆỀỂỄḘËĖẸȄÈẺȆĒḖḔĘɆẼḚꝪḞƑǴĞǦĢĜĠƓḠǤḪȞḨĤⱧḦḢḤĦÍĬǏÎÏḮİỊȈÌỈȊĪĮƗĨḬꝹꝻꝽꞂꞄꞆꝬĴɈḰǨĶⱩꝂḲƘḴꝀꝄĹȽĽĻḼḶḸⱠꝈḺĿⱢǈŁǇḾṀṂⱮŃŇŅṊṄṆǸƝṈȠǋÑǊÓŎǑÔỐỘỒỔỖÖȪȮȰỌŐȌÒỎƠỚỢỜỞỠȎꝊꝌŌṒṐƟǪǬØǾÕṌṎȬƢꝎƐƆȢṔṖꝒƤꝔⱣꝐꝘꝖŔŘŖṘṚṜȐȒṞɌⱤꜾƎŚṤŠṦŞŜȘṠṢṨŤŢṰȚȾṪṬƬṮƮŦⱯꞀƜɅꜨÚŬǓÛṶÜǗǙǛǕṲỤŰȔÙỦƯỨỰỪỬỮȖŪṺŲŮŨṸṴꝞṾƲṼꝠẂŴẄẆẈẀⱲẌẊÝŶŸẎỴỲƳỶỾȲɎỸŹŽẐⱫŻẒȤẔƵĲŒᴀᴁʙᴃᴄᴅᴇꜰɢʛʜɪʁᴊᴋʟᴌᴍɴᴏɶᴐᴕᴘʀᴎᴙꜱᴛⱻᴚᴜᴠᴡʏᴢáăắặằẳẵǎâấậầẩẫäǟȧǡạȁàảȃāąᶏẚåǻḁⱥãꜳæǽǣꜵꜷꜹꜻꜽḃḅɓḇᵬᶀƀƃɵćčçḉĉɕċƈȼďḑḓȡḋḍɗᶑḏᵭᶁđɖƌıȷɟʄǳǆéĕěȩḝêếệềểễḙëėẹȅèẻȇēḗḕⱸęᶒɇẽḛꝫḟƒᵮᶂǵğǧģĝġɠḡᶃǥḫȟḩĥⱨḧḣḥɦẖħƕíĭǐîïḯịȉìỉȋīįᶖɨĩḭꝺꝼᵹꞃꞅꞇꝭǰĵʝɉḱǩķⱪꝃḳƙḵᶄꝁꝅĺƚɬľļḽȴḷḹⱡꝉḻŀɫᶅɭłǉſẜẛẝḿṁṃɱᵯᶆńňņṋȵṅṇǹɲṉƞᵰᶇɳñǌóŏǒôốộồổỗöȫȯȱọőȍòỏơớợờởỡȏꝋꝍⱺōṓṑǫǭøǿõṍṏȭƣꝏɛᶓɔᶗȣṕṗꝓƥᵱᶈꝕᵽꝑꝙʠɋꝗŕřŗṙṛṝȑɾᵳȓṟɼᵲᶉɍɽↄꜿɘɿśṥšṧşŝșṡṣṩʂᵴᶊȿɡᴑᴓᴝťţṱțȶẗⱦṫṭƭṯᵵƫʈŧᵺɐᴂǝᵷɥʮʯᴉʞꞁɯɰᴔɹɻɺⱹʇʌʍʎꜩúŭǔûṷüǘǚǜǖṳụűȕùủưứựừửữȗūṻųᶙůũṹṵᵫꝸⱴꝟṿʋᶌⱱṽꝡẃŵẅẇẉẁⱳẘẍẋᶍýŷÿẏỵỳƴỷỿȳẙɏỹźžẑʑⱬżẓȥẕᵶᶎʐƶɀﬀﬃﬄﬁﬂĳœﬆₐₑᵢⱼₒᵣᵤᵥₓ\s]{0,7}$">
+                        </div>
+                    </li>
+                    <li>
+                        <div class="form_T">SĐT</div>
+                        <div class="form_In form_Left">
+                            <div id="CellPhone" name="CellPhone" class="w100 keyboard keyIn"
+                                 multi-show-numeric-keypad-v2="" tabindex="100" style="color:black;" maxlength="10"
+                                 placeholder="10 chữ số"
+                                 ng-if="ctrl.model.ElementManager.IsEnabled('CellPhone') &amp;&amp; !ctrl.model.IsCallCustomerService"
+                                 ng-model="ctrl.model.CreateModel.CellPhone" focus-to-top=""
+                                 numeric-blur="ctrl.VerifyCellPhoneAndCloseKeyboard()"
+                                 numeric-close="ctrl.VerifyCellPhoneAndCloseKeyboard()"
+                                 ng-bind="ctrl.model.CreateModel.CellPhone"></div>
+                            <!--disabled-->
+                            <div class="w100 keyboard keyIn" placeholder="10 chữ số"
+                                 ng-if="!ctrl.model.ElementManager.IsEnabled('CellPhone') || ctrl.model.IsCallCustomerService"
+                                 ng-model="ctrl.model.CreateModel.CellPhone"
+                                 ng-bind="ctrl.model.CreateModel.CellPhone"></div>
+                            <div class="icon_OK" ng-if="ctrl.model.IsCaptchaCodeVerified"></div>
+                        </div>
+                        <div class="form_Right"
+                             ng-if="!ctrl.model.IsCallCustomerService &amp;&amp; !ctrl.model.IsCaptchaCodeVerified">
+                            <!-- <input type="button" class="btn_code"
+                                style="line-height:0px !important;border-style:none;font-family: Arial,Microsoft JhengHei"
+                                id="sendCaptchaButton" ng-class="ctrl.GetSendCaptchaButtonClass()"
+                                ng-if="ctrl.model.IsCellPhoneValid"
+                                ng-disabled="!ctrl.model.ElementManager.IsEnabled('sendCaptchaButton')"
+                                disableautocomplete="" autocomplete="off"
+                                ng-value="ctrl.model.SendCaptchaButtonName"
+                                original-name="{{ctrl.model.SendCaptchaButtonName}}"> -->
+                            <input type="button" class="btn_code ng-scope blue"
+                                   style="line-height:0px !important;border-style:none;font-family: Arial,Microsoft JhengHei"
+                                   id="sendCaptchaButton" ng-class="ctrl.GetSendCaptchaButtonClass()"
+                                   ng-click="ctrl.RegisterMember()" ng-if="ctrl.model.IsCellPhoneValid"
+                                   ng-disabled="!ctrl.model.ElementManager.IsEnabled('sendCaptchaButton')"
+                                   disableautocomplete="" autocomplete="off"
+                                   ng-value="ctrl.model.SendCaptchaButtonName" original-name="Gửi mã" value="Gửi mã">
+                            <input type="button" class="btn_code off" ng-if="!ctrl.model.IsCellPhoneValid"
+                                   ng-value="ctrl.model.SendCaptchaButtonName" style="cursor:not-allowed">
+                        </div>
+                        <!--連繫客服-->
+                        <div class="form_Right"
+                             ng-if="ctrl.model.IsCallCustomerService &amp;&amp; !ctrl.model.IsCaptchaCodeVerified">
+                            <input type="button" id="btn_customerService" class="btn_code call" style="border:0px"
+                                   ng-click="ctrl.SendCustomerService()"
+                                   ng-value="ctrl.model.CallCustomerServiceButtonName"
+                                   ng-if="ctrl.model.ElementManager.IsEnabled('btn_customerService')"
+                                   disableautocomplete="" autocomplete="off">
+                            <input type="button" id="btn_customerService" class="btn_code off" style="border:0px"
+                                   value="Liên hệ hỗ trợ"
+                                   ng-if="!ctrl.model.ElementManager.IsEnabled('btn_customerService')">
+                        </div>
+                        <div>
+                            <input type="hidden" id="hfCellPhone" ng-value="ctrl.model.CreateModel.CellPhone"
+                                   required="" ckcellphoneverifybylength="true" ckcellphoneverify="true">
+                        </div>
+                    </li>
+                    <li class="keySetting">
+                        <span id="adddiv"></span>
+                        <div class="CellPhone" multi-numeric-keypad-v2="CellPhone"
+                             ng-model="ctrl.model.CreateModel.CellPhone"
+                             numeric-keypad-call-back="ctrl.VerifyCellPhone()" max-length="10"></div>
+                    </li>
+                </ul>
+                <div class="term">
+                    <div ng-click="ctrl.ChangeAgreement('AgreementOfReceiveSMS')"
+                         ng-class="ctrl.model.AgreementOfReceiveSMS"></div>
+                    <div class="termText">
+                        Nhận thông tin khuyến mãi qua tin nhắn điện thoại
+                    </div>
+                </div>
+                <div class="term">
+                    <div ng-click="ctrl.ChangeAgreement('AgreementOfRule')" ng-class="ctrl.model.AgreementOfRule">
+                    </div>
+                    <div class="termText">
+                        Tôi đã 18 tuổi, đồng thời đã đọc và đồng ý quy tắc cá cược
+                        <a class="terms_yellow_word t_blue" style="text-decoration: underline;"
+                           ng-click="ctrl.ShowRegisterRule()">Điều khoản</a>
+                    </div>
+                </div>
+                <div class="form_button">
+                    <input type="button" class="w100 bg_colorDB" name="btnStep02" id="RegisterMemberButton"
+                           value="Xác nhận" ng-disabled="ctrl.model.ElementManager.IsEnabled('RegisterMemberButtons')">
+                </div>
+            </form>
+        </div>
+        <style>
+            #mask_SliderCaptcha .popup {
+                width: fit-content;
+            }
+
+            #mask_SliderCaptcha .popup_In {
+                padding: 0 25px 6px 25px;
+            }
+
+            /*T39349 取代main.css的popup屬性與margin-top重置*/
+            #mask_SliderCaptcha .popup_In {
+                padding-top: 18px !important;
+            }
+
+            #mask_SliderCaptcha .popup_button {
+                margin-top: 0px !important;
+                padding-bottom: 18px !important;
+            }
+
+            @media (min-width: 320px) and (max-width: 360px) {
+                #mask_SliderCaptcha .popup_In {
+                    padding-top: 15px !important;
+                    padding: 0 7px 0 7px;
+                }
+
+                #mask_SliderCaptcha .popup_button {
+                    margin-top: 0px !important;
+                    padding-bottom: 15px !important;
+                }
+            }
+
+            @media (min-width: 361px) and (max-width: 399px) {
+                #mask_SliderCaptcha .popup_In {
+                    padding: 0 17px 0 17px;
+                }
+            }
+
+            @media (min-width: 400px) {
+                #mask_SliderCaptcha .popup_In {
+                    padding-top: 26px !important;
+                }
+
+                #mask_SliderCaptcha .popup_button {
+                    margin-top: 0px !important;
+                    padding-bottom: 26px !important;
+                }
+            }
+        </style>
+        <div ng-controller="CaptchaCodePanelCtrl as ctrl" block-ui="CaptchaCodePanel">
+            <!--彈跳驗證碼視窗-->
+            <div class="mask_all" id="msgBox" style="display:none;"
+                 ng-style="{'display': ctrl.IsVisible() ? 'block' : 'none'}" ng-show="ctrl.IsVisible()">
+                <div class="msgBox">
+                    <div class="btn_close" ng-click="ctrl.EmitPanelClose()"></div>
+                    <div class="msgBox_T" ng-show="ctrl.model.CurrentVerifyModeCache == 1">Xác nhận qua SMS</div>
+                    <div class="msgBox_Txt" ng-show="ctrl.model.CurrentVerifyModeCache == 1">
+                        Đã gửi mã xác nhận đến {{ctrl.model.Options.CellPhone}}
+                    </div>
+                    <div class="msgBox_T" ng-show="ctrl.model.CurrentVerifyModeCache == 2">Xác nhận bằng giọng nói
+                    </div>
+                    <div class="msgBox_Txt" ng-show="ctrl.model.CurrentVerifyModeCache == 2">
+                        Đã gọi đến số {{ ctrl.model.Options.CellPhone }}
+                        <br>
+                        <img class="img_call" ng-src="/images/icon_errorHint.svg">Vui lòng chú ý để nhận cuộc gọi！
+                    </div>
+                    <ul class="msgBox_Num">
+                        <li ng-class="ctrl.model.CaptchaCode1 == '' ? '' : 'on'">{{ctrl.model.CaptchaCode1}}</li>
+                        <li ng-class="ctrl.model.CaptchaCode2 == '' ? '' : 'on'">{{ctrl.model.CaptchaCode2}}</li>
+                        <li ng-class="ctrl.model.CaptchaCode3 == '' ? '' : 'on'">{{ctrl.model.CaptchaCode3}}</li>
+                        <li ng-class="ctrl.model.CaptchaCode4 == '' ? '' : 'on'">{{ctrl.model.CaptchaCode4}}</li>
+                    </ul>
+                    <div id="verifyCaptchaCodeButton" class="CaptchaCode" multi-numeric-keypad-v2="CaptchaCode"
+                         ng-model="ctrl.model.CaptchaCode" numeric-keypad-call-back="ctrl.VerifyCaptchaChange(true)"
+                         max-length="4">
+                    </div>
+                    <div class="form_button">
+                        <input type="button" class="w100 bg_colorDB" id="btn02"
+                               ng-class="ctrl.GetSendCaptchaButtonClass()" ng-click="ctrl.SendCaptchaButtonClick()"
+                               ng-disabled="!ctrl.model.ElementManager.IsEnabled('sendCaptchaButton')"
+                               ng-value="ctrl.GetSendCaptchaButtonName()"
+                               original-name="{{ctrl.GetSendCaptchaButtonName()}}"
+                               ng-if="ctrl.model.CallCustomerServiceCounts <= 0 &amp;&amp; ctrl.IsSendCaptchaButtonEnabled()">
+                        <div class="w100 off" ng-if="!ctrl.IsSendCaptchaButtonEnabled()">
+                            Gửi lại
+                            <span class="t_yellow">{{ctrl.model.CountDownSecond}} S</span>
+                        </div>
+                        <input type="button" class="w100 bg_colorDG" id="btn03"
+                               ng-value="ctrl.model.CallCustomerServiceButtonName"
+                               ng-click="ctrl.SendCustomerService()"
+                               ng-disabled="ctrl.model.CloseResult.LockCallCustomerService"
+                               ng-if="ctrl.model.CallCustomerServiceCounts > 0 &amp;&amp; ctrl.IsSendCaptchaButtonEnabled()">
+                    </div>
+                </div>
+            </div>
+            <!--滑塊驗證碼-->
+            <div class="mask_join full_layout" id="mask_SliderCaptcha">
+                <div class="popup_container">
+                    <div class="popup_bg_upper full_layout">
+                        <!--T38732 11/11 安全驗證彈窗按鈕處白背景需完整顯示-->
+                        <div class="popup" style="background-color: #fff;">
+                            <div class="btn_close popup_close" ng-click="ctrl.CaptchaImageClose()"></div>
+                            <div class="popup_T">
+                                <span>Xác nhận bảo mật</span>
+                            </div>
+                            <div class="popup_In">
+                                <!--內容-->
+                                <slider-captcha slider-bg-image="{{ctrl.SliderBgImage}}"
+                                                slider-image="{{ctrl.SliderImage}}" slider-max-error="5"
+                                                slider-success="ctrl.HandleCaptchaSuccess(data)"
+                                                slider-fail="ctrl.HandleCaptchaFail()"
+                                                slider-refresh="ctrl.SliderRefreshCallback()"></slider-captcha>
+                                <!--內容 end-->
+                            </div>
+                            <div class="popup_button">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mask_all" id="PopSuccess" ng-click="ctrl.ClosePopSuccess();" style="display: none;">
+                <div class="popup_container">
+                    <div class="popup_bg">
+                        <div class="popup popupShort">
+                            <div class="popup_In">
+                                <div class="popupS_T"><img src="/images/icon_checkGreen.svg"></div>
+                                <div class="popupS_In">Xác minh thành công!</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <input type="hidden" id="hfDefaultCountDownSecond" value="30">
+        </div>
+        <div ng-show="ctrl.model.ShowPanel == 'showRegisterRule'" class="desc">
+            <div class="desc_list">
+                <h6 class="desc_listT">1.Tuân thủ các quy định hội viên và các quy định pháp lệnh:</h6>
+                Sau khi quý khách đăng ký tài khoản hội viên thành công thì sẽ được sử dụng tất cả các dịch vụ của
+                công ty chúng tôi. Khi sử dụng các dịch vụ đó, đồng nghĩa quý khách đã đồng ý và tuân thủ theo các
+                quy định mà công ty chúng tôi đề ra như (Quy tắc trò chơi Casino, quy tắc đặt cược thể thao, thông
+                báo, các hạng mục chú ý) và một số pháp lệnh có liên quan. Tất cả các dịch vụ liên quan như sản
+                phẩm, dịch vụ khách hàng, hệ thống phần mềm, kèo cược, trò chơi, casino, kết cấu mạng của công ty
+                chúng tôi đều được giám sát bởi ủy ban cờ bạc và giải trí của nước Philippines. Vì vậy khi quý khách
+                sử dụng những dịch vụ của chúng tôi thì phải tuân thủ theo các pháp lệnh hợp pháp của nước bản địa,
+                nếu có vi phạm điều gì đều không thuộc phạm vi trách nhiệm dịch vụ của chúng tôi.
+            </div>
+            <div class="desc_list">
+                <h6 class="desc_listT">2.Giới thiệu dịch vụ:</h6>
+                (1) Công ty chúng tôi dựa trên nền tảng dịch vụ chất lượng [An Toàn Uy Tín], [Tiện Lợi Kịp Thời],
+                [Công Bằng Công Chính]. Điều tuyệt vời là hội viên không chịu sự gò bó về thời gian mà có thể lên
+                mạng mọi lúc và tham gia một loại trò chơi bất kỳ với tính công bằng tuyệt đối, ngoài ra hội viên có
+                thể cảm nhận học hỏi những điều thú vị cùng với những người chơi khác trên thế giới. Chúng tôi luôn
+                duy trì một thái độ tôn trọng khách hàng, từ đó tìm tòi hiểu biết thêm nhu cầu thực tế để không
+                ngừng phát triển và sáng tạo, chúng tôi cảm thấy tự hào về triết lý kinh doanh này. Hy vọng sẽ sáng
+                tạo ra một giá trị giải trí mới đồng thời đáp ứng được mục đích phổ cập cho mọi nơi và trở thành một
+                trong những trang web hàng đầu trong lĩnh vực giải trí này.
+                <br>
+                (2) Dịch vụ tiền ảo ngân hàng: công ty chúng tôi cung cấp dịch vụ thanh toán dòng tiền qua mạng, khi
+                quý khách đặt mua điểm số thì sẽ được hưởng các dịch vụ phù hợp mà công ty chúng tôi đã cung cấp.
+            </div>
+            <div class="desc_list">
+                <h6 class="desc_listT">3.Nghĩa vụ đăng ký thông tin xác thực:</h6>
+                Đối với các hạng mục dịch vụ mà công ty chúng tôi đã cung cấp, sau khi quý khách đồng ý đăng ký thì
+                vui lòng dựa trên trình tự các mục hướng dẫn để cung cấp thông tin cá nhân một cách chính xác và
+                chân thực nhất; Khi thông tin cá nhân của quý khách không chính xác thì vui lòng cập nhật lại để duy
+                trì thông tin cá nhân chính xác và đầy đủ nhất. Nếu thông tin được đăng ký không chính xác hoặc mạo
+                nhận thông tin của người khác mà gây tổn hại đến quyền lợi của người đó hoặc vi phạm pháp luật thì
+                quý khách phải hoàn toàn chịu trách nhiệm trước pháp luật về hành vi đó; Khi quý khách đã cung cấp
+                thông tin cá nhân không chính xác hoặc thông tin cá nhân có sự bất thường mà không chịu cập nhật lại
+                dẫn đến việc không khớp thông tin cá nhân đăng ký lúc ban đầu thì công ty chúng tôi có quyền chấm
+                dứt tư cách và quyền lợi hội viên của quý khách.
+            </div>
+            <div class="desc_list">
+                <h6 class="desc_listT">4.Thay đổi và ngưng cung cấp dịch vụ:</h6>
+                <ul class="descNum_list">
+                    <li>Dữ liệu đăng nhập của hội viên không chính xác.</li>
+                    <li>Sử dụng thông tin của người khác để đăng ký dịch vụ này.</li>
+                    <li>Vi phạm quy định về tính công bằng trò chơi.</li>
+                    <li>Tham gia các loại trò chơi hoặc các trận đấu mà cố tình lợi dụng các lỗ hỏng của hệ thống
+                        hoặc lợi dụng các nhược điểm của trò chơi để gây ảnh hưởng đến kết quả.</li>
+                    <li>Công ty chúng tôi không cho phép đặt cược không công bằng, đặt cược hai bên, không rủi ro.
+                        Nếu có phát hiện người chơi có vấn đề này, công ty chúng tôi sẽ ngưng quyền sử dụng của
+                        người chơi. Nếu có bất kỳ tranh luận vấn đề nào, chúng tôi có quyền quyết định cuối cùng. Ở
+                        bất kỳ tình huống nào, sẽ ngưng phục vụ hoặc là chấm dứt phục vụ đối với tài khoản hội viên
+                        để tránh gây nên vấn đề phát sinh thiệt hại, chúng tôi không chịu trách nhiệm.</li>
+                    <li>Hội viên nhiều nhất đăng ký 1 tài khoản đặt cược, nếu vượt quá 1 tài khoản đặt cược cùng 1
+                        trận đấu, công ty có quyền hạn xét duyệt xóa đơn cược và bảo lưu đơn cược cuối cùng.</li>
+                </ul>
+            </div>
+            <div class="desc_list">
+                <h6 class="desc_listT">5.Tạm ngưng hoặc gián đoạn dịch vụ:</h6>
+                (1) Một trong các trường hợp sau đây, trang mạng sẽ không chịu bất cứ trách nhiệm bồi thường nào đối
+                với người chơi:
+                <ul class="descNum_list">
+                    <li>Trong trường hợp đang tiến hành di chuyển, thay thế hoặc bảo trì các thiết bị hệ thống có
+                        liên quan đến dịch vụ của chúng tôi.</li>
+                    <li>Bị mất mạng internet nhưng không do công ty chúng tôi gây ra mà dẫn đến tạm ngưng hoặc gián
+                        đoạn dịch vụ.</li>
+                    <li>Do các yếu tố đặc biệt bất khả kháng dẫn đến tạm ngưng hoặc gián đoạn dịch vụ.</li>
+                </ul>
+                (2) Nếu công ty chúng tôi đối với hệ thống liên quan tiến hành di chuyển, thay đổi hoặc bảo trì, và
+                cần tạm ngưng hoặc gián đoán phục vụ, chúng tôi sẽ gửi thông báo. <br>
+                (3) Trường hợp tạm ngưng và gián đoạn dịch vụ có thể sẽ gây ra những bất tiện và tổn thất như mất dữ
+                liệu, ảnh hướng đến kinh tế, thời gian của quý khách. Vì vậy thường ngày quý khách nên chọn những
+                phương án và cách xử lý thích hợp nhằm đảm bảo được quyền lợi của chính mình.
+            </div>
+            <div class="desc_list">
+                <h6 class="desc_listT">6.Nghĩa vụ bảo mật:</h6>
+                Quý hội viên phải tự bảo mật thông tin tài khoản và mật khẩu, đồng thời chịu trách nhiệm về tất cả
+                các thao tác sau khi tài khoản và mật khẩu được đăng nhập. Để đảm bảo quyền lợi của bản thân hội
+                viên, xin đừng tiết lộ hoặc cung cấp tài khoản và mật khẩu cho người khác biết và không nên cho mượn
+                hoặc chuyển nhượng cho người khác sử dụng dưới mọi hình thức.
+            </div>
+            <div class="desc_list">
+                <h6 class="desc_listT">7.Đồng ý với các quy tắc của trò chơi và môn bóng thi đấu:</h6>
+                Nhằm tránh tình trạng tranh cãi khi đặt cược vào các loại trò chơi cũng như các môn bóng thi đấu,
+                kính mong quý hội viên nên tham khảo chi tiết các quy tắc có liên quan, một khi quý hội viên đã bắt
+                đầu sử dụng dịch vụ này thì được xem như là đã đồng ý với tất cả các quy định của chúng tôi.
+            </div>
+            <div class="desc_list">
+                <h6 class="desc_listT">8.Sửa đổi bổ sung các quy phạm của hội viên:</h6>
+                Nếu điều khoản dịch vụ có sửa đổi hoặc bổ sung thì quý khách sẽ chịu sự ràng buộc đồng ý với những
+                điều khoản được sửa đổi từ khi có được thông báo từ trang mạng, chúng tôi sẽ không gửi thông báo
+                riêng cho từng cá nhân. Nếu sau khi nhận được thông báo mà quý khách vẫn tiếp tục sử dụng dịch vụ
+                thì xem như đã đồng ý với những điều khoản được sửa đổi đó.
+            </div>
+            <div class="desc_list">
+                <h6 class="desc_listT">9.Quyền riêng tư:</h6>
+                Chúng tôi cam kết bảo vệ sự riêng tư của khách hàng để cung cấp các trò chơi mang tính an toàn,
+                những thông tin được thu thập được từ trang mạng này sẽ giúp chúng tôi phục vụ quý khách với những
+                dịch vụ tốt nhất. Chúng tôi sẽ không bán hoặc cho thuê thông tin của khách hàng cho bên thứ ba,
+                những thông tin cá nhân mà khách hàng cung cấp sẽ được xử lý mã hóa bảo mật bằng kỹ thuật SSL128 và
+                thông tin sẽ được lưu trữ rất an toàn, không rò rỉ khi thao tác hệ thống. Trong trường hợp có cơ hội
+                tiếp xúc với thông tin cá nhân khách hàng mà được sự trợ giúp từ phí đối tác thì vẫn phải tuân theo
+                các điều khoản về riêng tư mà chúng tôi đưa ra.
+            </div>
+            <div class="desc_list">
+                <h6 class="desc_listT">10.Miễn trừ trách nhiệm:</h6>
+                Một số khu vực quốc gia có những quy định không rõ ràng về tính hợp pháp của cờ bạc trực tuyến, thậm
+                chí có quốc gia có quy định hướng dẫn cụ thể loại hình cờ bạc này là bất hợp pháp. Chúng tôi không
+                cố ý mời gọi bất kỳ cá nhân nào tham gia sử dụng dịch vụ của chúng tôi trên khu vực và quốc gia có
+                quy định loại hình này là không hợp pháp. Cá nhân sử dụng dịch vụ này phải xác định rõ rằng khu vực
+                hoặc quốc gia đang sử dụng dịch vụ là có phi pháp hay không và tự chịu hoàn toàn trách nhiệm. Cá
+                nhân sử dụng dịch vụ này nên tuân thủ theo các pháp lệnh có liên quan tại địa phương, nếu có điều gì
+                vi phạm thì chúng tôi sẽ không chịu trách nhiệm.
+            </div>
+        </div>
+        <input type="hidden" id="hfDefaultCountDownSecond" value="30">
+        <input type="hidden" ng-init="ctrl.model.DefaultCountDownSecond = '30'"
+               ng-value="ctrl.model.DefaultCountDownSecond">
+        <div class="mask_all mask_new" id="popup_continue" style="display: none;">
+            <div class="popup_container">
+                <div class="popup_bg">
+                    <div class="popup">
+                        <div class="popup_T">Tin nhắn</div>
+                        <div class="popup_In">
+                            <div class="popupCenter">Bạn đăng ký chưa hoàn tất, có tiếp tục hay không</div>
+                        </div>
+                        <div class="popup_button">
+                            <input type="button" class="w50L" value="Thoát" ng-click="ctrl.ExitRegisterPage();">
+                            <input type="button" class="w50R popup_close" value="Tiếp tục">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <input id="indexUrl" name="indexUrl" type="hidden" value="/Mobile/Home">
+</div>
+<input id="hfCopySuccessImg" name="hfCopySuccessImg" type="hidden"
+       value="/Areas/Mobile/Content/Images/icon_checkGreen.svg">
+<input id="hfLanguageCode" name="hfLanguageCode" type="hidden" value="vi-vn">
+<input id="hfCountry" name="hfCountry" type="hidden" value="618">
+<!-- start Footer -->
+<style>
+    .footer_maintainTxt {
+        word-wrap: break-word;
+        word-break: normal;
+    }
+</style>
+<!-- end Footer -->
+<!--彈跳視窗 Start-->
+<!--彈跳視窗 End-->
+<input type="hidden" id="hfUniqueSessionId" value="TM1418002244022185984">
+<div id="valid-rule-block">
+    <valid-rule rule-name="required" rule-message="Bắt buộc điền"></valid-rule>
+    <valid-rule rule-name="number" rule-message="Nhập số nguyên"></valid-rule>
+    <valid-rule rule-name="min" rule-message="Nhập số nguyên"></valid-rule>
+    <valid-rule rule-name="maxlength" rule-message="Đừng nhập vượt quá {0} chữ số"></valid-rule>
+    <valid-rule rule-name="ckSpace" rule-message="Phần nhập không được để trống"></valid-rule>
+    <valid-rule rule-name="ckAccountRule" rule-message="Tài khoản là tổ hợp 4 ~ 10 ký tự chữ và số"></valid-rule>
+    <valid-rule rule-name="ckPassword" rule-message="6 ~ 10 ký tự chữ và số"></valid-rule>
+    <valid-rule rule-name="ckCaptcha" rule-message="Mã xác nhận nhập sai"></valid-rule>
+    <valid-rule rule-name="ckPasswordConfirmation"
+                rule-message="Xác nhận mật khẩu và mật khẩu hội viên phải thống nhất"></valid-rule>
+    <valid-rule rule-name="ckNickName" rule-message="Vui lòng nhập 1 ~ 8 ký tự chữ và số"></valid-rule>
+    <valid-rule rule-name="ckCellPhone" rule-message="Lỗi quy cách số điện thoại"></valid-rule>
+    <valid-rule rule-name="ckAccountExist" rule-message=""></valid-rule>
+    <valid-rule rule-name="ckNewPassword" rule-message="6 ~ 10 ký tự chữ và số"></valid-rule>
+    <valid-rule rule-name="ckCaptchaCode" rule-message="Nhập 4 con số"></valid-rule>
+    <valid-rule rule-name="ckCompareAccount" rule-message="Mật khẩu và tài khoản phải khác nhau"></valid-rule>
+    <valid-rule rule-name="ckSimplePassword" rule-message="Mật khẩu quá đơn giản, hãy thiết lập lại"></valid-rule>
+    <valid-rule rule-name="ckSamePassword" rule-message="Mật khẩu và tài khoản phải khác nhau"></valid-rule>
+    <valid-rule rule-name="ckCellPhoneVerifyByLength" rule-message="Sai quy cách SĐT Việt Nam"></valid-rule>
+    <valid-rule rule-name="ckCellPhoneVerify" rule-message="Sai quy cách SĐT Việt Nam"></valid-rule>
+</div>
+<div id="alert-rule-block">
+    <!-- SweetAlert多國語言設定(若是自訂Alert，請在各自頁面增加規則) -->
+    <alert-rule rule-name="建立成功" rule-message="Tạo thành công"></alert-rule>
+    <alert-rule rule-name="建立失敗" rule-message="Tạo thất bại"></alert-rule>
+    <alert-rule rule-name="更新成功" rule-message="Cập nhật thành công"></alert-rule>
+    <alert-rule rule-name="更新失敗" rule-message="Cập nhật thất bại"></alert-rule>
+    <alert-rule rule-name="刪除成功" rule-message="Xóa thành công"></alert-rule>
+    <alert-rule rule-name="刪除失敗" rule-message="Xóa thất bại"></alert-rule>
+    <alert-rule rule-name="參數錯誤" rule-message="Lỗi tham số"></alert-rule>
+    <alert-rule rule-name="確認刪除" rule-message="Xác nhận xóa bỏ"></alert-rule>
+    <alert-rule rule-name="確認修改" rule-message="Xác nhận sửa đổi"></alert-rule>
+    <alert-rule rule-name="刪除後將無法復原是否還要進行"
+                rule-message="Sau khi xóa sẽ không thể khôi phục, có muốn tiến hành hay không"></alert-rule>
+    <alert-rule rule-name="請填寫刷新時間" rule-message="Vui lòng nhập thời gian làm mới"></alert-rule>
+    <alert-rule rule-name="刷新時間需大於10秒" rule-message="Thời gian làm mới phải lớn hơn 10 giây"></alert-rule>
+    <alert-rule rule-name="轉換語系發生問題" rule-message="Chuyển đổi ngôn ngữ xảy ra lỗi"></alert-rule>
+    <alert-rule rule-name="處理中" rule-message="Đang xử lý"></alert-rule>
+    <alert-rule rule-name="新增書籤Cmd" rule-message="Vui lòng bấm Cmd + D để dấu trang"></alert-rule>
+    <alert-rule rule-name="新增書籤Ctrl" rule-message="Vui lòng bấm Ctrl + D để dấu trang"></alert-rule>
+    <alert-rule rule-name="您已經登入" rule-message="Bạn đã đăng nhập"></alert-rule>
+    <alert-rule rule-name="確認" rule-message="Xác nhận"></alert-rule>
+    <alert-rule rule-name="取消" rule-message="Hủy"></alert-rule>
+    <alert-rule rule-name="您沒有進入" rule-message="Bạn không có quyền hạn vào "></alert-rule>
+    <alert-rule rule-name="的權限，請至本網其他項目投注" rule-message="的權限，請至本網其他項目投注"></alert-rule>
+    <alert-rule rule-name="的權限，請至本網其他項目投注，謝謝！"
+                rule-message=", vui lòng đặt cược hạng mục khác, cảm ơn !"></alert-rule>
+    <alert-rule rule-name="KU彩票" rule-message="KU XỔ SỐ"></alert-rule>
+    <alert-rule rule-name="TS真人" rule-message="TS"></alert-rule>
+    <alert-rule rule-name="聊愛玩色" rule-message="Chat sex"></alert-rule>
+    <alert-rule rule-name="查詢有效服務列表發生問題" rule-message="Kiểm tra danh sách dịch vụ hữu hiệu xảy ra lỗi"></alert-rule>
+    <alert-rule rule-name="系統異常請稍後再試" rule-message="Lỗi hệ thống, vui lòng thử lại sau"></alert-rule>
+    <alert-rule rule-name="網路異常，請刷新頁面" rule-message="Lỗi mạng, vui lòng làm mới giao diện"></alert-rule>
+    <alert-rule rule-name="請求異常，請稍後再試" rule-message="Lỗi truy cập, vui lòng thử lại sau"></alert-rule>
+    <alert-rule rule-name="您沒有進入《{0}》的權限！" rule-message="Bạn không có quyền hạn vào《{0}》!"></alert-rule>
+    <alert-rule rule-name="轉帳維護中" rule-message="Bảo trì"></alert-rule>
+    <alert-rule rule-name="信息" rule-message="Tin nhắn"></alert-rule>
+    <alert-rule rule-name="轉點中" rule-message="Đang chuyển"></alert-rule>
+    <alert-rule rule-name="轉點金額不能大於帳戶餘額"
+                rule-message="Điểm chuyển không được nhiều hơn số dư trong tài khoản"></alert-rule>
+    <alert-rule rule-name="載入中" rule-message="Đang tải"></alert-rule>
+    <alert-rule rule-name="維護中" rule-message="Đang bảo trì"></alert-rule>
+    <alert-rule rule-name="請輸入轉點金額" rule-message="Vui lòng nhập số tiền chuyển điểm"></alert-rule>
+    <alert-rule rule-name="轉點成功" rule-message="Chuyển điểm thành công"></alert-rule>
+    <alert-rule rule-name="進入遊戲" rule-message="Vào trò chơi"></alert-rule>
+    <alert-rule rule-name="關閉視窗" rule-message="Tắt cửa sổ"></alert-rule>
+    <alert-rule rule-name="維護中，請稍後再試" rule-message=" đang bảo trì."></alert-rule>
+    <alert-rule rule-name="請輸入整數金額" rule-message="Nhập số nguyên"></alert-rule>
+    <alert-rule rule-name="請輸入金額" rule-message="Nhập số điểm"></alert-rule>
+    <alert-rule rule-name="很抱歉，目前轉帳功能維護中" rule-message="Xin lỗi, chức năng chuyển khoản đang bảo trì"></alert-rule>
+    <alert-rule rule-name="很抱歉，目前轉帳功能維護中！"
+                rule-message="Xin lỗi, chức năng chuyển khoản đang bảo trì！"></alert-rule>
+    <alert-rule rule-name="平台轉帳維護中" rule-message="Chuyển khoản bảo trì"></alert-rule>
+    <alert-rule rule-name="您存入的額度高於上限" rule-message="Số tiền bạn nạp vào cao hơn mức tối đa"></alert-rule>
+    <alert-rule rule-name="您的可轉金額為0" rule-message="Số tiền bạn có thể chuyển là 0"></alert-rule>
+    <alert-rule rule-name="主帳戶餘額不足" rule-message="Số dư của bạn không đủ"></alert-rule>
+    <alert-rule rule-name="今日互轉次數已達到限定值"
+                rule-message="Số lần chuyển điểm trong ngày đã đạt mức hạn chế"></alert-rule>
+    <alert-rule rule-name="今日互轉額度已達限定值" rule-message="Số điểm chuyển trong ngày đã đạt mức hạn chế"></alert-rule>
+    <alert-rule rule-name="您的可用額度不足" rule-message="Số dư của bạn không đủ"></alert-rule>
+    <alert-rule rule-name="代理商金額不足" rule-message="Số dư đại lý không đủ"></alert-rule>
+    <alert-rule rule-name="【{0}】與【{1}】互轉失敗，請聯繫客服！"
+                rule-message="【{0}】và【{1}】Chuyển điểm thất bại, vui lòng liên hệ hỗ trợ!"></alert-rule>
+    <alert-rule rule-name="主帳戶" rule-message="TK Chính"></alert-rule>
+    <alert-rule rule-name="很抱歉，目前存款功能暫不開放，請聯繫客服中心！"
+                rule-message="Xin lỗi, hiện tại chức năng nạp tiền tạm thời chưa mở, xin vui lòng liên hệ hỗ trợ khách hàng!"></alert-rule>
+    <alert-rule rule-name="您已完善資料，待通過資料審核，"
+                rule-message="Bạn đã hoàn tất tư liệu, vui lòng chờ thông qua xét duyệt,"></alert-rule>
+    <alert-rule rule-name="即開放存款，請耐心等候" rule-message="Mở nạp tiền, vui lòng chờ đợi"></alert-rule>
+    <alert-rule rule-name="很抱歉，目前提款功能暫不開放，請聯繫客服中心！"
+                rule-message="Xin lỗi, hiện tại chức năng rút tiền tạm thời chưa mở, xin vui lòng liên hệ hỗ trợ khách hàng!"></alert-rule>
+    <alert-rule rule-name="很抱歉，目前存提款功能維護中"
+                rule-message="Xin lỗi, hiện nay chức năng nạp rút tiền đang bảo trì"></alert-rule>
+    <alert-rule rule-name="很抱歉，目前存提款功能暫不開放，請聯繫客服中心！"
+                rule-message="Xin lỗi, hiện tại chức năng nạp rút tiền tạm thời chưa mở, xin vui lòng liên hệ hỗ trợ khách hàng!"></alert-rule>
+    <alert-rule rule-name="您已完善資料，待通過資料審核，即開放存款，請耐心等候"
+                rule-message="Bạn đã hoàn thiện thông tin, sau khi xét duyệt thông qua sẽ mở chức năng nạp tiền, vui lòng nhẫn nại chờ đợi"></alert-rule>
+    <alert-rule rule-name="轉帳功能維護中" rule-message="đang bảo trì"></alert-rule>
+    <alert-rule rule-name="XXX與XXX互轉失敗，請重新操作"
+                rule-message="{0} và {1} Chuyển điểm thất bại, vui lòng thao tác lại"></alert-rule>
+    <alert-rule rule-name="轉點失敗" rule-message="Chuyển điểm thất bại"></alert-rule>
+    <alert-rule rule-name="轉點失敗，請重新操作" rule-message="Chuyển điểm thất bại, vui lòng thao tác lại"></alert-rule>
+    <alert-rule rule-name="您的帳號已禁止登入，如有疑問請聯繫客服人員"
+                rule-message="Tài khoản của bạn đã cấm đăng nhập, nếu có thắc mắc vui lòng liên hệ hỗ trợ"></alert-rule>
+    <alert-rule rule-name="偵測到重複登入，已將您登出" rule-message="Đăng nhập trùng lặp, bạn đã đăng xuất"></alert-rule>
+    <alert-rule rule-name="您已經登出" rule-message="Tài khoản đã bị đăng xuất"></alert-rule>
+    <alert-rule rule-name="單次登入時間過長已超過限制時間，已將您登出"
+                rule-message="Thời gian đăng nhập của một lần đã vượt quá thời gian hạn chế, bạn đã đăng xuất"></alert-rule>
+    <alert-rule rule-name="您帳號已被禁止登入，已將您登出"
+                rule-message="Tài khoản của bạn đã bị cấm đăng nhập, bạn đã đăng xuất"></alert-rule>
+    <alert-rule rule-name="您帳號已被黑名單，已將您登出"
+                rule-message="Tài khoản của bạn đã là danh sách đen, bạn đã đăng xuất"></alert-rule>
+    <alert-rule rule-name="系統維護中，已將您登出" rule-message="Hệ thống đang bảo trì, bạn đã đăng xuất"></alert-rule>
+    <alert-rule rule-name="系統異常，已將您登出" rule-message="Lỗi hệ thống, bạn đã đăng xuất"></alert-rule>
+    <alert-rule rule-name="總額度" rule-message="Tổng số điểm"></alert-rule>
+    <alert-rule rule-name="您的帳號已被鎖定，請聯繫客服"
+                rule-message="Tài khoản của bạn đã bị khóa, vui lòng liên hệ hỗ trợ"></alert-rule>
+    <alert-rule rule-name="請勿提供手機驗證碼給他人！"
+                rule-message="Vui lòng không cung cấp mã xác minh OTP cho bất kì ai!"></alert-rule>
+    <alert-rule rule-name="您的可轉餘額為0" rule-message="Số dư bạn có thể chuyển là 0"></alert-rule>
+    <alert-rule rule-name="全部遊戲轉點至主帳戶成功" rule-message="Chuyển hết về tài khoản chính thành công"></alert-rule>
+    <alert-rule rule-name="很抱歉，目前{0}轉帳功能維護中！"
+                rule-message="Xin lỗi, chức năng chuyển khoản {0} đang bảo trì！"></alert-rule>
+    <alert-rule rule-name="該平台餘額不足" rule-message="該平台餘額不足"></alert-rule>
+    <alert-rule rule-name="用戶已存在" rule-message="Người dùng đã tồn tại"></alert-rule>
+    <alert-rule rule-name="此欄位必填" rule-message="Bắt buộc điền"></alert-rule>
+    <alert-rule rule-name="帳號第一碼須為數字" rule-message="Ký tự đầu tiên của tài khoản phải là chữ số"></alert-rule>
+    <alert-rule rule-name="帳號第一碼須為英文" rule-message="Ký tự đầu tiên của tài khoản phải là chữ cái"></alert-rule>
+    <alert-rule rule-name="手機號碼必填" rule-message="Bắt buộc điền số điện thoại"></alert-rule>
+    <alert-rule rule-name="手機號碼格式錯誤" rule-message="Lỗi quy cách số điện thoại"></alert-rule>
+    <alert-rule rule-name="手機號碼已被註冊" rule-message="Số điện thoại đã được đăng ký"></alert-rule>
+    <alert-rule rule-name="發送成功" rule-message="Gửi thành công"></alert-rule>
+    <alert-rule rule-name="驗證成功" rule-message="Xác nhận thành công"></alert-rule>
+    <alert-rule rule-name="您今日驗證次數已達上限，請聯繫客服"
+                rule-message="Số lần xác nhận trong ngày đã đạt mức tối đa, vui lòng liên hệ hỗ trợ"></alert-rule>
+    <alert-rule rule-name="該帳號已註冊，建議使用" rule-message="Tài khoản này đã tồn tại, kiến nghị"></alert-rule>
+    <alert-rule rule-name="獲取驗證碼" rule-message="Gửi mã"></alert-rule>
+    <alert-rule rule-name="重發驗證碼" rule-message="Gửi lại"></alert-rule>
+    <alert-rule rule-name="重發" rule-message="Gửi lại"></alert-rule>
+    <alert-rule rule-name="驗證碼已發至您的手機，請查收。"
+                rule-message="Mã xác nhận đã gửi, vui lòng kiểm tra điện thoại"></alert-rule>
+    <alert-rule rule-name="該帳號已被註冊，請重新填寫"
+                rule-message="Tài khoản này đã được đăng ký, vui lòng nhập lại"></alert-rule>
+    <alert-rule rule-name="請先獲取驗證碼" rule-message="Vui lòng nhận mã xác nhận trước"></alert-rule>
+    <alert-rule rule-name="驗證碼已發送至您的手機" rule-message="Mã xác nhận đã gửi đến số điện thoại của bạn"></alert-rule>
+    <alert-rule rule-name="發送失敗，請確認手機號碼是否有誤"
+                rule-message="Gửi thất bại, vui lòng xác nhận số điện thoại có đúng hay không"></alert-rule>
+    <alert-rule rule-name="發送中" rule-message="Đang gửi"></alert-rule>
+    <alert-rule rule-name="手機號碼格式錯誤，請重新輸入"
+                rule-message="Lỗi quy cách số điện thoại, vui lòng nhập lại"></alert-rule>
+    <alert-rule rule-name="請輸入驗證碼" rule-message="Vui lòng nhập mã xác nhận"></alert-rule>
+    <alert-rule rule-name="驗證碼錯誤，請重新輸入" rule-message="Mã xác nhận sai, vui lòng nhập lại."></alert-rule>
+    <alert-rule rule-name="您今日驗證次數已達上限，請聯繫客服專員!"
+                rule-message="Số lần xác nhận trong ngày của bạn đã đạt mức tối đa, vui lòng liên hệ hỗ trợ!"></alert-rule>
+    <alert-rule rule-name="客服人員將致電與您聯繫，請您留意接聽電話"
+                rule-message="Nhân viên hỗ trợ sẽ liên hệ bạn, vui lòng chú ý để nhận cuộc gọi"></alert-rule>
+    <alert-rule rule-name="已驗證" rule-message="Đã xác nhận"></alert-rule>
+    <alert-rule rule-name="新增成功" rule-message="Thêm mới thành công"></alert-rule>
+    <alert-rule rule-name="很抱歉，回電服務目前關閉中，請暫時使用其他客服管道聯繫我們，謝謝！"
+                rule-message="Xin lỗi, dịch vụ gọi lại hiện tại không thể sử dụng, hãy sử dụng cách khác để liên hệ với chúng tôi, cảm ơn!"></alert-rule>
+    <alert-rule rule-name="短信" rule-message="Gửi mã"></alert-rule>
+    <alert-rule rule-name="聯繫客服" rule-message="Liên hệ hỗ trợ"></alert-rule>
+    <alert-rule rule-name="您尚未完成註冊，是否繼續"
+                rule-message="Bạn đăng ký chưa hoàn tất, có tiếp tục hay không"></alert-rule>
+    <alert-rule rule-name="繼續註冊" rule-message="Tiếp tục"></alert-rule>
+    <alert-rule rule-name="確定離開" rule-message="Thoát"></alert-rule>
+    <alert-rule rule-name="請輸入正確的電話號碼" rule-message="Vui lòng nhập số điện thoại chính xác"></alert-rule>
+    <alert-rule rule-name="請重新嘗試" rule-message="Thử lại"></alert-rule>
+    <alert-rule rule-name="向右滑動填充拼圖" rule-message="Trượt qua phải ghép hình"></alert-rule>
+    <alert-rule rule-name="很抱歉，目前會員註冊關閉中"
+                rule-message="Xin lỗi, hiện tại không mở chức năng đăng ký hội viên"></alert-rule>
+    <alert-rule rule-name="驗證碼已發送至您的手機，請查收。"
+                rule-message="Mã xác nhận đã gửi, vui lòng kiểm tra điện thoại"></alert-rule>
+    <alert-rule rule-name="系統錯誤，請稍後再試" rule-message="Lỗi hệ thống, vui lòng thử lại sau"></alert-rule>
+    <alert-rule rule-name="繼續" rule-message="Tiếp tục"></alert-rule>
+    <alert-rule rule-name="離開" rule-message="Thoát"></alert-rule>
+    <alert-rule rule-name="發送語音驗證碼" rule-message="Gửi mã xác nhận qua tin nhắn thoại"></alert-rule>
+    <alert-rule rule-name="請檢查輸入網址是否有誤，網路信號是否正常，請嘗試重新整理頁面或聯繫客服!"
+                rule-message="Vui lòng kiểm tra địa chỉ trang mạng chính xác hay không, tín hiệu đường truyền có bình thường không, vui lòng làm mới giao diện hoặc liên hệ hỗ trợ!"></alert-rule>
+    <alert-rule rule-name="無效的推薦人" rule-message="Người giới thiệu vô hiệu"></alert-rule>
+    <alert-rule rule-name="讀取中" rule-message="loading"></alert-rule>
+    <alert-rule rule-name="語音" rule-message="Tin nhắn thoại"></alert-rule>
+</div>
+<script src="/mobile/js/thirdpartyplugin.m-memberportal.20181204A.js"></script>
+<script src="/mobile/js/vi-vn.js"></script>
+<script src="/mobile/js/base.m-memberportal.20181204A.js"></script>
+<script src="/mobile/js/app.m.js"></script>
+<script src="/mobile/js/menu.m.js"></script>
+<script src="/mobile/js/mobile-register-register.js"></script>
+<script type="text/javascript">
+    OBSMobileApp.GlobalJsConfig.SetConfig({
+        "SignalRNFSvcHost": "//sgrapi.ku6688.net/NFSvc",
+        "SignalRNFSvcIsDebug": "false",
+        "GetGameBalanceTime": "30",
+        "DDDFastTransferCallBackUrl": '',
+        "FastTransferGameID": '',
+        "EntryRef": '',
+        "SiteCulture": "vi-vn",
+        "CountryID": "618",
+        "SiteCultureAcronym": "VN"
+    });
+</script>
+
+</body>
+
+</html>

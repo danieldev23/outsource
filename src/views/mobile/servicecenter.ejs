@@ -1,0 +1,386 @@
+
+<!DOCTYPE html>
+<html ng-app="OBSMobileApp">
+
+<head>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <meta http-equiv="cache-control" content="no-siteapp">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="browsermode" content="application">
+    <meta name="apple-mobile-web-app-title" content="KU Web">
+    <meta name="apple-mobile-web-app-capable" content="no">
+    <meta name="mobile-web-app-capable" content="no">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon" sizes="57x57" href="/mobile/images/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/mobile/images/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/mobile/images/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/mobile/images/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/mobile/images/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/mobile/images/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/mobile/images/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/mobile/images/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/mobile/images/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/mobile/images/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/mobile/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/mobile/images/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/mobile/images/favicon-16x16.png">
+    <title>KU Web</title>
+    <style>
+        [ng\:cloak],
+        [ng-cloak],
+        [data-ng-cloak],
+        [x-ng-cloak],
+        .ng-cloak,
+        .x-ng-cloak {
+            display: none !important;
+        }
+
+        html {
+            -webkit-text-size-adjust: none;
+            /* Never autoresize text */
+        }
+    </style>
+    <link href="/mobile/css/mobile_main.css" rel="stylesheet">
+    <link href="/mobile/css/mobile_CustomerServ.css" rel="stylesheet">
+</head>
+
+<body ontouchstart="">
+<a href="https://www.mykubet.com/" style="display:block;overflow:hidden;height:0;width:0"></a>
+<a href="https://www.kubetkubet.com/" style="display:block;overflow:hidden;height:0;width:0"></a>
+<a href="https://www.kubetnav.com/" style="display:block;overflow:hidden;height:0;width:0"></a>
+<a href="https://www.te7.com.tw/" style="display:block;overflow:hidden;height:0;width:0"></a>
+<a href="https://www.ex589.com/home/" style="display:block;overflow:hidden;height:0;width:0"></a>
+<a href="https://www.casino5168.com/" style="display:block;overflow:hidden;height:0;width:0"></a>
+<a href="https://www.ex5888.com/" style="display:block;overflow:hidden;height:0;width:0"></a>
+<ajax-anti-forgery-token
+    token="5tq3NGSRE02quwF2MsGIXvuFcC7qa-SsFzINs1mgI0C83i-55DY038C6TLTC-b2DQ46EeMlt3HmG3gq5pidM_bXoaqE1:X6l7OJ7wXooGJS6tUIH5e4ijtR8MLkOCoX6AObAY46__lwxQOALuDpvBYtOhch7esDhsThpKX21wmzU2dQ_iOeb8vvA1"></ajax-anti-forgery-token>
+<!-- start Header -->
+<div ng-controller="HeaderCtrl as ctrl" class="bg_header">
+    <div>
+        <img src="/mobile/images/logo_KU.png" style="display:none;"
+             onload="IMG_ID = '29039ed48c7749aa8a4d7d7b0d3a0eb1';IMG_PG = 'e3f08305dF03m1Dp'">
+    </div>
+    <a class="btn_back" ng-click="ctrl.HeaderGoBack()"></a>
+    <h1 class="bg_header_name ">HỖ TRỢ</h1>
+    <div style="display:none">
+        <div id="signout" class="btn_inforOut" ng-click="ctrl.DoSignOut()" data-signout="/Mobile/Home/login"></div>
+    </div>
+</div>
+<div id="inforMDropOUT" ng-controller="HeaderGamePointListCtrl as ctrl" class="inforMDropOUT">
+    <div class="inforMDrop">
+        <ul class="inforMDropT">
+            <li ng-repeat="row in ctrl.model.GameMenusBalanceList track by row.GameID">
+                <div ng-bind="row.ServiceName" ng-class="{true: 't_pink', false: ''}[row.Visible == '0']"></div>
+                <div ng-if="row.Balance !== null &amp;&amp; row.Visible == '1'">
+                        <span ng-bind="row.Balance | number">
+                        </span>
+                    <span class="returnP" ng-if="row.Balance >= 1"
+                          ng-click="ctrl.TransferPoint(row.GameID, ctrl.FindPlatform(row.GameID).Balance, row.ServiceName)"
+                          ng-disabled="!ctrl.isEnabled">Chuyển về</span>
+                </div>
+                <div ng-if="row.Balance === null &amp;&amp; row.Visible !== '0'"><img src="/mobile/images/spinner.svg">
+                </div>
+                <div class="t_pink" style="white-space:nowrap"
+                     ng-if="row.Balance == 0 &amp;&amp; row.Visible == '0'">
+                    Đang bảo trì
+                </div>
+            </li>
+        </ul>
+        <ul class="inforMDropB">
+            <li>
+                <div class="t_yellow">Tổng số điểm</div>
+                <div class="t_yellow" ng-bind="ctrl.model.LoginAreaPointsControlCenter.TotalBalance | number"></div>
+            </li>
+            <li ng-repeat="row in ctrl.model.GameMenusBottomList track by row.GameID">
+                <div ng-bind="row.ServiceName" class="t_purple"></div>
+                <div ng-if="row.Balance !== null &amp;&amp; row.Visible == '1'" ng-bind="row.Balance | number"
+                     style="color:#cb83ff"></div>
+                <div ng-if="row.Balance === null &amp;&amp; row.Visible !== '0'"><img src="/mobile/images/spinner.svg">
+                </div>
+                <div style="white-space:nowrap;color:#cb83ff"
+                     ng-if="row.Visible == '0' &amp;&amp; row.Balance !== null" ng-bind="row.Balance | number"></div>
+            </li>
+            <li class="btn_backAll">
+                    <span
+                        ng-if="ctrl.CheckTopMenuPermission('CanPlatfromTransfer') &amp;&amp; ctrl.NoneAvailableGame == false">
+                        <a ng-click="ctrl.TransferGamesPointToMain()" id="transferGamesPoint"
+                           style="border:none;font-size:1em">
+                            Chuyển hết về tài khoản chính
+                        </a>
+                    </span>
+                <span ng-if="!ctrl.CheckTopMenuPermission('CanPlatfromTransfer') || ctrl.NoneAvailableGame == true">
+                        <a class="returnMainP off" style="border:none;font-size:1em">
+                            Chuyển hết về tài khoản chính
+                            <div class="t_backAll_off">Đang bảo trì</div>
+                        </a>
+                    </span>
+            </li>
+        </ul>
+    </div>
+</div>
+<!-- end Header -->
+<div id="container_main" class="container_main noID noBottom" ng-cloak="">
+    <ajax-anti-forgery-token
+        token="Ipt6gzk5j4_bdmd-53xCa6m9Gil1C3dkNyRZGq89r7jecVnFr0kfuUaL30dhj14qRJ3Pp-I2yoIIffZrE-CMdaDkYQQ1:NEJwLpppNB99f1n-bj_Cgk8B18byiy4mEOXgYPI_mF34AQSENCAVAhLMD-vU1EgrtJEpYnL-ZTn6RdmLQvgjjRUoeKw1"></ajax-anti-forgery-token>
+    <!--頁面內容-->
+    <div class="service" ng-controller="ServiceCenterCtrl as ctrl">
+        <div>
+            <a class="service_Link" ng-click="ctrl.GoCSLiveChat(false)">
+                Liên hệ ngay
+            </a>
+            <ul class="service_list" ng-click="ctrl.GoCSLiveChat(false)">
+                <li class="service_InL">
+                    <div class="Serv_img"><img src="/mobile/images/icon_Serv_online.svg"></div>
+                </li>
+                <li class="service_InC">
+                    <h3>Hỗ trợ</h3> <!-- 在線客服 -->
+                </li>
+                <li class="service_InR">
+                    <div class="btn_ServID">Liên hệ</div>
+                </li>
+            </ul>
+            <ul class="service_list" ng-if="true" ng-click="ctrl.GoServiceCallBack($event)">
+                <li class="service_InL">
+                    <div class="Serv_img"><img src="/mobile/images/icon_Serv_callBack.svg"></div>
+                </li>
+                <li class="service_InC">
+                    <h3>Dịch vụ gọi lại</h3>
+                </li>
+                <li class="service_InR">
+                    <div class="btn_ServID">Đăng ký</div>
+                    <div class="serMaintain_in">
+                        <div class="serMaintain_text" ng-bind="ctrl.model.CallbackServiceApplyMessage"></div>
+                    </div>
+                </li>
+            </ul>
+            <ul class="service_list off" ng-if="false">
+                <li class="service_InL">
+                    <div class="Serv_img"><img src="/mobile/images/icon_Serv_callBack.svg"></div>
+                </li>
+                <li class="service_InC">
+                    <h3>Dịch vụ gọi lại</h3>
+                </li>
+                <li class="service_InR">
+                    <div class="serMaintain">Bảo trì</div>
+                </li>
+            </ul>
+            <ul class="service_list" onclick="window.open('https://t.me/CSKU009', '_blank')">
+                <li class="service_InL">
+                    <div class="Serv_img"><img src="/mobile/images/icon_telegram.svg"></div>
+                </li>
+                <li class="service_InC">
+                    <h3>Telegram</h3>
+                </li>
+                <li class="service_InR">
+                    <div class="btn_ServID">Liên hệ</div>
+                </li>
+            </ul>
+            <ul class="service_list">
+                <li class="service_InL">
+                    <div class="Serv_img"><img src="/mobile/images/icon_Serv_viber.png"></div>
+                </li>
+                <li class="service_InC">
+                    <h3>+639064061820</h3>
+                </li>
+                <li class="service_InR">
+                    <div class="btn_ServID" copy-to-clipboard="" copy-to-clipboard-func="ctrl.model.Viber">Sao chép
+                    </div>
+                </li>
+            </ul>
+            <!--電話客服-->
+            <ul class="service_list" onclick="location.href='tel:+63279082890'">
+                <li class="service_InL">
+                    <div class="Serv_img"><img src="/mobile/images/icon_Serv_phone.svg"></div>
+                </li>
+                <li class="service_InC">
+                    <h3>
+                        +63279082890
+                    </h3>
+                </li>
+                <li class="service_InR">
+                    <div class="btn_ServID">Gọi ngay</div>
+                </li>
+            </ul>
+            <!--客服郵件-->
+            <ul class="service_list">
+                <li class="service_InL">
+                    <div class="Serv_img"><img src="/mobile/images/icon_Serv_email.svg"></div>
+                </li>
+                <li class="service_InC" style="word-break: break-all;">
+                    <h3>
+                        <a href="/cdn-cgi/l/email-protection" class="__cf_email__" style="text-decoration: none; color: black" data-cfemail="472c32767525223307202a262e2b6924282a">ku12bet@gmail.com</a>
+                    </h3>
+                </li>
+                <li class="service_InR">
+                    <div class="btn_ServID" copy-to-clipboard="" copy-to-clipboard-func="ctrl.model.Email"
+                         suc-img="/images/icon_checkGreen.svg">
+                        Sao chép
+                    </div>
+                </li>
+            </ul>
+            <input type="hidden" name="hidViber" id="hidViber" value="+639064061820">
+            <input type="hidden" name="hidEMail" id="hidEMail" value="ku12bet@gmail.com">
+        </div>
+    </div>
+    <!--頁面內容 end-->
+    <alert-rule rule-name="複製成功" rule-message="Sao chép thành công"></alert-rule>
+    <alert-rule rule-name="您的申請正在處理中，請稍後！"
+                rule-message="Yêu cầu của bạn đang được xử lý, vui lòng chờ đợi！"></alert-rule>
+    <alert-rule rule-name="系統繁忙中，請稍候再試！" rule-message="Hệ thống đang bận, vui lòng thử lại sau！"></alert-rule>
+    <alert-rule rule-name="系統繁忙中，請稍候再試！！" rule-message="Hệ thống đang bận, vui lòng thử lại sau！！"></alert-rule>
+    <alert-rule rule-name="您提交的太頻繁，請稍後再試！！！"
+                rule-message="Yêu cầu quá thường xuyên, vui lòng thử lại sau！！！"></alert-rule>
+    <alert-rule rule-name="系統異常請稍後再試" rule-message="Lỗi hệ thống, vui lòng thử lại sau"></alert-rule>
+    <alert-rule rule-name="很抱歉，回電服務目前關閉中，請暫時使用其他客服管道聯繫我們，謝謝！"
+                rule-message="Xin lỗi, dịch vụ gọi lại hiện tại không thể sử dụng, hãy sử dụng cách khác để liên hệ với chúng tôi, cảm ơn!"></alert-rule>
+    <alert-rule rule-name="《在線客服》維護中" rule-message="《Hỗ trợ trực tuyến》đang bảo trì"></alert-rule>
+</div>
+<input id="hfCopySuccessImg" name="hfCopySuccessImg" type="hidden"
+       value="/Areas/Mobile/Content/Images/icon_checkGreen.svg">
+<input id="hfLanguageCode" name="hfLanguageCode" type="hidden" value="vi-vn">
+<input id="hfCountry" name="hfCountry" type="hidden" value="618">
+<!-- start Footer -->
+<style>
+    .footer_maintainTxt {
+        word-wrap: break-word;
+        word-break: normal;
+    }
+</style>
+<!-- end Footer -->
+<!--彈跳視窗 Start-->
+<!--彈跳視窗 End-->
+<input type="hidden" id="hfUniqueSessionId" value="TM1418002238822608896">
+<div id="valid-rule-block">
+    <valid-rule rule-name="required" rule-message="Bắt buộc điền"></valid-rule>
+    <valid-rule rule-name="number" rule-message="Nhập số nguyên"></valid-rule>
+    <valid-rule rule-name="min" rule-message="Nhập số nguyên"></valid-rule>
+    <valid-rule rule-name="maxlength" rule-message="Đừng nhập vượt quá {0} chữ số"></valid-rule>
+</div>
+<div id="alert-rule-block">
+    <!-- SweetAlert多國語言設定(若是自訂Alert，請在各自頁面增加規則) -->
+    <alert-rule rule-name="建立成功" rule-message="Tạo thành công"></alert-rule>
+    <alert-rule rule-name="建立失敗" rule-message="Tạo thất bại"></alert-rule>
+    <alert-rule rule-name="更新成功" rule-message="Cập nhật thành công"></alert-rule>
+    <alert-rule rule-name="更新失敗" rule-message="Cập nhật thất bại"></alert-rule>
+    <alert-rule rule-name="刪除成功" rule-message="Xóa thành công"></alert-rule>
+    <alert-rule rule-name="刪除失敗" rule-message="Xóa thất bại"></alert-rule>
+    <alert-rule rule-name="參數錯誤" rule-message="Lỗi tham số"></alert-rule>
+    <alert-rule rule-name="確認刪除" rule-message="Xác nhận xóa bỏ"></alert-rule>
+    <alert-rule rule-name="確認修改" rule-message="Xác nhận sửa đổi"></alert-rule>
+    <alert-rule rule-name="刪除後將無法復原是否還要進行"
+                rule-message="Sau khi xóa sẽ không thể khôi phục, có muốn tiến hành hay không"></alert-rule>
+    <alert-rule rule-name="請填寫刷新時間" rule-message="Vui lòng nhập thời gian làm mới"></alert-rule>
+    <alert-rule rule-name="刷新時間需大於10秒" rule-message="Thời gian làm mới phải lớn hơn 10 giây"></alert-rule>
+    <alert-rule rule-name="轉換語系發生問題" rule-message="Chuyển đổi ngôn ngữ xảy ra lỗi"></alert-rule>
+    <alert-rule rule-name="處理中" rule-message="Đang xử lý"></alert-rule>
+    <alert-rule rule-name="新增書籤Cmd" rule-message="Vui lòng bấm Cmd + D để dấu trang"></alert-rule>
+    <alert-rule rule-name="新增書籤Ctrl" rule-message="Vui lòng bấm Ctrl + D để dấu trang"></alert-rule>
+    <alert-rule rule-name="您已經登入" rule-message="Bạn đã đăng nhập"></alert-rule>
+    <alert-rule rule-name="確認" rule-message="Xác nhận"></alert-rule>
+    <alert-rule rule-name="取消" rule-message="Hủy"></alert-rule>
+    <alert-rule rule-name="您沒有進入" rule-message="Bạn không có quyền hạn vào "></alert-rule>
+    <alert-rule rule-name="的權限，請至本網其他項目投注" rule-message="的權限，請至本網其他項目投注"></alert-rule>
+    <alert-rule rule-name="的權限，請至本網其他項目投注，謝謝！"
+                rule-message=", vui lòng đặt cược hạng mục khác, cảm ơn !"></alert-rule>
+    <alert-rule rule-name="KU彩票" rule-message="KU XỔ SỐ"></alert-rule>
+    <alert-rule rule-name="TS真人" rule-message="TS"></alert-rule>
+    <alert-rule rule-name="聊愛玩色" rule-message="Chat sex"></alert-rule>
+    <alert-rule rule-name="查詢有效服務列表發生問題" rule-message="Kiểm tra danh sách dịch vụ hữu hiệu xảy ra lỗi"></alert-rule>
+    <alert-rule rule-name="系統異常請稍後再試" rule-message="Lỗi hệ thống, vui lòng thử lại sau"></alert-rule>
+    <alert-rule rule-name="網路異常，請刷新頁面" rule-message="Lỗi mạng, vui lòng làm mới giao diện"></alert-rule>
+    <alert-rule rule-name="請求異常，請稍後再試" rule-message="Lỗi truy cập, vui lòng thử lại sau"></alert-rule>
+    <alert-rule rule-name="您沒有進入《{0}》的權限！" rule-message="Bạn không có quyền hạn vào《{0}》!"></alert-rule>
+    <alert-rule rule-name="轉帳維護中" rule-message="Bảo trì"></alert-rule>
+    <alert-rule rule-name="信息" rule-message="Tin nhắn"></alert-rule>
+    <alert-rule rule-name="轉點中" rule-message="Đang chuyển"></alert-rule>
+    <alert-rule rule-name="轉點金額不能大於帳戶餘額"
+                rule-message="Điểm chuyển không được nhiều hơn số dư trong tài khoản"></alert-rule>
+    <alert-rule rule-name="載入中" rule-message="Đang tải"></alert-rule>
+    <alert-rule rule-name="維護中" rule-message="Đang bảo trì"></alert-rule>
+    <alert-rule rule-name="請輸入轉點金額" rule-message="Vui lòng nhập số tiền chuyển điểm"></alert-rule>
+    <alert-rule rule-name="轉點成功" rule-message="Chuyển điểm thành công"></alert-rule>
+    <alert-rule rule-name="進入遊戲" rule-message="Vào trò chơi"></alert-rule>
+    <alert-rule rule-name="關閉視窗" rule-message="Tắt cửa sổ"></alert-rule>
+    <alert-rule rule-name="維護中，請稍後再試" rule-message=" đang bảo trì."></alert-rule>
+    <alert-rule rule-name="請輸入整數金額" rule-message="Nhập số nguyên"></alert-rule>
+    <alert-rule rule-name="請輸入金額" rule-message="Nhập số điểm"></alert-rule>
+    <alert-rule rule-name="很抱歉，目前轉帳功能維護中" rule-message="Xin lỗi, chức năng chuyển khoản đang bảo trì"></alert-rule>
+    <alert-rule rule-name="很抱歉，目前轉帳功能維護中！"
+                rule-message="Xin lỗi, chức năng chuyển khoản đang bảo trì！"></alert-rule>
+    <alert-rule rule-name="平台轉帳維護中" rule-message="Chuyển khoản bảo trì"></alert-rule>
+    <alert-rule rule-name="您存入的額度高於上限" rule-message="Số tiền bạn nạp vào cao hơn mức tối đa"></alert-rule>
+    <alert-rule rule-name="您的可轉金額為0" rule-message="Số tiền bạn có thể chuyển là 0"></alert-rule>
+    <alert-rule rule-name="主帳戶餘額不足" rule-message="Số dư của bạn không đủ"></alert-rule>
+    <alert-rule rule-name="今日互轉次數已達到限定值"
+                rule-message="Số lần chuyển điểm trong ngày đã đạt mức hạn chế"></alert-rule>
+    <alert-rule rule-name="今日互轉額度已達限定值" rule-message="Số điểm chuyển trong ngày đã đạt mức hạn chế"></alert-rule>
+    <alert-rule rule-name="您的可用額度不足" rule-message="Số dư của bạn không đủ"></alert-rule>
+    <alert-rule rule-name="代理商金額不足" rule-message="Số dư đại lý không đủ"></alert-rule>
+    <alert-rule rule-name="【{0}】與【{1}】互轉失敗，請聯繫客服！"
+                rule-message="【{0}】và【{1}】Chuyển điểm thất bại, vui lòng liên hệ hỗ trợ!"></alert-rule>
+    <alert-rule rule-name="主帳戶" rule-message="TK Chính"></alert-rule>
+    <alert-rule rule-name="很抱歉，目前存款功能暫不開放，請聯繫客服中心！"
+                rule-message="Xin lỗi, hiện tại chức năng nạp tiền tạm thời chưa mở, xin vui lòng liên hệ hỗ trợ khách hàng!"></alert-rule>
+    <alert-rule rule-name="您已完善資料，待通過資料審核，"
+                rule-message="Bạn đã hoàn tất tư liệu, vui lòng chờ thông qua xét duyệt,"></alert-rule>
+    <alert-rule rule-name="即開放存款，請耐心等候" rule-message="Mở nạp tiền, vui lòng chờ đợi"></alert-rule>
+    <alert-rule rule-name="很抱歉，目前提款功能暫不開放，請聯繫客服中心！"
+                rule-message="Xin lỗi, hiện tại chức năng rút tiền tạm thời chưa mở, xin vui lòng liên hệ hỗ trợ khách hàng!"></alert-rule>
+    <alert-rule rule-name="很抱歉，目前存提款功能維護中"
+                rule-message="Xin lỗi, hiện nay chức năng nạp rút tiền đang bảo trì"></alert-rule>
+    <alert-rule rule-name="很抱歉，目前存提款功能暫不開放，請聯繫客服中心！"
+                rule-message="Xin lỗi, hiện tại chức năng nạp rút tiền tạm thời chưa mở, xin vui lòng liên hệ hỗ trợ khách hàng!"></alert-rule>
+    <alert-rule rule-name="您已完善資料，待通過資料審核，即開放存款，請耐心等候"
+                rule-message="Bạn đã hoàn thiện thông tin, sau khi xét duyệt thông qua sẽ mở chức năng nạp tiền, vui lòng nhẫn nại chờ đợi"></alert-rule>
+    <alert-rule rule-name="轉帳功能維護中" rule-message="đang bảo trì"></alert-rule>
+    <alert-rule rule-name="XXX與XXX互轉失敗，請重新操作"
+                rule-message="{0} và {1} Chuyển điểm thất bại, vui lòng thao tác lại"></alert-rule>
+    <alert-rule rule-name="轉點失敗" rule-message="Chuyển điểm thất bại"></alert-rule>
+    <alert-rule rule-name="轉點失敗，請重新操作" rule-message="Chuyển điểm thất bại, vui lòng thao tác lại"></alert-rule>
+    <alert-rule rule-name="您的帳號已禁止登入，如有疑問請聯繫客服人員"
+                rule-message="Tài khoản của bạn đã cấm đăng nhập, nếu có thắc mắc vui lòng liên hệ hỗ trợ"></alert-rule>
+    <alert-rule rule-name="偵測到重複登入，已將您登出" rule-message="Đăng nhập trùng lặp, bạn đã đăng xuất"></alert-rule>
+    <alert-rule rule-name="您已經登出" rule-message="Tài khoản đã bị đăng xuất"></alert-rule>
+    <alert-rule rule-name="單次登入時間過長已超過限制時間，已將您登出"
+                rule-message="Thời gian đăng nhập của một lần đã vượt quá thời gian hạn chế, bạn đã đăng xuất"></alert-rule>
+    <alert-rule rule-name="您帳號已被禁止登入，已將您登出"
+                rule-message="Tài khoản của bạn đã bị cấm đăng nhập, bạn đã đăng xuất"></alert-rule>
+    <alert-rule rule-name="您帳號已被黑名單，已將您登出"
+                rule-message="Tài khoản của bạn đã là danh sách đen, bạn đã đăng xuất"></alert-rule>
+    <alert-rule rule-name="系統維護中，已將您登出" rule-message="Hệ thống đang bảo trì, bạn đã đăng xuất"></alert-rule>
+    <alert-rule rule-name="系統異常，已將您登出" rule-message="Lỗi hệ thống, bạn đã đăng xuất"></alert-rule>
+    <alert-rule rule-name="總額度" rule-message="Tổng số điểm"></alert-rule>
+    <alert-rule rule-name="您的帳號已被鎖定，請聯繫客服"
+                rule-message="Tài khoản của bạn đã bị khóa, vui lòng liên hệ hỗ trợ"></alert-rule>
+    <alert-rule rule-name="請勿提供手機驗證碼給他人！"
+                rule-message="Vui lòng không cung cấp mã xác minh OTP cho bất kì ai!"></alert-rule>
+    <alert-rule rule-name="您的可轉餘額為0" rule-message="Số dư bạn có thể chuyển là 0"></alert-rule>
+    <alert-rule rule-name="全部遊戲轉點至主帳戶成功" rule-message="Chuyển hết về tài khoản chính thành công"></alert-rule>
+    <alert-rule rule-name="很抱歉，目前{0}轉帳功能維護中！"
+                rule-message="Xin lỗi, chức năng chuyển khoản {0} đang bảo trì！"></alert-rule>
+    <alert-rule rule-name="該平台餘額不足" rule-message="該平台餘額不足"></alert-rule>
+</div>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="/mobile/js/thirdpartyplugin.m-memberportal.20181204A.js"></script>
+<script src="/mobile/js/vi-vn.js"></script>
+<script src="/mobile/js/base.m-memberportal.20181204A.js"></script>
+<script src="/mobile/js/app.m.js"></script>
+<script src="/mobile/js/menu.m.js"></script>
+<script src="/mobile/js/mobile-member-servicecenter.js"></script>
+<script type="text/javascript">
+    OBSMobileApp.GlobalJsConfig.SetConfig({
+        "SignalRNFSvcHost": "//sgrapi.ku6688.net/NFSvc",
+        "SignalRNFSvcIsDebug": "false",
+        "GetGameBalanceTime": "30",
+        "DDDFastTransferCallBackUrl": '',
+        "FastTransferGameID": '',
+        "EntryRef": '',
+        "SiteCulture": "vi-vn",
+        "CountryID": "618",
+        "SiteCultureAcronym": "VN"
+    });
+</script>
+
+</body>
+
+</html>

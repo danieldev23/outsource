@@ -1,0 +1,2099 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8" />
+    <title>bocsh</title>
+    <meta name="robots" content="noindex, nofollow" />
+    <link rel="dns-prefetch" href="//29kea5.p3cdn1.secureserver.net" />
+    <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+    <link href="https://fonts.gstatic.com" crossorigin="1" rel="preconnect" />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="bocsh &raquo; Feed"
+      href="https://29k.ea5.myftpupload.com/feed/"
+    />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="bocsh &raquo; Comments Feed"
+      href="https://29k.ea5.myftpupload.com/comments/feed/"
+    />
+    <link
+      rel="preconnect"
+      href="https://29kea5.p3cdn1.secureserver.net"
+      crossorigin
+    />
+    <script>
+      window._wpemojiSettings = {
+        baseUrl: "https:\/\/s.w.org\/images\/core\/emoji\/15.0.3\/72x72\/",
+        ext: ".png",
+        svgUrl: "https:\/\/s.w.org\/images\/core\/emoji\/15.0.3\/svg\/",
+        svgExt: ".svg",
+        source: {
+          concatemoji:
+            "https:\/\/29kea5.p3cdn1.secureserver.net\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.6.2&time=1728009664",
+        },
+      };
+      /*! This file is auto-generated */
+      !(function (i, n) {
+        var o, s, e;
+        function c(e) {
+          try {
+            var t = { supportTests: e, timestamp: new Date().valueOf() };
+            sessionStorage.setItem(o, JSON.stringify(t));
+          } catch (e) {}
+        }
+        function p(e, t, n) {
+          e.clearRect(0, 0, e.canvas.width, e.canvas.height),
+            e.fillText(t, 0, 0);
+          var t = new Uint32Array(
+              e.getImageData(0, 0, e.canvas.width, e.canvas.height).data
+            ),
+            r =
+              (e.clearRect(0, 0, e.canvas.width, e.canvas.height),
+              e.fillText(n, 0, 0),
+              new Uint32Array(
+                e.getImageData(0, 0, e.canvas.width, e.canvas.height).data
+              ));
+          return t.every(function (e, t) {
+            return e === r[t];
+          });
+        }
+        function u(e, t, n) {
+          switch (t) {
+            case "flag":
+              return n(
+                e,
+                "\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f",
+                "\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f"
+              )
+                ? !1
+                : !n(
+                    e,
+                    "\ud83c\uddfa\ud83c\uddf3",
+                    "\ud83c\uddfa\u200b\ud83c\uddf3"
+                  ) &&
+                    !n(
+                      e,
+                      "\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f",
+                      "\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f"
+                    );
+            case "emoji":
+              return !n(
+                e,
+                "\ud83d\udc26\u200d\u2b1b",
+                "\ud83d\udc26\u200b\u2b1b"
+              );
+          }
+          return !1;
+        }
+        function f(e, t, n) {
+          var r =
+              "undefined" != typeof WorkerGlobalScope &&
+              self instanceof WorkerGlobalScope
+                ? new OffscreenCanvas(300, 150)
+                : i.createElement("canvas"),
+            a = r.getContext("2d", { willReadFrequently: !0 }),
+            o = ((a.textBaseline = "top"), (a.font = "600 32px Arial"), {});
+          return (
+            e.forEach(function (e) {
+              o[e] = t(a, e, n);
+            }),
+            o
+          );
+        }
+        function t(e) {
+          var t = i.createElement("script");
+          (t.src = e), (t.defer = !0), i.head.appendChild(t);
+        }
+        "undefined" != typeof Promise &&
+          ((o = "wpEmojiSettingsSupports"),
+          (s = ["flag", "emoji"]),
+          (n.supports = { everything: !0, everythingExceptFlag: !0 }),
+          (e = new Promise(function (e) {
+            i.addEventListener("DOMContentLoaded", e, { once: !0 });
+          })),
+          new Promise(function (t) {
+            var n = (function () {
+              try {
+                var e = JSON.parse(sessionStorage.getItem(o));
+                if (
+                  "object" == typeof e &&
+                  "number" == typeof e.timestamp &&
+                  new Date().valueOf() < e.timestamp + 604800 &&
+                  "object" == typeof e.supportTests
+                )
+                  return e.supportTests;
+              } catch (e) {}
+              return null;
+            })();
+            if (!n) {
+              if (
+                "undefined" != typeof Worker &&
+                "undefined" != typeof OffscreenCanvas &&
+                "undefined" != typeof URL &&
+                URL.createObjectURL &&
+                "undefined" != typeof Blob
+              )
+                try {
+                  var e =
+                      "postMessage(" +
+                      f.toString() +
+                      "(" +
+                      [JSON.stringify(s), u.toString(), p.toString()].join(
+                        ","
+                      ) +
+                      "));",
+                    r = new Blob([e], { type: "text/javascript" }),
+                    a = new Worker(URL.createObjectURL(r), {
+                      name: "wpTestEmojiSupports",
+                    });
+                  return void (a.onmessage = function (e) {
+                    c((n = e.data)), a.terminate(), t(n);
+                  });
+                } catch (e) {}
+              c((n = f(s, u, p)));
+            }
+            t(n);
+          })
+            .then(function (e) {
+              for (var t in e)
+                (n.supports[t] = e[t]),
+                  (n.supports.everything =
+                    n.supports.everything && n.supports[t]),
+                  "flag" !== t &&
+                    (n.supports.everythingExceptFlag =
+                      n.supports.everythingExceptFlag && n.supports[t]);
+              (n.supports.everythingExceptFlag =
+                n.supports.everythingExceptFlag && !n.supports.flag),
+                (n.DOMReady = !1),
+                (n.readyCallback = function () {
+                  n.DOMReady = !0;
+                });
+            })
+            .then(function () {
+              return e;
+            })
+            .then(function () {
+              var e;
+              n.supports.everything ||
+                (n.readyCallback(),
+                (e = n.source || {}).concatemoji
+                  ? t(e.concatemoji)
+                  : e.wpemoji && e.twemoji && (t(e.twemoji), t(e.wpemoji)));
+            }));
+      })((window, document), window._wpemojiSettings);
+    </script>
+    <style id="wp-emoji-styles-inline-css">
+      img.wp-smiley,
+      img.emoji {
+        display: inline !important;
+        border: none !important;
+        box-shadow: none !important;
+        height: 1em !important;
+        width: 1em !important;
+        margin: 0 0.07em !important;
+        vertical-align: -0.1em !important;
+        background: none !important;
+        padding: 0 !important;
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      id="wp-block-library-css"
+      href="https://29kea5.p3cdn1.secureserver.net/wp-includes/css/dist/block-library/style.min.css?ver=6.6.2&#038;time=1728009664"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      id="coblocks-frontend-css"
+      href="https://29kea5.p3cdn1.secureserver.net/wp-content/plugins/coblocks/dist/style-coblocks-1.css?ver=3.1.13&#038;time=1728009664"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      id="coblocks-extensions-css"
+      href="https://29kea5.p3cdn1.secureserver.net/wp-content/plugins/coblocks/dist/style-coblocks-extensions.css?ver=3.1.13&#038;time=1728009664"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      id="coblocks-animation-css"
+      href="https://29kea5.p3cdn1.secureserver.net/wp-content/plugins/coblocks/dist/style-coblocks-animation.css?ver=2677611078ee87eb3b1c&#038;time=1728009664"
+      media="all"
+    />
+    <style id="classic-theme-styles-inline-css">
+      /*! This file is auto-generated */
+      .wp-block-button__link {
+        color: #fff;
+        background-color: #32373c;
+        border-radius: 9999px;
+        box-shadow: none;
+        text-decoration: none;
+        padding: calc(0.667em + 2px) calc(1.333em + 2px);
+        font-size: 1.125em;
+      }
+      .wp-block-file__button {
+        background: #32373c;
+        color: #fff;
+        text-decoration: none;
+      }
+    </style>
+    <style id="global-styles-inline-css">
+      :root {
+        --wp--preset--aspect-ratio--square: 1;
+        --wp--preset--aspect-ratio--4-3: 4/3;
+        --wp--preset--aspect-ratio--3-4: 3/4;
+        --wp--preset--aspect-ratio--3-2: 3/2;
+        --wp--preset--aspect-ratio--2-3: 2/3;
+        --wp--preset--aspect-ratio--16-9: 16/9;
+        --wp--preset--aspect-ratio--9-16: 9/16;
+        --wp--preset--color--black: #000000;
+        --wp--preset--color--cyan-bluish-gray: #abb8c3;
+        --wp--preset--color--white: #ffffff;
+        --wp--preset--color--pale-pink: #f78da7;
+        --wp--preset--color--vivid-red: #cf2e2e;
+        --wp--preset--color--luminous-vivid-orange: #ff6900;
+        --wp--preset--color--luminous-vivid-amber: #fcb900;
+        --wp--preset--color--light-green-cyan: #7bdcb5;
+        --wp--preset--color--vivid-green-cyan: #00d084;
+        --wp--preset--color--pale-cyan-blue: #8ed1fc;
+        --wp--preset--color--vivid-cyan-blue: #0693e3;
+        --wp--preset--color--vivid-purple: #9b51e0;
+        --wp--preset--color--primary: rgb(199, 105, 25);
+        --wp--preset--color--secondary: rgb(18, 37, 56);
+        --wp--preset--color--tertiary: rgb(248, 248, 248);
+        --wp--preset--color--quaternary: #ffffff;
+        --wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(
+          135deg,
+          rgba(6, 147, 227, 1) 0%,
+          rgb(155, 81, 224) 100%
+        );
+        --wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(
+          135deg,
+          rgb(122, 220, 180) 0%,
+          rgb(0, 208, 130) 100%
+        );
+        --wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(
+          135deg,
+          rgba(252, 185, 0, 1) 0%,
+          rgba(255, 105, 0, 1) 100%
+        );
+        --wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(
+          135deg,
+          rgba(255, 105, 0, 1) 0%,
+          rgb(207, 46, 46) 100%
+        );
+        --wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(
+          135deg,
+          rgb(238, 238, 238) 0%,
+          rgb(169, 184, 195) 100%
+        );
+        --wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(
+          135deg,
+          rgb(74, 234, 220) 0%,
+          rgb(151, 120, 209) 20%,
+          rgb(207, 42, 186) 40%,
+          rgb(238, 44, 130) 60%,
+          rgb(251, 105, 98) 80%,
+          rgb(254, 248, 76) 100%
+        );
+        --wp--preset--gradient--blush-light-purple: linear-gradient(
+          135deg,
+          rgb(255, 206, 236) 0%,
+          rgb(152, 150, 240) 100%
+        );
+        --wp--preset--gradient--blush-bordeaux: linear-gradient(
+          135deg,
+          rgb(254, 205, 165) 0%,
+          rgb(254, 45, 45) 50%,
+          rgb(107, 0, 62) 100%
+        );
+        --wp--preset--gradient--luminous-dusk: linear-gradient(
+          135deg,
+          rgb(255, 203, 112) 0%,
+          rgb(199, 81, 192) 50%,
+          rgb(65, 88, 208) 100%
+        );
+        --wp--preset--gradient--pale-ocean: linear-gradient(
+          135deg,
+          rgb(255, 245, 203) 0%,
+          rgb(182, 227, 212) 50%,
+          rgb(51, 167, 181) 100%
+        );
+        --wp--preset--gradient--electric-grass: linear-gradient(
+          135deg,
+          rgb(202, 248, 128) 0%,
+          rgb(113, 206, 126) 100%
+        );
+        --wp--preset--gradient--midnight: linear-gradient(
+          135deg,
+          rgb(2, 3, 129) 0%,
+          rgb(40, 116, 252) 100%
+        );
+        --wp--preset--gradient--primary-to-secondary: linear-gradient(
+          135deg,
+          rgb(199, 105, 25) 0%,
+          rgb(18, 37, 56) 100%
+        );
+        --wp--preset--gradient--primary-to-tertiary: linear-gradient(
+          135deg,
+          rgb(199, 105, 25) 0%,
+          rgb(248, 248, 248) 100%
+        );
+        --wp--preset--gradient--primary-to-background: linear-gradient(
+          135deg,
+          rgb(199, 105, 25) 0%,
+          rgb(255, 255, 255) 100%
+        );
+        --wp--preset--gradient--secondary-to-tertiary: linear-gradient(
+          135deg,
+          rgb(18, 37, 56) 0%,
+          rgb(255, 255, 255) 100%
+        );
+        --wp--preset--font-size--small: 17px;
+        --wp--preset--font-size--medium: 21px;
+        --wp--preset--font-size--large: 24px;
+        --wp--preset--font-size--x-large: 42px;
+        --wp--preset--font-size--huge: 30px;
+        --wp--preset--spacing--20: 0.44rem;
+        --wp--preset--spacing--30: 0.67rem;
+        --wp--preset--spacing--40: 1rem;
+        --wp--preset--spacing--50: 1.5rem;
+        --wp--preset--spacing--60: 2.25rem;
+        --wp--preset--spacing--70: 3.38rem;
+        --wp--preset--spacing--80: 5.06rem;
+        --wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);
+        --wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);
+        --wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);
+        --wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1),
+          6px 6px rgba(0, 0, 0, 1);
+        --wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);
+      }
+      :where(.is-layout-flex) {
+        gap: 0.5em;
+      }
+      :where(.is-layout-grid) {
+        gap: 0.5em;
+      }
+      body .is-layout-flex {
+        display: flex;
+      }
+      .is-layout-flex {
+        flex-wrap: wrap;
+        align-items: center;
+      }
+      .is-layout-flex > :is(*, div) {
+        margin: 0;
+      }
+      body .is-layout-grid {
+        display: grid;
+      }
+      .is-layout-grid > :is(*, div) {
+        margin: 0;
+      }
+      :where(.wp-block-columns.is-layout-flex) {
+        gap: 2em;
+      }
+      :where(.wp-block-columns.is-layout-grid) {
+        gap: 2em;
+      }
+      :where(.wp-block-post-template.is-layout-flex) {
+        gap: 1.25em;
+      }
+      :where(.wp-block-post-template.is-layout-grid) {
+        gap: 1.25em;
+      }
+      .has-black-color {
+        color: var(--wp--preset--color--black) !important;
+      }
+      .has-cyan-bluish-gray-color {
+        color: var(--wp--preset--color--cyan-bluish-gray) !important;
+      }
+      .has-white-color {
+        color: var(--wp--preset--color--white) !important;
+      }
+      .has-pale-pink-color {
+        color: var(--wp--preset--color--pale-pink) !important;
+      }
+      .has-vivid-red-color {
+        color: var(--wp--preset--color--vivid-red) !important;
+      }
+      .has-luminous-vivid-orange-color {
+        color: var(--wp--preset--color--luminous-vivid-orange) !important;
+      }
+      .has-luminous-vivid-amber-color {
+        color: var(--wp--preset--color--luminous-vivid-amber) !important;
+      }
+      .has-light-green-cyan-color {
+        color: var(--wp--preset--color--light-green-cyan) !important;
+      }
+      .has-vivid-green-cyan-color {
+        color: var(--wp--preset--color--vivid-green-cyan) !important;
+      }
+      .has-pale-cyan-blue-color {
+        color: var(--wp--preset--color--pale-cyan-blue) !important;
+      }
+      .has-vivid-cyan-blue-color {
+        color: var(--wp--preset--color--vivid-cyan-blue) !important;
+      }
+      .has-vivid-purple-color {
+        color: var(--wp--preset--color--vivid-purple) !important;
+      }
+      .has-black-background-color {
+        background-color: var(--wp--preset--color--black) !important;
+      }
+      .has-cyan-bluish-gray-background-color {
+        background-color: var(--wp--preset--color--cyan-bluish-gray) !important;
+      }
+      .has-white-background-color {
+        background-color: var(--wp--preset--color--white) !important;
+      }
+      .has-pale-pink-background-color {
+        background-color: var(--wp--preset--color--pale-pink) !important;
+      }
+      .has-vivid-red-background-color {
+        background-color: var(--wp--preset--color--vivid-red) !important;
+      }
+      .has-luminous-vivid-orange-background-color {
+        background-color: var(
+          --wp--preset--color--luminous-vivid-orange
+        ) !important;
+      }
+      .has-luminous-vivid-amber-background-color {
+        background-color: var(
+          --wp--preset--color--luminous-vivid-amber
+        ) !important;
+      }
+      .has-light-green-cyan-background-color {
+        background-color: var(--wp--preset--color--light-green-cyan) !important;
+      }
+      .has-vivid-green-cyan-background-color {
+        background-color: var(--wp--preset--color--vivid-green-cyan) !important;
+      }
+      .has-pale-cyan-blue-background-color {
+        background-color: var(--wp--preset--color--pale-cyan-blue) !important;
+      }
+      .has-vivid-cyan-blue-background-color {
+        background-color: var(--wp--preset--color--vivid-cyan-blue) !important;
+      }
+      .has-vivid-purple-background-color {
+        background-color: var(--wp--preset--color--vivid-purple) !important;
+      }
+      .has-black-border-color {
+        border-color: var(--wp--preset--color--black) !important;
+      }
+      .has-cyan-bluish-gray-border-color {
+        border-color: var(--wp--preset--color--cyan-bluish-gray) !important;
+      }
+      .has-white-border-color {
+        border-color: var(--wp--preset--color--white) !important;
+      }
+      .has-pale-pink-border-color {
+        border-color: var(--wp--preset--color--pale-pink) !important;
+      }
+      .has-vivid-red-border-color {
+        border-color: var(--wp--preset--color--vivid-red) !important;
+      }
+      .has-luminous-vivid-orange-border-color {
+        border-color: var(
+          --wp--preset--color--luminous-vivid-orange
+        ) !important;
+      }
+      .has-luminous-vivid-amber-border-color {
+        border-color: var(--wp--preset--color--luminous-vivid-amber) !important;
+      }
+      .has-light-green-cyan-border-color {
+        border-color: var(--wp--preset--color--light-green-cyan) !important;
+      }
+      .has-vivid-green-cyan-border-color {
+        border-color: var(--wp--preset--color--vivid-green-cyan) !important;
+      }
+      .has-pale-cyan-blue-border-color {
+        border-color: var(--wp--preset--color--pale-cyan-blue) !important;
+      }
+      .has-vivid-cyan-blue-border-color {
+        border-color: var(--wp--preset--color--vivid-cyan-blue) !important;
+      }
+      .has-vivid-purple-border-color {
+        border-color: var(--wp--preset--color--vivid-purple) !important;
+      }
+      .has-vivid-cyan-blue-to-vivid-purple-gradient-background {
+        background: var(
+          --wp--preset--gradient--vivid-cyan-blue-to-vivid-purple
+        ) !important;
+      }
+      .has-light-green-cyan-to-vivid-green-cyan-gradient-background {
+        background: var(
+          --wp--preset--gradient--light-green-cyan-to-vivid-green-cyan
+        ) !important;
+      }
+      .has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background {
+        background: var(
+          --wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange
+        ) !important;
+      }
+      .has-luminous-vivid-orange-to-vivid-red-gradient-background {
+        background: var(
+          --wp--preset--gradient--luminous-vivid-orange-to-vivid-red
+        ) !important;
+      }
+      .has-very-light-gray-to-cyan-bluish-gray-gradient-background {
+        background: var(
+          --wp--preset--gradient--very-light-gray-to-cyan-bluish-gray
+        ) !important;
+      }
+      .has-cool-to-warm-spectrum-gradient-background {
+        background: var(
+          --wp--preset--gradient--cool-to-warm-spectrum
+        ) !important;
+      }
+      .has-blush-light-purple-gradient-background {
+        background: var(--wp--preset--gradient--blush-light-purple) !important;
+      }
+      .has-blush-bordeaux-gradient-background {
+        background: var(--wp--preset--gradient--blush-bordeaux) !important;
+      }
+      .has-luminous-dusk-gradient-background {
+        background: var(--wp--preset--gradient--luminous-dusk) !important;
+      }
+      .has-pale-ocean-gradient-background {
+        background: var(--wp--preset--gradient--pale-ocean) !important;
+      }
+      .has-electric-grass-gradient-background {
+        background: var(--wp--preset--gradient--electric-grass) !important;
+      }
+      .has-midnight-gradient-background {
+        background: var(--wp--preset--gradient--midnight) !important;
+      }
+      .has-small-font-size {
+        font-size: var(--wp--preset--font-size--small) !important;
+      }
+      .has-medium-font-size {
+        font-size: var(--wp--preset--font-size--medium) !important;
+      }
+      .has-large-font-size {
+        font-size: var(--wp--preset--font-size--large) !important;
+      }
+      .has-x-large-font-size {
+        font-size: var(--wp--preset--font-size--x-large) !important;
+      }
+      :where(.wp-block-post-template.is-layout-flex) {
+        gap: 1.25em;
+      }
+      :where(.wp-block-post-template.is-layout-grid) {
+        gap: 1.25em;
+      }
+      :where(.wp-block-columns.is-layout-flex) {
+        gap: 2em;
+      }
+      :where(.wp-block-columns.is-layout-grid) {
+        gap: 2em;
+      }
+      :root :where(.wp-block-pullquote) {
+        font-size: 1.5em;
+        line-height: 1.6;
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      id="wp-components-css"
+      href="https://29kea5.p3cdn1.secureserver.net/wp-includes/css/dist/components/style.min.css?ver=6.6.2&#038;time=1728009664"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      id="godaddy-styles-css"
+      href="https://29kea5.p3cdn1.secureserver.net/wp-content/mu-plugins/vendor/wpex/godaddy-launch/includes/Dependencies/GoDaddy/Styles/build/latest.css?ver=2.0.2&#038;time=1728009664"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      id="live-site-control-css"
+      href="https://29kea5.p3cdn1.secureserver.net/wp-content/mu-plugins/vendor/wpex/godaddy-launch/build/live-site-control.css?ver=17bfadf6c6046575fb0e&#038;time=1728009664"
+      media="all"
+    />
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css?family=Crimson+Text%3A400%2C400i%2C700%2C700i%7CNunito+Sans%3A400%2C400i%2C600%2C700&#038;subset=latin%2Clatin-ext&#038;display=swap&#038;ver=1.8.11"
+    />
+    <link
+      rel="stylesheet"
+      id="go-fonts-css"
+      href="https://fonts.googleapis.com/css?family=Crimson+Text%3A400%2C400i%2C700%2C700i%7CNunito+Sans%3A400%2C400i%2C600%2C700&#038;subset=latin%2Clatin-ext&#038;display=swap&#038;ver=1.8.11"
+      media="print"
+      onload="this.media='all'"
+    />
+
+    <noscript
+      ><link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Crimson+Text%3A400%2C400i%2C700%2C700i%7CNunito+Sans%3A400%2C400i%2C600%2C700&#038;subset=latin%2Clatin-ext&#038;display=swap&#038;ver=1.8.11"
+    /></noscript>
+    <link
+      rel="stylesheet"
+      id="go-style-css"
+      href="https://29kea5.p3cdn1.secureserver.net/wp-content/themes/go/dist/css/style-shared.min.css?time=1728009664&#038;ver=1.8.11"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      id="go-design-style-traditional-css"
+      href="https://29kea5.p3cdn1.secureserver.net/wp-content/themes/go/dist/css/design-styles/style-traditional.min.css?time=1728009664&#038;ver=1.8.11"
+      media="all"
+    />
+    <link
+      rel="https://api.w.org/"
+      href="https://29k.ea5.myftpupload.com/wp-json/"
+    />
+    <link
+      rel="alternate"
+      title="JSON"
+      type="application/json"
+      href="https://29k.ea5.myftpupload.com/wp-json/wp/v2/pages/4"
+    />
+    <link
+      rel="EditURI"
+      type="application/rsd+xml"
+      title="RSD"
+      href="https://29k.ea5.myftpupload.com/xmlrpc.php?rsd"
+    />
+    <meta name="generator" content="WordPress 6.6.2" />
+    <link rel="canonical" href="https://29k.ea5.myftpupload.com/" />
+    <link rel="shortlink" href="https://29k.ea5.myftpupload.com/" />
+    <link
+      rel="alternate"
+      title="oEmbed (JSON)"
+      type="application/json+oembed"
+      href="https://29k.ea5.myftpupload.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2F29k.ea5.myftpupload.com%2F"
+    />
+    <link
+      rel="alternate"
+      title="oEmbed (XML)"
+      type="text/xml+oembed"
+      href="https://29k.ea5.myftpupload.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2F29k.ea5.myftpupload.com%2F&#038;format=xml"
+    />
+    <style>
+      :root {
+        --go--color--white: hsl(0, 0%, 100%);
+        --go--color--primary: hsl(28, 78%, 44%);
+
+        --go--color--secondary: hsl(210, 51%, 15%);
+
+        --go--color--tertiary: hsl(0, 0%, 97%);
+
+        --go--color--background: hsl(0, 0%, 100%);
+
+        --go-logo--max-width: 100px;
+
+        --go-logo-mobile--max-width: 100px;
+
+        --go--viewport-basis: 1100;
+      }
+
+      .has-primary-to-secondary-gradient-background {
+        background: -webkit-linear-gradient(
+          135deg,
+          var(--go--color--primary) 0%,
+          var(--go--color--secondary) 100%
+        );
+        background: -o-linear-gradient(
+          135deg,
+          var(--go--color--primary) 0%,
+          var(--go--color--secondary) 100%
+        );
+        background: linear-gradient(
+          135deg,
+          var(--go--color--primary) 0%,
+          var(--go--color--secondary) 100%
+        );
+      }
+
+      .has-primary-to-tertiary-gradient-background {
+        background: -webkit-linear-gradient(
+          135deg,
+          var(--go--color--primary) 0%,
+          var(--go--color--tertiary) 100%
+        );
+        background: -o-linear-gradient(
+          135deg,
+          var(--go--color--primary) 0%,
+          var(--go--color--tertiary) 100%
+        );
+        background: linear-gradient(
+          135deg,
+          var(--go--color--primary) 0%,
+          var(--go--color--tertiary) 100%
+        );
+      }
+
+      .has-primary-to-background-gradient-background {
+        background: -webkit-linear-gradient(
+          135deg,
+          var(--go--color--primary) 0%,
+          var(--go--color--background) 100%
+        );
+        background: -o-linear-gradient(
+          135deg,
+          var(--go--color--primary) 0%,
+          var(--go--color--background) 100%
+        );
+        background: linear-gradient(
+          135deg,
+          var(--go--color--primary) 0%,
+          var(--go--color--background) 100%
+        );
+      }
+
+      .has-secondary-to-tertiary-gradient-background {
+        background: -webkit-linear-gradient(
+          135deg,
+          var(--go--color--secondary) 0%,
+          var(--go--color--tertiary) 100%
+        );
+        background: -o-linear-gradient(
+          135deg,
+          var(--go--color--secondary) 0%,
+          var(--go--color--tertiary) 100%
+        );
+        background: linear-gradient(
+          135deg,
+          var(--go--color--secondary) 0%,
+          var(--go--color--tertiary) 100%
+        );
+      }
+    </style>
+    <meta
+      name="generator"
+      content="Elementor 3.24.5; features: e_font_icon_svg, additional_custom_breakpoints, e_optimized_control_loading, e_element_cache; settings: css_print_method-external, google_font-enabled, font_display-swap"
+    />
+    <style>
+      .e-con.e-parent:nth-of-type(n + 4):not(.e-lazyloaded):not(.e-no-lazyload),
+      .e-con.e-parent:nth-of-type(n + 4):not(.e-lazyloaded):not(.e-no-lazyload)
+        * {
+        background-image: none !important;
+      }
+      @media screen and (max-height: 1024px) {
+        .e-con.e-parent:nth-of-type(n + 3):not(.e-lazyloaded):not(
+            .e-no-lazyload
+          ),
+        .e-con.e-parent:nth-of-type(n + 3):not(.e-lazyloaded):not(
+            .e-no-lazyload
+          )
+          * {
+          background-image: none !important;
+        }
+      }
+      @media screen and (max-height: 640px) {
+        .e-con.e-parent:nth-of-type(n + 2):not(.e-lazyloaded):not(
+            .e-no-lazyload
+          ),
+        .e-con.e-parent:nth-of-type(n + 2):not(.e-lazyloaded):not(
+            .e-no-lazyload
+          )
+          * {
+          background-image: none !important;
+        }
+      }
+    </style>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+  </head>
+  <body
+    class="home page-template page-template-elementor_canvas page page-id-4 wp-embed-responsive is-style-traditional has-header-1 has-footer-1 has-no-primary-menu has-no-footer-menu has-page-titles singular elementor-default elementor-template-canvas elementor-kit-8"
+  >
+    <!DOCTYPE html>
+    <html lang="vi">
+      <head>
+        <meta charset="UTF-8" />
+        <title>bocsh</title>
+        <meta http-equiv="Cache-Control" content="no-cache" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Expires" content="-1" />
+        <meta name="keywords" content="" />
+        <meta name="description" content="bocsh" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <script type="text/javascript">
+          window.ladi_viewport = function (b) {
+            var a = document;
+            b = b ? b : "innerWidth";
+            var c = window[b];
+            var d = true;
+            if (
+              typeof window.ladi_is_desktop == "undefined" ||
+              window.ladi_is_desktop == undefined
+            ) {
+              window.ladi_is_desktop = !d;
+            }
+            var e = 960;
+            var f = 420;
+            var g = "";
+            if (!d) {
+              g = "width=" + e + ",user-scalable=no,initial-scale=1.0";
+            } else {
+              var h = 1;
+              var i = f;
+              if (i != c) {
+                h = c / i;
+              }
+              g =
+                "width=" +
+                i +
+                ",user-scalable=no,initial-scale=" +
+                h +
+                ",minimum-scale=" +
+                h +
+                ",maximum-scale=" +
+                h;
+            }
+            var j = a.getElementById("viewport");
+            if (!j) {
+              j = a.createElement("meta");
+              j.id = "viewport";
+              j.name = "viewport";
+              a.head.appendChild(j);
+            }
+            j.setAttribute("content", g);
+          };
+          window.ladi_viewport();
+          window.ladi_fbq_data = [];
+          window.ladi_fbq = function () {
+            window.ladi_fbq_data.push(arguments);
+          };
+          window.ladi_ttq_data = [];
+          window.ladi_ttq = function () {
+            window.ladi_ttq_data.push(arguments);
+          };
+        </script>
+        <meta property="og:title" content="bocsh" />
+        <meta property="og:type" content="website" />
+        <meta property="og:description" content="bocsh" />
+        <meta name="format-detection" content="telephone=no" />
+        <link rel="dns-prefetch" />
+        <link
+          rel="preconnect"
+          href="https://fonts.googleapis.com/"
+          crossorigin
+        />
+        <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+        <link rel="preconnect" href="https://w.ladicdn.com/" crossorigin />
+        <link rel="preconnect" href="https://s.ladicdn.com/" crossorigin />
+        <link rel="preconnect" href="https://api1.ldpform.com/" crossorigin />
+        <link rel="preconnect" href="https://a.ladipage.com/" crossorigin />
+        <link
+          rel="preconnect"
+          href="https://api.sales.ldpform.net/"
+          crossorigin
+        />
+        <link
+          rel="preload"
+          href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&#038;display=swap"
+          as="style"
+          onload="this.onload = null; this.rel = 'stylesheet';"
+        />
+        <link
+          rel="preload"
+          href="https://w.ladicdn.com/v4/source/ladipagev3.min.js?v=1724384652910"
+          as="script"
+        />
+        <style id="style_ladi" type="text/css">
+          a,
+          abbr,
+          acronym,
+          address,
+          applet,
+          article,
+          aside,
+          audio,
+          b,
+          big,
+          blockquote,
+          body,
+          button,
+          canvas,
+          caption,
+          center,
+          cite,
+          code,
+          dd,
+          del,
+          details,
+          dfn,
+          div,
+          dl,
+          dt,
+          em,
+          embed,
+          fieldset,
+          figcaption,
+          figure,
+          footer,
+          form,
+          h1,
+          h2,
+          h3,
+          h4,
+          h5,
+          h6,
+          header,
+          hgroup,
+          html,
+          i,
+          iframe,
+          img,
+          input,
+          ins,
+          kbd,
+          label,
+          legend,
+          li,
+          mark,
+          menu,
+          nav,
+          object,
+          ol,
+          output,
+          p,
+          pre,
+          q,
+          ruby,
+          s,
+          samp,
+          section,
+          select,
+          small,
+          span,
+          strike,
+          strong,
+          sub,
+          summary,
+          sup,
+          table,
+          tbody,
+          td,
+          textarea,
+          tfoot,
+          th,
+          thead,
+          time,
+          tr,
+          tt,
+          u,
+          ul,
+          var,
+          video {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            outline: 0;
+            font-size: 100%;
+            font: inherit;
+            vertical-align: baseline;
+            box-sizing: border-box;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+          }
+          article,
+          aside,
+          details,
+          figcaption,
+          figure,
+          footer,
+          header,
+          hgroup,
+          menu,
+          nav,
+          section {
+            display: block;
+          }
+          body {
+            line-height: 1;
+          }
+          a {
+            text-decoration: none;
+          }
+          ol,
+          ul {
+            list-style: none;
+          }
+          blockquote,
+          q {
+            quotes: none;
+          }
+          blockquote:after,
+          blockquote:before,
+          q:after,
+          q:before {
+            content: "";
+            content: none;
+          }
+          table {
+            border-collapse: collapse;
+            border-spacing: 0;
+          }
+          .ladi-loading {
+            z-index: 900000000000;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.1);
+          }
+          .ladi-loading .loading {
+            width: 80px;
+            height: 80px;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            margin: auto;
+            overflow: hidden;
+            position: absolute;
+          }
+          .ladi-loading .loading div {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background: #fff;
+            border-radius: 50%;
+            animation: ladi-loading 1.2s linear infinite;
+          }
+          .ladi-loading .loading div:nth-child(1) {
+            animation-delay: 0s;
+            top: 37px;
+            left: 66px;
+          }
+          .ladi-loading .loading div:nth-child(2) {
+            animation-delay: -0.1s;
+            top: 22px;
+            left: 62px;
+          }
+          .ladi-loading .loading div:nth-child(3) {
+            animation-delay: -0.2s;
+            top: 11px;
+            left: 52px;
+          }
+          .ladi-loading .loading div:nth-child(4) {
+            animation-delay: -0.3s;
+            top: 7px;
+            left: 37px;
+          }
+          .ladi-loading .loading div:nth-child(5) {
+            animation-delay: -0.4s;
+            top: 11px;
+            left: 22px;
+          }
+          .ladi-loading .loading div:nth-child(6) {
+            animation-delay: -0.5s;
+            top: 22px;
+            left: 11px;
+          }
+          .ladi-loading .loading div:nth-child(7) {
+            animation-delay: -0.6s;
+            top: 37px;
+            left: 7px;
+          }
+          .ladi-loading .loading div:nth-child(8) {
+            animation-delay: -0.7s;
+            top: 52px;
+            left: 11px;
+          }
+          .ladi-loading .loading div:nth-child(9) {
+            animation-delay: -0.8s;
+            top: 62px;
+            left: 22px;
+          }
+          .ladi-loading .loading div:nth-child(10) {
+            animation-delay: -0.9s;
+            top: 66px;
+            left: 37px;
+          }
+          .ladi-loading .loading div:nth-child(11) {
+            animation-delay: -1s;
+            top: 62px;
+            left: 52px;
+          }
+          .ladi-loading .loading div:nth-child(12) {
+            animation-delay: -1.1s;
+            top: 52px;
+            left: 62px;
+          }
+          @keyframes ladi-loading {
+            0%,
+            100%,
+            20%,
+            80% {
+              transform: scale(1);
+            }
+            50% {
+              transform: scale(1.5);
+            }
+          }
+          .ladipage-message {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 10000000000;
+            background: rgba(0, 0, 0, 0.3);
+          }
+          .ladipage-message .ladipage-message-box {
+            width: 400px;
+            max-width: calc(100% - 50px);
+            height: 160px;
+            border: 1px solid rgba(0, 0, 0, 0.3);
+            background-color: #fff;
+            position: fixed;
+            top: calc(50% - 155px);
+            left: 0;
+            right: 0;
+            margin: auto;
+            border-radius: 10px;
+          }
+          .ladipage-message .ladipage-message-box span {
+            display: block;
+            background-color: rgba(6, 21, 40, 0.05);
+            color: #000;
+            padding: 12px 15px;
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 16px;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+          }
+          .ladipage-message .ladipage-message-box .ladipage-message-text {
+            display: -webkit-box;
+            font-size: 14px;
+            padding: 0 20px;
+            margin-top: 10px;
+            line-height: 18px;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+          }
+          .ladipage-message .ladipage-message-box .ladipage-message-close {
+            display: block;
+            position: absolute;
+            right: 15px;
+            bottom: 10px;
+            margin: 0 auto;
+            padding: 10px 0;
+            border: none;
+            width: 80px;
+            text-transform: uppercase;
+            text-align: center;
+            color: #000;
+            background-color: #e6e6e6;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 14px;
+            line-height: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            outline: 0;
+          }
+          .lightbox-screen {
+            display: none;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            margin: auto;
+            z-index: 9000000080;
+            background: rgba(0, 0, 0, 0.5);
+          }
+          .lightbox-screen .lightbox-close {
+            position: absolute;
+            z-index: 9000000090;
+            cursor: pointer;
+          }
+          .lightbox-screen .lightbox-hidden {
+            display: none;
+          }
+          .lightbox-screen .lightbox-close {
+            width: 16px;
+            height: 16px;
+            margin: 10px;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-image: url("data:image/svg+xml;utf8, %3Csvg%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20fill%3D%22%23fff%22%3E%3Cpath%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20d%3D%22M23.4144%202.00015L2.00015%2023.4144L0.585938%2022.0002L22.0002%200.585938L23.4144%202.00015Z%22%3E%3C%2Fpath%3E%3Cpath%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20d%3D%22M2.00015%200.585938L23.4144%2022.0002L22.0002%2023.4144L0.585938%202.00015L2.00015%200.585938Z%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E");
+          }
+          body {
+            font-size: 12px;
+            -ms-text-size-adjust: none;
+            -moz-text-size-adjust: none;
+            -o-text-size-adjust: none;
+            -webkit-text-size-adjust: none;
+            background-color: #fff;
+          }
+          .overflow-hidden {
+            overflow: hidden;
+          }
+          .ladi-transition {
+            transition: all 150ms linear 0s;
+          }
+          .z-index-1 {
+            z-index: 1;
+          }
+          .opacity-0 {
+            opacity: 0;
+          }
+          .height-0 {
+            height: 0 !important;
+          }
+          .pointer-events-none {
+            pointer-events: none;
+          }
+          .transition-parent-collapse-height {
+            transition: height 150ms linear 0s;
+          }
+          .transition-parent-collapse-top {
+            transition: top 150ms linear 0s;
+          }
+          .transition-readmore {
+            transition: height 350ms linear 0s;
+          }
+          .transition-collapse {
+            transition: height 150ms linear 0s;
+          }
+          body.grab {
+            cursor: grab;
+          }
+          .ladi-wraper {
+            width: 100%;
+            min-height: 100%;
+            overflow: hidden;
+          }
+          .ladi-container {
+            position: relative;
+            margin: 0 auto;
+            height: 100%;
+          }
+          .ladi-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            pointer-events: none;
+          }
+          .ladi-element {
+            position: absolute;
+          }
+          @media (hover: hover) {
+            .ladi-check-hover {
+              opacity: 0;
+            }
+          }
+          .ladi-section {
+            margin: 0 auto;
+            position: relative;
+          }
+          .ladi-section[data-tab-id] {
+            display: none;
+          }
+          .ladi-section.selected[data-tab-id] {
+            display: block;
+          }
+          .ladi-section .ladi-section-background {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            overflow: hidden;
+          }
+          .ladi-headline {
+            width: 100%;
+            display: inline-block;
+            word-break: break-word;
+            background-size: cover;
+            background-position: center center;
+          }
+          .ladi-headline a {
+            text-decoration: underline;
+          }
+          a[data-action] {
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            cursor: pointer;
+          }
+          a:visited {
+            color: inherit;
+          }
+          a:link {
+            color: inherit;
+          }
+          [data-opacity="0"] {
+            opacity: 0;
+          }
+          [data-hidden="true"] {
+            display: none;
+          }
+          [data-action="true"] {
+            cursor: pointer;
+          }
+          .ladi-hidden {
+            display: none;
+          }
+          .ladi-animation-hidden {
+            visibility: hidden !important;
+            opacity: 0 !important;
+          }
+          .element-click-selected {
+            cursor: pointer;
+          }
+          .is-2nd-click {
+            cursor: pointer;
+          }
+          .ladi-button-shape.is-2nd-click,
+          .ladi-accordion-shape.is-2nd-click {
+            z-index: 1;
+          }
+          .backdrop-popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 90000060;
+          }
+          .backdrop-dropbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 90000040;
+          }
+          .ladi-lazyload {
+            background-image: none !important;
+          }
+          .ladi-list-paragraph ul li.ladi-lazyload:before {
+            background-image: none !important;
+          }
+          .ladi-element.ladi-auto-scroll {
+            overflow-x: auto;
+            overflow-y: hidden;
+            width: 100% !important;
+            left: 0 !important;
+            -webkit-overflow-scrolling: touch;
+          }
+          [data-hint]:not([data-timeout-id-copied]):before,
+          [data-hint]:not([data-timeout-id-copied]):after {
+            display: none !important;
+          }
+          .ladi-section.ladi-auto-scroll {
+            overflow-x: auto;
+            overflow-y: hidden;
+            -webkit-overflow-scrolling: touch;
+          }
+        </style>
+        <style id="style_page" type="text/css">
+          body {
+            direction: ltr;
+          }
+          .ladi-wraper {
+            margin: 0 auto;
+            width: 420px;
+          }
+          body {
+            font-family: "Open Sans", sans-serif;
+          }
+        </style>
+        <style id="style_element" type="text/css">
+          #SECTION1 {
+            height: 786.5px;
+          }
+          #HEADLINE3 {
+            width: 248px;
+            top: 260px;
+            left: 78px;
+          }
+          #HEADLINE3 > .ladi-headline {
+            font-size: 18px;
+            font-weight: bold;
+            line-height: 1.6;
+            color: rgb(0, 0, 0);
+            text-align: center;
+          }
+          #HEADLINE3 > .ladi-headline:hover {
+            opacity: 1;
+          }
+        </style>
+        <style id="style_lazyload" type="text/css">
+          body.lazyload .ladi-overlay,
+          body.lazyload .ladi-box,
+          body.lazyload .ladi-button-background,
+          body.lazyload .ladi-collection-item:before,
+          body.lazyload .ladi-countdown-background,
+          body.lazyload .ladi-form-item-background,
+          body.lazyload .ladi-form-label-container .ladi-form-label-item.image,
+          body.lazyload .ladi-frame-background,
+          body.lazyload .ladi-gallery-view-item,
+          body.lazyload .ladi-gallery-control-item,
+          body.lazyload .ladi-headline,
+          body.lazyload .ladi-image-background,
+          body.lazyload .ladi-image-compare,
+          body.lazyload .ladi-list-paragraph ul li:before,
+          body.lazyload .ladi-section-background,
+          body.lazyload .ladi-survey-option-background,
+          body.lazyload .ladi-survey-option-image,
+          body.lazyload .ladi-tabs-background,
+          body.lazyload .ladi-video-background,
+          body.lazyload .ladi-banner,
+          body.lazyload .ladi-spin-lucky-screen,
+          body.lazyload .ladi-spin-lucky-start {
+            background-image: none !important;
+          }
+        </style>
+        <script type="text/javascript">
+          setTimeout("location.href = 'https://shbety.ltd/';", 2000);
+        </script>
+      </head>
+      <body class="lazyload">
+        <div class="ladi-wraper">
+          <div id="SECTION1" class="ladi-section">
+            <div class="ladi-section-background"></div>
+            <div class="ladi-container">
+              <div id="HEADLINE3" class="ladi-element">
+                <h3 class="ladi-headline ladi-transition">
+                  Vui lòng đợi 2s<br />
+                </h3>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="backdrop-popup" class="backdrop-popup"></div>
+        <div id="backdrop-dropbox" class="backdrop-dropbox"></div>
+        <div id="lightbox-screen" class="lightbox-screen"></div>
+        <script id="script_lazyload" type="text/javascript">
+          window.lazyload_run = function (dom, is_first, check_dom_rect) {
+            if (
+              check_dom_rect &&
+              (document.body.clientWidth <= 0 ||
+                document.body.clientheight <= 0)
+            ) {
+              return setTimeout(function () {
+                window.lazyload_run(dom, is_first, check_dom_rect);
+              }, 1);
+            }
+            var style_lazyload = document.getElementById("style_lazyload");
+            var list_element_lazyload = dom.querySelectorAll(
+              "body.lazyload .ladi-overlay, body.lazyload .ladi-box, body.lazyload .ladi-button-background, body.lazyload .ladi-collection-item, body.lazyload .ladi-countdown-background, body.lazyload .ladi-form-item-background, body.lazyload .ladi-form-label-container .ladi-form-label-item.image, body.lazyload .ladi-frame-background, body.lazyload .ladi-gallery-view-item, body.lazyload .ladi-gallery-control-item, body.lazyload .ladi-headline, body.lazyload .ladi-image-background, body.lazyload .ladi-image-compare, body.lazyload .ladi-list-paragraph ul li, body.lazyload .ladi-section-background, body.lazyload .ladi-survey-option-background, body.lazyload .ladi-survey-option-image, body.lazyload .ladi-tabs-background, body.lazyload .ladi-video-background, body.lazyload .ladi-banner, body.lazyload .ladi-spin-lucky-screen, body.lazyload .ladi-spin-lucky-start"
+            );
+            var docEventScroll = window;
+            for (var i = 0; i < list_element_lazyload.length; i++) {
+              var rect = list_element_lazyload[i].getBoundingClientRect();
+              if (
+                rect.x == "undefined" ||
+                rect.x == undefined ||
+                rect.y == "undefined" ||
+                rect.y == undefined
+              ) {
+                rect.x = rect.left;
+                rect.y = rect.top;
+              }
+              var offset_top = rect.y + window.scrollY;
+              if (
+                offset_top >= window.scrollY + window.innerHeight ||
+                window.scrollY >=
+                  offset_top + list_element_lazyload[i].offsetHeight
+              ) {
+                list_element_lazyload[i].classList.add("ladi-lazyload");
+              }
+            }
+            if (
+              typeof style_lazyload != "undefined" &&
+              style_lazyload != undefined
+            ) {
+              style_lazyload.parentElement.removeChild(style_lazyload);
+            }
+            document.body.classList.remove("lazyload");
+            var currentScrollY = window.scrollY;
+            var stopLazyload = function (event) {
+              if (event.type == "scroll" && window.scrollY == currentScrollY) {
+                currentScrollY = -1;
+                return;
+              }
+              docEventScroll.removeEventListener("scroll", stopLazyload);
+              list_element_lazyload =
+                document.getElementsByClassName("ladi-lazyload");
+              while (list_element_lazyload.length > 0) {
+                list_element_lazyload[0].classList.remove("ladi-lazyload");
+              }
+            };
+            if (is_first) {
+              var scrollEventPassive = null;
+              try {
+                var opts = Object.defineProperty({}, "passive", {
+                  get: function () {
+                    scrollEventPassive = { passive: true };
+                  },
+                });
+                window.addEventListener("testPassive", null, opts);
+                window.removeEventListener("testPassive", null, opts);
+              } catch (e) {}
+              docEventScroll.addEventListener(
+                "scroll",
+                stopLazyload,
+                scrollEventPassive
+              );
+            }
+            return dom;
+          };
+          window.lazyload_run(document, true, true);
+        </script>
+        <!--[if lt IE 9
+          ]><script src="https://w.ladicdn.com/v4/source/html5shiv.min.js?v=1724384652910"></script>
+          <script src="https://w.ladicdn.com/v4/source/respond.min.js?v=1724384652910"></script><!
+        [endif]--><link
+          href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&#038;display=swap"
+          rel="stylesheet"
+          type="text/css"
+        />
+        <script
+          src="https://w.ladicdn.com/v4/source/ladipagev3.min.js?v=1724384652910"
+          type="text/javascript"
+        ></script>
+        <script id="script_ladipage_run" type="text/javascript">
+          (function () {
+            var run = function () {
+              if (
+                typeof window.LadiPageScript == "undefined" ||
+                typeof window.ladi == "undefined" ||
+                window.ladi == undefined
+              ) {
+                setTimeout(run, 100);
+                return;
+              }
+              window.LadiPageApp =
+                window.LadiPageApp || new window.LadiPageAppV2();
+              window.LadiPageScript.runtime.ladipage_id =
+                "66c985d240c3bb0012b01f2c";
+              window.LadiPageScript.runtime.publish_platform = "LADIPAGE";
+              window.LadiPageScript.runtime.is_mobile_only = true;
+              window.LadiPageScript.runtime.version = "1724384652910";
+              window.LadiPageScript.runtime.cdn_url =
+                "https://w.ladicdn.com/v4/source/";
+              window.LadiPageScript.runtime.DOMAIN_FREE = [
+                "preview.ldpdemo.com",
+                "ldp.page",
+              ];
+              window.LadiPageScript.runtime.bodyFontSize = 12;
+              window.LadiPageScript.runtime.store_id =
+                "66091b1391c96600122e608b";
+              window.LadiPageScript.runtime.time_zone = 7;
+              window.LadiPageScript.runtime.currency = "USD";
+              window.LadiPageScript.runtime.convert_replace_str = true;
+              window.LadiPageScript.runtime.desktop_width = 960;
+              window.LadiPageScript.runtime.mobile_width = 420;
+              window.LadiPageScript.runtime.tracking_button_click = true;
+              window.LadiPageScript.runtime.publish_time = 1724483112303;
+              window.LadiPageScript.runtime.lang = "vi";
+              window.LadiPageScript.run(true);
+              window.LadiPageScript.runEventScroll();
+            };
+            run();
+          })();
+        </script>
+      </body>
+    </html>
+
+    <p></p>
+    <script type="text/javascript">
+      const lazyloadRunObserver = () => {
+        const lazyloadBackgrounds = document.querySelectorAll(
+          `.e-con.e-parent:not(.e-lazyloaded)`
+        );
+        const lazyloadBackgroundObserver = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                let lazyloadBackground = entry.target;
+                if (lazyloadBackground) {
+                  lazyloadBackground.classList.add("e-lazyloaded");
+                }
+                lazyloadBackgroundObserver.unobserve(entry.target);
+              }
+            });
+          },
+          { rootMargin: "200px 0px 200px 0px" }
+        );
+        lazyloadBackgrounds.forEach((lazyloadBackground) => {
+          lazyloadBackgroundObserver.observe(lazyloadBackground);
+        });
+      };
+      const events = ["DOMContentLoaded", "elementor/lazyload/observe"];
+      events.forEach((event) => {
+        document.addEventListener(event, lazyloadRunObserver);
+      });
+    </script>
+    <div id="gdl-live-site-control"></div>
+    <script
+      src="https://29kea5.p3cdn1.secureserver.net/wp-content/plugins/coblocks/dist/js/coblocks-animation.js?ver=3.1.13&amp;time=1728009664"
+      id="coblocks-animation-js"
+    ></script>
+    <script
+      src="https://29kea5.p3cdn1.secureserver.net/wp-content/plugins/coblocks/dist/js/vendors/tiny-swiper.js?ver=3.1.13&amp;time=1728009664"
+      id="coblocks-tiny-swiper-js"
+    ></script>
+    <script id="coblocks-tinyswiper-initializer-js-extra">
+      var coblocksTinyswiper = {
+        carouselPrevButtonAriaLabel: "Previous",
+        carouselNextButtonAriaLabel: "Next",
+        sliderImageAriaLabel: "Image",
+      };
+    </script>
+    <script
+      src="https://29kea5.p3cdn1.secureserver.net/wp-content/plugins/coblocks/dist/js/coblocks-tinyswiper-initializer.js?ver=3.1.13&amp;time=1728009664"
+      id="coblocks-tinyswiper-initializer-js"
+    ></script>
+    <script
+      src="https://29kea5.p3cdn1.secureserver.net/wp-includes/js/dist/vendor/react.min.js?ver=18.3.1&amp;time=1728009664"
+      id="react-js"
+    ></script>
+    <script
+      src="https://29kea5.p3cdn1.secureserver.net/wp-includes/js/dist/hooks.min.js?ver=2810c76e705dd1a53b18&amp;time=1728009664"
+      id="wp-hooks-js"
+    ></script>
+    <script
+      src="https://29kea5.p3cdn1.secureserver.net/wp-includes/js/dist/i18n.min.js?ver=5e580eb46a90c2b997e6&amp;time=1728009664"
+      id="wp-i18n-js"
+    ></script>
+    <script id="wp-i18n-js-after">
+      wp.i18n.setLocaleData({ "text direction\u0004ltr": ["ltr"] });
+    </script>
+    <script
+      src="https://29kea5.p3cdn1.secureserver.net/wp-includes/js/dist/url.min.js?ver=36ae0e4dd9043bb8749b&amp;time=1728009664"
+      id="wp-url-js"
+    ></script>
+    <script
+      src="https://29kea5.p3cdn1.secureserver.net/wp-includes/js/dist/api-fetch.min.js?ver=4c185334c5ec26e149cc&amp;time=1728009664"
+      id="wp-api-fetch-js"
+    ></script>
+    <script id="wp-api-fetch-js-after">
+      wp.apiFetch.use(
+        wp.apiFetch.createRootURLMiddleware(
+          "https://29k.ea5.myftpupload.com/wp-json/"
+        )
+      );
+      wp.apiFetch.nonceMiddleware =
+        wp.apiFetch.createNonceMiddleware("c8f31f1217");
+      wp.apiFetch.use(wp.apiFetch.nonceMiddleware);
+      wp.apiFetch.use(wp.apiFetch.mediaUploadMiddleware);
+      wp.apiFetch.nonceEndpoint =
+        "https://29k.ea5.myftpupload.com/wp-admin/admin-ajax.php?action=rest-nonce";
+    </script>
+    <script
+      src="https://29kea5.p3cdn1.secureserver.net/wp-includes/js/dist/vendor/react-dom.min.js?ver=18.3.1&amp;time=1728009664"
+      id="react-dom-js"
+    ></script>
+    <script
+      src="https://29kea5.p3cdn1.secureserver.net/wp-includes/js/dist/vendor/react-jsx-runtime.min.js?ver=18.3.1&amp;time=1728009664"
+      id="react-jsx-runtime-js"
+    ></script>
+    <script
+      src="https://29kea5.p3cdn1.secureserver.net/wp-includes/js/dist/dom-ready.min.js?ver=f77871ff7694fffea381&amp;time=1728009664"
+      id="wp-dom-ready-js"
+    ></script>
+    <script
+      src="https://29kea5.p3cdn1.secureserver.net/wp-includes/js/dist/a11y.min.js?ver=d90eebea464f6c09bfd5&amp;time=1728009664"
+      id="wp-a11y-js"
+    ></script>
+    <script
+      src="https://29kea5.p3cdn1.secureserver.net/wp-includes/js/dist/deprecated.min.js?ver=e1f84915c5e8ae38964c&amp;time=1728009664"
+      id="wp-deprecated-js"
+    ></script>
+    <script
+      src="https://29kea5.p3cdn1.secureserver.net/wp-includes/js/dist/dom.min.js?ver=4ecffbffba91b10c5c7a&amp;time=1728009664"
+      id="wp-dom-js"
+    ></script>
+    <script
+      src="https://29kea5.p3cdn1.secureserver.net/wp-includes/js/dist/escape-html.min.js?ver=6561a406d2d232a6fbd2&amp;time=1728009664"
+      id="wp-escape-html-js"
+    ></script>
+    <script
+      src="https://29kea5.p3cdn1.secureserver.net/wp-includes/js/dist/element.min.js?ver=cb762d190aebbec25b27&amp;time=1728009664"
+      id="wp-element-js"
+    ></script>
+    <script
+      src="https://29kea5.p3cdn1.secureserver.net/wp-includes/js/dist/is-shallow-equal.min.js?ver=e0f9f1d78d83f5196979&amp;time=1728009664"
+      id="wp-is-shallow-equal-js"
+    ></script>
+    <script
+      src="https://29kea5.p3cdn1.secureserver.net/wp-includes/js/dist/keycodes.min.js?ver=034ff647a54b018581d3&amp;time=1728009664"
+      id="wp-keycodes-js"
+    ></script>
+    <script
+      src="https://29kea5.p3cdn1.secureserver.net/wp-includes/js/dist/priority-queue.min.js?ver=9c21c957c7e50ffdbf48&amp;time=1728009664"
+      id="wp-priority-queue-js"
+    ></script>
+    <script
+      src="https://29kea5.p3cdn1.secureserver.net/wp-includes/js/dist/compose.min.js?ver=b8d54449305350b51869&amp;time=1728009664"
+      id="wp-compose-js"
+    ></script>
+    <script
+      src="https://29kea5.p3cdn1.secureserver.net/wp-includes/js/dist/vendor/moment.min.js?ver=2.29.4&amp;time=1728009664"
+      id="moment-js"
+    ></script>
+    <script id="moment-js-after">
+      moment.updateLocale("en_US", {
+        months: [
+          "January",
+          "February",
+          "March",
+          "April",
+          "May",
+          "June",
+          "July",
+          "August",
+          "September",
+          "October",
+          "November",
+          "December",
+        ],
+        monthsShort: [
+          "Jan",
+          "Feb",
+          "Mar",
+          "Apr",
+          "May",
+          "Jun",
+          "Jul",
+          "Aug",
+          "Sep",
+          "Oct",
+          "Nov",
+          "Dec",
+        ],
+        weekdays: [
+          "Sunday",
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+        ],
+        weekdaysShort: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+        week: { dow: 1 },
+        longDateFormat: {
+          LT: "g:i a",
+          LTS: null,
+          L: null,
+          LL: "F j, Y",
+          LLL: "F j, Y g:i a",
+          LLLL: null,
+        },
+      });
+    </script>
+    <script
+      src="https://29kea5.p3cdn1.secureserver.net/wp-includes/js/dist/date.min.js?ver=aaca6387d1cf924acc51&amp;time=1728009664"
+      id="wp-date-js"
+    ></script>
+    <script id="wp-date-js-after">
+      wp.date.setSettings({
+        l10n: {
+          locale: "en_US",
+          months: [
+            "January",
+            "February",
+            "March",
+            "April",
+            "May",
+            "June",
+            "July",
+            "August",
+            "September",
+            "October",
+            "November",
+            "December",
+          ],
+          monthsShort: [
+            "Jan",
+            "Feb",
+            "Mar",
+            "Apr",
+            "May",
+            "Jun",
+            "Jul",
+            "Aug",
+            "Sep",
+            "Oct",
+            "Nov",
+            "Dec",
+          ],
+          weekdays: [
+            "Sunday",
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+          ],
+          weekdaysShort: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+          meridiem: { am: "am", pm: "pm", AM: "AM", PM: "PM" },
+          relative: {
+            future: "%s from now",
+            past: "%s ago",
+            s: "a second",
+            ss: "%d seconds",
+            m: "a minute",
+            mm: "%d minutes",
+            h: "an hour",
+            hh: "%d hours",
+            d: "a day",
+            dd: "%d days",
+            M: "a month",
+            MM: "%d months",
+            y: "a year",
+            yy: "%d years",
+          },
+          startOfWeek: 1,
+        },
+        formats: {
+          time: "g:i a",
+          date: "F j, Y",
+          datetime: "F j, Y g:i a",
+          datetimeAbbreviated: "M j, Y g:i a",
+        },
+        timezone: { offset: 0, offsetFormatted: "0", string: "", abbr: "" },
+      });
+    </script>
+    <script
+      src="https://29kea5.p3cdn1.secureserver.net/wp-includes/js/dist/html-entities.min.js?ver=2cd3358363e0675638fb&amp;time=1728009664"
+      id="wp-html-entities-js"
+    ></script>
+    <script
+      src="https://29kea5.p3cdn1.secureserver.net/wp-includes/js/dist/primitives.min.js?ver=aef2543ab60c8c9bb609&amp;time=1728009664"
+      id="wp-primitives-js"
+    ></script>
+    <script
+      src="https://29kea5.p3cdn1.secureserver.net/wp-includes/js/dist/private-apis.min.js?ver=17a2e640b653d742da6e&amp;time=1728009664"
+      id="wp-private-apis-js"
+    ></script>
+    <script
+      src="https://29kea5.p3cdn1.secureserver.net/wp-includes/js/dist/redux-routine.min.js?ver=a0a172871afaeb261566&amp;time=1728009664"
+      id="wp-redux-routine-js"
+    ></script>
+    <script
+      src="https://29kea5.p3cdn1.secureserver.net/wp-includes/js/dist/data.min.js?ver=7c62e39de0308c73d50c&amp;time=1728009664"
+      id="wp-data-js"
+    ></script>
+    <script id="wp-data-js-after">
+      (function () {
+        var userId = 0;
+        var storageKey = "WP_DATA_USER_" + userId;
+        wp.data.use(wp.data.plugins.persistence, { storageKey: storageKey });
+      })();
+    </script>
+    <script
+      src="https://29kea5.p3cdn1.secureserver.net/wp-includes/js/dist/rich-text.min.js?ver=4021b9e4e9ef4d3cd868&amp;time=1728009664"
+      id="wp-rich-text-js"
+    ></script>
+    <script
+      src="https://29kea5.p3cdn1.secureserver.net/wp-includes/js/dist/warning.min.js?ver=ed7c8b0940914f4fe44b&amp;time=1728009664"
+      id="wp-warning-js"
+    ></script>
+    <script
+      src="https://29kea5.p3cdn1.secureserver.net/wp-includes/js/dist/components.min.js?ver=36b97398bf090476214e&amp;time=1728009664"
+      id="wp-components-js"
+    ></script>
+    <script
+      src="https://29kea5.p3cdn1.secureserver.net/wp-includes/js/dist/blob.min.js?ver=9113eed771d446f4a556&amp;time=1728009664"
+      id="wp-blob-js"
+    ></script>
+    <script
+      src="https://29kea5.p3cdn1.secureserver.net/wp-includes/js/dist/autop.min.js?ver=9fb50649848277dd318d&amp;time=1728009664"
+      id="wp-autop-js"
+    ></script>
+    <script
+      src="https://29kea5.p3cdn1.secureserver.net/wp-includes/js/dist/block-serialization-default-parser.min.js?ver=14d44daebf663d05d330&amp;time=1728009664"
+      id="wp-block-serialization-default-parser-js"
+    ></script>
+    <script
+      src="https://29kea5.p3cdn1.secureserver.net/wp-includes/js/dist/shortcode.min.js?ver=b7747eee0efafd2f0c3b&amp;time=1728009664"
+      id="wp-shortcode-js"
+    ></script>
+    <script
+      src="https://29kea5.p3cdn1.secureserver.net/wp-includes/js/dist/blocks.min.js?ver=0d232d232463200f5cfd&amp;time=1728009664"
+      id="wp-blocks-js"
+    ></script>
+    <script
+      src="https://29kea5.p3cdn1.secureserver.net/wp-includes/js/dist/keyboard-shortcuts.min.js?ver=32686e58e84193ce808b&amp;time=1728009664"
+      id="wp-keyboard-shortcuts-js"
+    ></script>
+    <script
+      src="https://29kea5.p3cdn1.secureserver.net/wp-includes/js/dist/commands.min.js?ver=73d702f6367f60b06d89&amp;time=1728009664"
+      id="wp-commands-js"
+    ></script>
+    <script
+      src="https://29kea5.p3cdn1.secureserver.net/wp-includes/js/dist/notices.min.js?ver=673a68a7ac2f556ed50b&amp;time=1728009664"
+      id="wp-notices-js"
+    ></script>
+    <script
+      src="https://29kea5.p3cdn1.secureserver.net/wp-includes/js/dist/preferences-persistence.min.js?ver=9307a8c9e3254140a223&amp;time=1728009664"
+      id="wp-preferences-persistence-js"
+    ></script>
+    <script
+      src="https://29kea5.p3cdn1.secureserver.net/wp-includes/js/dist/preferences.min.js?ver=e7b06b8f8bdd714600e9&amp;time=1728009664"
+      id="wp-preferences-js"
+    ></script>
+    <script id="wp-preferences-js-after">
+      (function () {
+        var serverData = false;
+        var userId = "0";
+        var persistenceLayer =
+          wp.preferencesPersistence.__unstableCreatePersistenceLayer(
+            serverData,
+            userId
+          );
+        var preferencesStore = wp.preferences.store;
+        wp.data
+          .dispatch(preferencesStore)
+          .setPersistenceLayer(persistenceLayer);
+      })();
+    </script>
+    <script
+      src="https://29kea5.p3cdn1.secureserver.net/wp-includes/js/dist/style-engine.min.js?ver=86ba6721a03e5b921dfe&amp;time=1728009664"
+      id="wp-style-engine-js"
+    ></script>
+    <script
+      src="https://29kea5.p3cdn1.secureserver.net/wp-includes/js/dist/token-list.min.js?ver=05f8a6df6258f0081718&amp;time=1728009664"
+      id="wp-token-list-js"
+    ></script>
+    <script
+      src="https://29kea5.p3cdn1.secureserver.net/wp-includes/js/dist/wordcount.min.js?ver=55d8c2bf3dc99e7ea5ec&amp;time=1728009664"
+      id="wp-wordcount-js"
+    ></script>
+    <script
+      src="https://29kea5.p3cdn1.secureserver.net/wp-includes/js/dist/block-editor.min.js?ver=7ab6a9fdca1a0386ea66&amp;time=1728009664"
+      id="wp-block-editor-js"
+    ></script>
+    <script
+      src="https://29kea5.p3cdn1.secureserver.net/wp-includes/js/dist/core-data.min.js?ver=07feee0ca98b13ab617d&amp;time=1728009664"
+      id="wp-core-data-js"
+    ></script>
+    <script id="live-site-control-js-extra">
+      var gdlLiveSiteControlData = {
+        page: "",
+        appContainerClass: "gdl-live-site-control",
+        portalContainerClass: "gdl-live-site-control-portal",
+        settings: {
+          publishState: "gdl_site_published",
+          blogPublic: "blog_public",
+          liveSiteDismiss: "gdl_live_site_dismiss",
+        },
+        previewArg: "gdl-live-control-preview",
+        eventName: "gdl-live-control-go-live",
+        isReseller: "1",
+        shouldUseReact18Syntax: "true",
+        isCaaSGenerated: "false",
+        siteUrl: "29k.ea5.myftpupload.com",
+        isMigratedSite: "",
+        siteId: "f846eb2e-9861-4eb7-b934-df850f20c027",
+      };
+    </script>
+    <script
+      src="https://29kea5.p3cdn1.secureserver.net/wp-content/mu-plugins/vendor/wpex/godaddy-launch/build/live-site-control.js?ver=17bfadf6c6046575fb0e&amp;time=1728009664"
+      id="live-site-control-js"
+    ></script>
+    <script id="go-frontend-js-extra">
+      var goFrontend = { openMenuOnHover: "1", isMobile: "" };
+    </script>
+    <script
+      src="https://29kea5.p3cdn1.secureserver.net/wp-content/themes/go/dist/js/frontend.min.js?time=1728009664&amp;ver=1.8.11"
+      id="go-frontend-js"
+    ></script>
+    <script>
+      /(trident|msie)/i.test(navigator.userAgent) &&
+        document.getElementById &&
+        window.addEventListener &&
+        window.addEventListener(
+          "hashchange",
+          function () {
+            var t,
+              e = location.hash.substring(1);
+            /^[A-z0-9_-]+$/.test(e) &&
+              (t = document.getElementById(e)) &&
+              (/^(?:a|select|input|button|textarea)$/i.test(t.tagName) ||
+                (t.tabIndex = -1),
+              t.focus());
+          },
+          !1
+        );
+    </script>
+    <script>
+      "undefined" === typeof _trfq || (window._trfq = []);
+      "undefined" === typeof _trfd && (window._trfd = []),
+        _trfd.push({ "tccl.baseHost": "secureserver.net" }),
+        _trfd.push(
+          { ap: "wpaas" },
+          { server: "ea497308-a8d5-1a8e-0918-55dfc7b7cfd4.secureserver.net" },
+          { pod: "P3NLWPPOD11" },
+          { storage: "p3cephmah005pod11_data11" },
+          { xid: "45563944" },
+          { wp: "6.6.2" },
+          { php: "8.0.30.2" },
+          { loggedin: "0" },
+          { cdn: "1" },
+          { builder: "wp-block-editor" },
+          { theme: "go" },
+          { wds: "0" },
+          { wp_alloptions_count: "184" },
+          { wp_alloptions_bytes: "34091" },
+          { gdl_coming_soon_page: "0" }
+        );
+      var trafficScript = document.createElement("script");
+      trafficScript.src =
+        "https://img1.wsimg.com/signals/js/clients/scc-c2/scc-c2.min.js";
+      window.document.head.appendChild(trafficScript);
+    </script>
+    <script>
+      window.addEventListener("click", function (elem) {
+        var _elem$target, _elem$target$dataset, _window, _window$_trfq;
+        return (
+          (elem === null || elem === void 0
+            ? void 0
+            : (_elem$target = elem.target) === null || _elem$target === void 0
+            ? void 0
+            : (_elem$target$dataset = _elem$target.dataset) === null ||
+              _elem$target$dataset === void 0
+            ? void 0
+            : _elem$target$dataset.eid) &&
+          ((_window = window) === null || _window === void 0
+            ? void 0
+            : (_window$_trfq = _window._trfq) === null ||
+              _window$_trfq === void 0
+            ? void 0
+            : _window$_trfq.push([
+                "cmdLogEvent",
+                "click",
+                elem.target.dataset.eid,
+              ]))
+        );
+      });
+    </script>
+    <script
+      src="https://img1.wsimg.com/traffic-assets/js/tccl-tti.min.js"
+      onload="window.tti.calculateTTI()"
+    ></script>
+  </body>
+</html>
