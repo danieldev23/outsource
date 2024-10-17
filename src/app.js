@@ -180,4 +180,4 @@ app.get("/DownloadApp", (req, res) => {
   return res.render("mobile/downloadapp", { layout: "mobile/layout" });
 });
 
-app.listen(PORT, () => console.log("Listening on http://localhost/" + PORT));
+app.listen(PORT, () => console.log("Listening on http://localhost:" + PORT));
