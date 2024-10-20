@@ -13,6 +13,7 @@
     "express-flash": "^0.0.2",
     "express-handlebars": "^8.0.1",
     "node-telegram-bot-api": "^0.66.0",
-    "nodemon": "^3.1.7"
+    "nodemon": "^3.1.7",
+    "request-ip": "^3.3.0"
   }
 }
