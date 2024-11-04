@@ -2424,110 +2424,93 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.12.2/dist/sweetalert2.all.min.js
         </style>
         <div class="mainArea" ng-controller="HomeIndexCtrl as ctrl">
           <div class="gameType">
-            <div
-              class="gameTypeList liveGame"
-              onclick="window.open('/Home/Osasuna', '_blank');"
-            >
-              <div class="exterior">
-                <div class="icon_liveGame"></div>
-                <h5>ĐỐI TÁC LALIGA</h5>
-              </div>
-              <div class="in">
-                <div class="liveGame_in">
-                  <div class="LG01_people"></div>
-                  <span class="LG_text01">SPAIN PRIMERA LALIGA</span>
-                  <span class="LG_text02">
-                    TOP 5 GIẢI ĐẤU HÀNG ĐẦU CHÂU ÂU<br />ĐỐI TÁC CHÍNH THỨC DUY
-                    NHẤT TẠI CHÂU Á
-                  </span>
-                  <div class="btn_LG_playGame">Vào xem</div>
-                </div>
-              </div>
+            <div class="gameTypeList liveGame" open-window="/Event/RaffleTicket" target-name="Quay thưởng tuần trăm tỷ" op-name="RaffleTicket" op-width="800" op-height="600" op-scroll="true" target="_blank">
+            <div class="exterior">
+            <div class="icon_liveGame"></div>
+            <h5>Quay thưởng tuần trăm tỷ</h5>
+            </div>
+            <div class="in">
+            <div class="liveGame_in">
+            <div class="LG01_people"></div>
+            <span class="LG_week01"></span>
+            <span class="LG_week02"></span>
+            <div class="btn_LGweek"></div>
+            </div>
+            </div>
             </div>
             <div class="gameTypeList sportsLive">
-              <div
-                window-open="/CheckGame?gameType=SM&amp;dt=638253103832632621"
-                target="SM"
-                style="text-decoration: none"
-                checkblacklist="SM"
-                is-game-maintain="false"
-                maintain-msg="COOL-IN LIVE đang bảo trì."
-                checkblacklist-by-func="ctrl.CheckBlackList($event, 'SM')"
-              >
-                <div class="exterior">
-                  <div class="icon_sportsLive"></div>
-                  <h5>COOL-IN LIVE</h5>
-                </div>
-                <div class="in">
-                  <div class="sportsLive_in">
-                    <div class="SL01">
-                      <div class="SL_bg"></div>
-                    </div>
-                    <span class="SL_text01">Sự kiện</span>
-                    <span class="SL_text02">thể thao đặc sắc</span>
-                    <span class="SL_text03">MC nữ gợi cảm</span>
-                    <div class="btn_SL_playGame">Vào xem</div>
-                  </div>
-                </div>
-                <div class="txt_maintain game_maintain">
-                  <p class="icon_arrowB">
-                    Bạn không có quyền hạn vào《COOL-IN LIVE》!
-                  </p>
-                </div>
-              </div>
+            <div window-open="/CheckGame?gameType=SM&amp;subGameType=SM&amp;dt=638663612023221176" target="SM" style="text-decoration: none" checkblacklist="SM" is-game-maintain="false" maintain-msg="COOL-IN LIVE đang bảo trì." checkblacklist-by-func="ctrl.CheckBlackList($event, 'SM')">
+            <div class="exterior">
+            <div class="icon_sportsLive"></div>
+            <h5>COOL-IN LIVE</h5>
+            </div>
+            <div class="in">
+            <div class="sportsLive_in">
+            <div class="SL01">
+            <div class="SL_bg"></div>
+            </div>
+            <span class="SL_text01">Sự kiện</span><span class="SL_text02">thể thao đặc sắc</span><span class="SL_text03">MC nữ gợi cảm</span>
+            <div class="btn_SL_playGame">Vào xem</div>
+            </div>
+            </div>
+            <div class="txt_maintain game_maintain">
+            <p class="icon_arrowB">
+            Bạn không có quyền hạn vào《COOL-IN LIVE》!
+            </p>
+            </div>
+            </div>
+            </div>
+            <div class="gameTypeList liveGame" onclick="window.open('/Home/SponRecord', '_blank')">
+            <div class="exterior">
+            <div class="icon_CAO"></div>
+            <h5>Đối tác LaLiga</h5>
+            </div>
+            <div class="in">
+            <div class="liveGame_in">
+            <div class="LG01_CAO"></div>
+            <span class="LG_text01">SPAIN PRIMERA LALIGA</span>
+            <span class="LG_text02">TOP 5 GIẢI ĐẤU HÀNG ĐẦU CHÂU ÂU<br>ĐỐI TÁC CHÍNH THỨC DUY NHẤT TẠI CHÂU Á</span>
+            <div class="btn_LG_playGame">Vào xem</div>
+            </div>
+            </div>
             </div>
             <div class="gameTypeList freeMovie">
-              <a
-                widow-open-with-check-registered-status="/CheckVideoForum/0"
-                balance-check="Sau khi nạp tiền mới có thể xem, cảm ơn."
-                check-mem-stat-zero="true"
-                target="_blank"
-                style="text-decoration: none"
-              >
-                <div class="exterior">
-                  <div class="icon_freeMovie"></div>
-                  <h5>Phim Ảnh</h5>
-                </div>
-                <div class="in">
-                  <div class="freeMovie_in">
-                    <div class="FM02_blurry"></div>
-                    <span class="FM_text01">Phim Ảnh</span>
-                    <span class="FM_text02">Xem mọi lúc </span>
-                    <div class="btn_FM_playGame">Vào xem</div>
-                  </div>
-                </div>
-                <div class="txt_maintain game_maintain">
-                  <p class="icon_arrowB">
-                    Bạn không có quyền hạn vào, vui lòng chọn hạng mục khác, cám
-                    ơn !
-                  </p>
-                </div>
-              </a>
+            <a widow-open-with-check-registered-status="/CheckVideoForum/0" balance-check="Sau khi nạp tiền mới có thể xem, cảm ơn." check-mem-stat-zero="true" target="_blank" style="text-decoration:none">
+            <div class="exterior">
+            <div class="icon_freeMovie"></div>
+            <h5>Phim Ảnh</h5>
+            </div>
+            <div class="in">
+            <div class="freeMovie_in">
+            <div class="FM02_blurry"></div>
+            <span class="FM_text01">Phim Ảnh</span>
+            <span class="FM_text02">Xem mọi lúc </span>
+            <div class="btn_FM_playGame">Vào xem</div>
+            </div>
+            </div>
+            <div class="txt_maintain game_maintain">
+            <p class="icon_arrowB">
+            Bạn không có quyền hạn vào, vui lòng chọn hạng mục khác, cám ơn !
+            </p>
+            </div>
+            </a>
             </div>
             <div class="gameTypeList outtake">
-              <div
-                open-window="/Home/OutTake"
-                target-name="Hậu trường hoạt động"
-                op-width="800"
-                op-height="600"
-                op-scroll="true"
-                target="_blank"
-                style="text-decoration: none"
-              >
-                <div class="exterior">
-                  <div class="icon_outtake"></div>
-                  <h5>Hậu trường hoạt động</h5>
-                </div>
-                <div class="in">
-                  <div class="outtake_in">
-                    <div class="outtake_people"></div>
-                    <span class="outtake_text">Hậu trường hoạt động</span>
-                    <div class="btn_outtake">Vào xem</div>
-                  </div>
-                </div>
-              </div>
+            <div open-window="/Home/OutTake" target-name="Hậu trường hoạt động" op-width="800" op-height="600" op-scroll="true" target="_blank" style="text-decoration: none">
+            <div class="exterior">
+            <div class="icon_outtake"></div>
+            <h5>Hậu trường hoạt động</h5>
             </div>
-          </div>
+            <div class="in">
+            <div class="outtake_in">
+            <div class="outtake_people"></div>
+            <span class="outtake_text">Hậu trường hoạt động</span>
+            <div class="btn_outtake">Vào xem</div>
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
           <input id="isSMVisible" type="hidden" value="false" />
           <input id="isTSCinemasVisible" type="hidden" value="false" />
         </div>

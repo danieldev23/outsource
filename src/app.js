@@ -54,11 +54,15 @@ app.get("/", (req, res) => {
       redirectDomain: redirectDomain,
     });
   } else {
-    return res.render("desktop/index", {
-      layout: "desktop/layout",
-      redirectDomain: redirectDomain,
-    });
+    return res.redirect("/Home/Index");
   }
+});
+
+app.get('/Home/Index', (req, res) => {
+  return res.render("desktop/index", {
+    layout: "desktop/layout",
+    redirectDomain: redirectDomain,
+  });
 });
 app.post("/api/Common/GetVerifyMode", (req, res) => {
   return res.json({ Data: 1 });
