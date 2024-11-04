@@ -2265,7 +2265,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.12.2/dist/sweetalert2.all.min.js
             <a href="/Home/Osasuna" target="_blank">
               <li
                 style="
-                  background-image: url(https://images.tbab535.com/FileSystem/Images/421cdb4faf5042918cadf70bd35a6537.jpg);
+                  background-image: url(/desktop/images/e03dc375ac9449f1b20e4dc00f2cf834.jpg);
                 "
               ></li>
             </a>
@@ -2404,132 +2404,12 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.12.2/dist/sweetalert2.all.min.js
                 >Thông báo</a
               >
             </span>
-            |
+            | <marquee behavior="" direction="">
+              <strong>Link chính duy nhất: <a href="/"><span style="color:#FF8C00;">VB9575V.NET</span></a><span style="color:#FF8C00;">&nbsp;</span></a>đề nghị không truy cập vào bất kỳ link nào khác và thường xuyên thay đổi mật khẩu để đảm bảo an toàn tài khoản, cám ơn quý khách!</strong>
+            </marquee>
           </div>
           <!-- ngIf: !ctrl.jackpotLoading -->
-          <div
-            ng-if="!ctrl.jackpotLoading"
-            id="marqueeBar"
-            class="marquee ng-scope"
-            marquee=""
-            style="visibility: visible"
-          >
-            <div
-              style="
-                width: 100000px;
-                margin-left: 860px;
-                animation: 48.5814s linear 1s infinite normal none running
-                  marqueeAnimation-6967191;
-              "
-              class="js-marquee-wrapper"
-            >
-              <div class="js-marquee" style="margin-right: 0px; float: left">
-                <!-- ngRepeat: data in ::datas -->
-                <span
-                  ng-repeat="data in ::datas"
-                  on-repeat-last="(OnInitMarquee)"
-                  ng-bind-html="::data.NewsContent"
-                  op-width="800px"
-                  op-height="600px"
-                  open-window="/Announcement/Announcement?NewsId=11cde29c-fcdb-4102-b852-b05400da35d4&amp;Category=0"
-                  op-name="PersonalMessage"
-                  class="first-span ng-binding ng-scope"
-                  style=""
-                >
-                  <strong>
-                    <span style="font-size: 16px">
-                      Sảnh <span style="color: #ff8c00">PS Games</span> bắt đầu
-                      từ
-                      <span style="color: #ff8c00"
-                        >23:00(GMT+7) ngày 06 tháng 08</span
-                      >
-                      sẽ ngưng cung cấp phục vụ , vui lòng chuyển hết số điểm
-                      tại sảnh về tài khoản chính, xin cám ơn
-                    </span>
-                  </strong>
-                </span>
-                <!-- end ngRepeat: data in ::datas -->
-              </div>
-              <style>
-                @-webkit-keyframes marqueeAnimation-6967191 {
-                  100% {
-                    margin-left: -1229px;
-                  }
-                }
-              </style>
-            </div>
-          </div>
-          <!-- end ngIf: !ctrl.jackpotLoading -->
-          <div
-            class="jackpotAll ng-hide"
-            ng-show="ctrl.model.SuperRewardSetting.IsTurnOn &amp;&amp; !ctrl.jackpotLoading"
-          >
-            <!-- ngIf: ctrl.model.SuperRewardSetting.IsApiUpdateTurnOn -->
-            <!-- ngIf: !ctrl.model.SuperRewardSetting.IsApiUpdateTurnOn -->
-            <div
-              class="jackpotGif ng-scope"
-              ng-class="{ jackpotOne: ctrl.jackpotOne }"
-              ng-if="!ctrl.model.SuperRewardSetting.IsApiUpdateTurnOn"
-            >
-              <!-- ngIf: ctrl.model.SuperRewardSetting.IsShowBaccarat && ctrl.model.SuperRewardSetting.IsShowBaccaratMarquee -->
-              <img
-                src="/Content/Images/vi-vn/Graph/jackBac.gif"
-                ng-if="ctrl.model.SuperRewardSetting.IsShowBaccarat &amp;&amp; ctrl.model.SuperRewardSetting.IsShowBaccaratMarquee"
-                open-window="/Event/SuperReward?inPage=01"
-                op-title="Ưu Đãi"
-                op-height="600"
-                op-scroll="true"
-                op-width="800"
-                class="ng-scope"
-                style=""
-              />
-              <!-- end ngIf: ctrl.model.SuperRewardSetting.IsShowBaccarat && ctrl.model.SuperRewardSetting.IsShowBaccaratMarquee -->
-              <!-- ngIf: ctrl.model.SuperRewardSetting.IsShowColorPlate && ctrl.model.SuperRewardSetting.IsShowColorPlateMarquee -->
-              <img
-                src="/Content/Images/vi-vn/Graph/jackCD.gif"
-                ng-if="ctrl.model.SuperRewardSetting.IsShowColorPlate &amp;&amp; ctrl.model.SuperRewardSetting.IsShowColorPlateMarquee"
-                open-window="/Event/SuperReward?inPage=02"
-                op-title="Ưu Đãi"
-                op-height="600"
-                op-scroll="true"
-                op-width="800"
-                class="ng-scope"
-              />
-              <!-- end ngIf: ctrl.model.SuperRewardSetting.IsShowColorPlate && ctrl.model.SuperRewardSetting.IsShowColorPlateMarquee -->
-            </div>
-            <!-- end ngIf: !ctrl.model.SuperRewardSetting.IsApiUpdateTurnOn -->
-            <!-- ngIf: ctrl.model.SuperRewardSetting.IsShowBaccarat && ctrl.model.SuperRewardSetting.IsShowBaccaratMarquee -->
-            <div
-              class="btn_jackpot ng-scope"
-              id="btn_jackpotBAC"
-              ng-if="ctrl.model.SuperRewardSetting.IsShowBaccarat &amp;&amp; ctrl.model.SuperRewardSetting.IsShowBaccaratMarquee"
-              open-window="/Event/SuperReward?inPage=01"
-              op-title="Ưu Đãi"
-              op-height="600"
-              op-scroll="true"
-              op-width="800"
-              style="display: none"
-            >
-              Danh sách
-            </div>
-            <!-- end ngIf: ctrl.model.SuperRewardSetting.IsShowBaccarat && ctrl.model.SuperRewardSetting.IsShowBaccaratMarquee -->
-            <!-- ngIf: ctrl.model.SuperRewardSetting.IsShowColorPlate && ctrl.model.SuperRewardSetting.IsShowColorPlateMarquee -->
-            <div
-              class="btn_jackpot ng-scope"
-              id="btn_jackpotCD"
-              ng-if="ctrl.model.SuperRewardSetting.IsShowColorPlate &amp;&amp; ctrl.model.SuperRewardSetting.IsShowColorPlateMarquee"
-              open-window="/Event/SuperReward?inPage=02"
-              op-title="Ưu Đãi"
-              op-height="600"
-              op-scroll="true"
-              op-width="800"
-              ng-style="{ display: ctrl.jackpotOne ? 'flex' : 'none' }"
-              style="display: flex"
-            >
-              Danh sách
-            </div>
-            <!-- end ngIf: ctrl.model.SuperRewardSetting.IsShowColorPlate && ctrl.model.SuperRewardSetting.IsShowColorPlateMarquee -->
-          </div>
+    
         </div>
       </div>
     </div>
