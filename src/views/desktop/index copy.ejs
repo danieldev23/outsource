@@ -2384,9 +2384,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.12.2/dist/sweetalert2.all.min.js
       </div>
       <div
         class="runMsgArea ng-scope w1000"
-        ng-class="{
-          w1000: !ctrl.model.SuperRewardSetting.IsTurnOn || ctrl.jackpotLoading
-        }"
+      
         ng-controller="RunMsgAreaCtrl as ctrl"
       >
         <div class="runMsg">
@@ -2409,7 +2407,45 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.12.2/dist/sweetalert2.all.min.js
             </marquee>
           </div>
           <!-- ngIf: !ctrl.jackpotLoading -->
-    
+          <div class="jackpotAll" style="">
+            <div class="jackpotBox" style="">
+                <div class="jackpotBAC">
+                    <img src="/desktop/images/Images/vi-vn/Graph/jackBac.png">
+                    <div id="jackpotNum01" class="jackpotNum">
+                        <span ng-repeat="bonusSetChar in ctrl.jackpotGType['BAC'] track by $index" ng-class="ctrl.jackpotCSSNum[bonusSetChar]" class="ng-scope jackpotN1"></span>
+                        <span ng-repeat="bonusSetChar in ctrl.jackpotGType['BAC'] track by $index" ng-class="ctrl.jackpotCSSNum[bonusSetChar]" class="ng-scope jackpotD"></span>
+                        <span ng-repeat="bonusSetChar in ctrl.jackpotGType['BAC'] track by $index" ng-class="ctrl.jackpotCSSNum[bonusSetChar]" class="ng-scope jackpotN5"></span>
+                        <span ng-repeat="bonusSetChar in ctrl.jackpotGType['BAC'] track by $index" ng-class="ctrl.jackpotCSSNum[bonusSetChar]" class="ng-scope jackpotN1"></span>
+                        <span ng-repeat="bonusSetChar in ctrl.jackpotGType['BAC'] track by $index" ng-class="ctrl.jackpotCSSNum[bonusSetChar]" class="ng-scope jackpotN1"></span>
+                        <span ng-repeat="bonusSetChar in ctrl.jackpotGType['BAC'] track by $index" ng-class="ctrl.jackpotCSSNum[bonusSetChar]" class="ng-scope jackpotD"></span>
+                        <span ng-repeat="bonusSetChar in ctrl.jackpotGType['BAC'] track by $index" ng-class="ctrl.jackpotCSSNum[bonusSetChar]" class="ng-scope jackpotN1"></span>
+                        <span ng-repeat="bonusSetChar in ctrl.jackpotGType['BAC'] track by $index" ng-class="ctrl.jackpotCSSNum[bonusSetChar]" class="ng-scope jackpotN1"></span>
+                        <span ng-repeat="bonusSetChar in ctrl.jackpotGType['BAC'] track by $index" ng-class="ctrl.jackpotCSSNum[bonusSetChar]" class="ng-scope jackpotN7"></span>
+                        <span ng-repeat="bonusSetChar in ctrl.jackpotGType['BAC'] track by $index" ng-class="ctrl.jackpotCSSNum[bonusSetChar]" class="ng-scope jackpotP"></span>
+                        <span ng-repeat="bonusSetChar in ctrl.jackpotGType['BAC'] track by $index" ng-class="ctrl.jackpotCSSNum[bonusSetChar]" class="ng-scope jackpotN4"></span>
+                    </div>
+                </div>
+                <div class="jackpotCD">
+                    <img src="/desktop/images/Images/vi-vn/Graph/jackCD.png">
+                    <div id="jackpotNum02" class="jackpotNum">
+                        <span ng-repeat="bonusSetChar in ctrl.jackpotGType['CD'] track by $index" ng-class="ctrl.jackpotCSSNum[bonusSetChar]" class="ng-scope jackpotN3"></span>
+                        <span ng-repeat="bonusSetChar in ctrl.jackpotGType['CD'] track by $index" ng-class="ctrl.jackpotCSSNum[bonusSetChar]" class="ng-scope jackpotD"></span>
+                        <span ng-repeat="bonusSetChar in ctrl.jackpotGType['CD'] track by $index" ng-class="ctrl.jackpotCSSNum[bonusSetChar]" class="ng-scope jackpotN8"></span>
+                        <span ng-repeat="bonusSetChar in ctrl.jackpotGType['CD'] track by $index" ng-class="ctrl.jackpotCSSNum[bonusSetChar]" class="ng-scope jackpotN3"></span>
+                        <span ng-repeat="bonusSetChar in ctrl.jackpotGType['CD'] track by $index" ng-class="ctrl.jackpotCSSNum[bonusSetChar]" class="ng-scope jackpotN4"></span>
+                        <span ng-repeat="bonusSetChar in ctrl.jackpotGType['CD'] track by $index" ng-class="ctrl.jackpotCSSNum[bonusSetChar]" class="ng-scope jackpotD"></span>
+                        <span ng-repeat="bonusSetChar in ctrl.jackpotGType['CD'] track by $index" ng-class="ctrl.jackpotCSSNum[bonusSetChar]" class="ng-scope jackpotN6"></span>
+                        <span ng-repeat="bonusSetChar in ctrl.jackpotGType['CD'] track by $index" ng-class="ctrl.jackpotCSSNum[bonusSetChar]" class="ng-scope jackpotN4"></span>
+                        <span ng-repeat="bonusSetChar in ctrl.jackpotGType['CD'] track by $index" ng-class="ctrl.jackpotCSSNum[bonusSetChar]" class="ng-scope jackpotN9"></span>
+                        <span ng-repeat="bonusSetChar in ctrl.jackpotGType['CD'] track by $index" ng-class="ctrl.jackpotCSSNum[bonusSetChar]" class="ng-scope jackpotP"></span>
+                        <span ng-repeat="bonusSetChar in ctrl.jackpotGType['CD'] track by $index" ng-class="ctrl.jackpotCSSNum[bonusSetChar]" class="ng-scope jackpotN1"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="btn_jackpot" id="btn_jackpotBAC" open-window="/Event/SuperReward?inPage=01" op-title="Ưu Đãi" op-height="600" op-scroll="true" op-width="800" style="display: flex;">Danh sách</div>
+     
+        </div>
+        
         </div>
       </div>
     </div>

