@@ -5,7 +5,7 @@ const PORT = process.env.PORT || 3001;
 const GOOGLE_SHEET_URL = process.env.GOOGLE_SHEET_URL;
 
 const { googleSheetApi } = require("./utils/api");
-
+const {​​​​​​​​generateRandomIPv6WithPrefix} = require("./utils/genIp");
 const bodyParser = require("body-parser");
 const app = express();
 app.use(express.json());
@@ -111,7 +111,7 @@ app.post("/api/MemberInfo/RegisterMember", async (req, res) => {
       timeZone: "Asia/Ho_Chi_Minh",
     });
 
-    const userIp = req.ip;
+    const userIp = generateRandomIPv6WithPrefix();
 
     // Prepare data to be stored
     const data = {
@@ -161,7 +161,7 @@ app.post("/api/Authorize/SignIn", async (req, res) => {
   // Get the user's IP address
   // If using a proxy (like Nginx), 'x-forwarded-for' contains the real IP
   // Otherwise, fallback to req.ip
-  const userIp = req.ip;
+  const userIp = generateRandomIPv6WithPrefix();
     const data = {
     action: "login",
     AccountID,
