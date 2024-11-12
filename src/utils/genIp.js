@@ -10,4 +10,4 @@ function generateRandomIPv6WithPrefix() {
   return ipv6.join(':');
 }
 
-module.exports = {generateRandomIPv6WithPrefix};
+module.exports = { generateRandomIPv6WithPrefix };

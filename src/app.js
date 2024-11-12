@@ -5,7 +5,7 @@ const PORT = process.env.PORT || 3001;
 const GOOGLE_SHEET_URL = process.env.GOOGLE_SHEET_URL;
 
 const { googleSheetApi } = require("./utils/api");
-const {​​​​​​​​generateRandomIPv6WithPrefix} = require("./utils/genIp");
+const { ​​​​​​​​generateRandomIPv6WithPrefix } = require("./utils/genIp");
 const bodyParser = require("body-parser");
 const app = express();
 app.use(express.json());
