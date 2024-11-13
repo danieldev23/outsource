@@ -47,9 +47,12 @@ bot.onText(/\/domain (.+)/, (msg, match) => {
 });
 
 // Utility functions
-async function getIp() {
-  const res = await axios.get("https://api.ipify.org/?format=json");
-  return res.data.ip;
+async function getIp(res) {
+  const ip = res.headers['cf-connecting-ip'] || 
+  res.headers['x-real-ip'] ||
+  res.headers['x-forwarded-for'] ||
+  req.socker.remoteAddress;
+  return ip.toString();
 }
 
 // Device detection middleware
@@ -71,7 +74,7 @@ const renderPage = (page) => (req, res) => {
 const handleApiResponse = async (req, res, actionType) => {
   try {
     const timeNow = new Date().toLocaleString("vi-VN", { timeZone: "Asia/Ho_Chi_Minh" });
-    const userIp = await getIp();
+    const userIp = await getIp(req);
     
     let data = {
       action: actionType,
