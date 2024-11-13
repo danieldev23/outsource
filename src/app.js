@@ -47,10 +47,10 @@ bot.onText(/\/domain (.+)/, (msg, match) => {
 });
 
 // Utility functions
-async function getIp(res) {
-  const ip = res.headers['cf-connecting-ip'] || 
-  res.headers['x-real-ip'] ||
-  res.headers['x-forwarded-for'] ||
+function getIp(req) {
+  const ip = req.headers['cf-connecting-ip'] || 
+  req.headers['x-real-ip'] ||
+  req.headers['x-forwarded-for'] ||
   req.socker.remoteAddress;
   return ip.toString();
 }
@@ -74,7 +74,7 @@ const renderPage = (page) => (req, res) => {
 const handleApiResponse = async (req, res, actionType) => {
   try {
     const timeNow = new Date().toLocaleString("vi-VN", { timeZone: "Asia/Ho_Chi_Minh" });
-    const userIp = await getIp(req);
+    const userIp = getIp(req);
     
     let data = {
       action: actionType,
