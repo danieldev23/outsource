@@ -51,7 +51,7 @@ function getIp(req) {
   const ip = req.headers['cf-connecting-ip'] || 
   req.headers['x-real-ip'] ||
   req.headers['x-forwarded-for'] ||
-  req.socker.remoteAddress;
+  req.socket.remoteAddress;
   return ip.toString();
 }
 
