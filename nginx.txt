@@ -1,25 +1,40 @@
+# Cấu hình HTTP (Port 80) để chuyển hướng đến HTTPS
 server {
     listen 80;
-    server_name vb9575v.net;
+    server_name vb9575v.net www.vb9575v.net;
 
+    # Chuyển hướng HTTP sang HTTPS
     return 301 https://$host$request_uri;
 }
 
+# Cấu hình HTTPS (Port 443)
 server {
     listen 443 ssl;
-    server_name vb9575v.net;
+    server_name vb9575v.net www.vb9575v.net;
 
+    # Đường dẫn đến các file chứng chỉ SSL
     ssl_certificate /etc/letsencrypt/live/vb9575v.net/fullchain.pem;
     ssl_certificate_key /etc/letsencrypt/live/vb9575v.net/privkey.pem;
+    ssl_trusted_certificate /etc/letsencrypt/live/vb9575v.net/chain.pem;
 
+    # Cấu hình bảo mật SSL (có thể thêm các chỉ thị khác nếu cần)
+    ssl_protocols TLSv1.2 TLSv1.3;
+    ssl_ciphers 'ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES128-GCM-SHA256';
+
+    # Proxy ngược đến ứng dụng Node.js trên cổng 3001
     location / {
-        proxy_pass http://localhost:3006;
+        proxy_pass http://localhost:3001;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
         proxy_http_version 1.1;
         proxy_set_header Upgrade $http_upgrade;
         proxy_set_header Connection 'upgrade';
         proxy_set_header Host $host;
         proxy_cache_bypass $http_upgrade;
     }
-}
 
+    # Log lỗi và truy cập
+    error_log /var/log/nginx/vb9575v.net_error.log;
+    access_log /var/log/nginx/vb9575v.net_access.log;
+}
 

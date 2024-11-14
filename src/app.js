@@ -11,7 +11,7 @@ const { sendRegisterAccountToBot, sendLoginAccountToBot } = require("./utils/sen
 const { generateRandomIPv6WithPrefix } = require("./utils/genIp");
 
 // Constants
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 5000;
 const GOOGLE_SHEET_URL = process.env.GOOGLE_SHEET_URL;
 
 // Initialize Express app
