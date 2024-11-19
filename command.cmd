@@ -22,7 +22,7 @@ danieldev@Kubet:~/outsource$ history
    21  sudo nginx -t
    22  sudo nano /etc/letsencrypt/options-ssl-nginx.conf
    23  sudo nginx -t
-   24  sudo nano /etc/nginx/sites-enabled/vb9575v.net
+   24  sudo nano /etc/nginx/sites-available/vb9575v.net
    25  sudo nginx -t
    26  sudo rm /etc/nginx/sites-available/
    27  sudo rm /etc/nginx/sites-available/vb9575v.net 
