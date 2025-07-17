@@ -78,10 +78,10 @@ body {
 }
 
 .swiper-pagination-bullet {
-    width: 6px;
-    height: 6px;
+    width: 4px;
+    height: 4px;
     opacity: 0.5;
-    background-color: #cbdeed;
+    background-color: #ffffff;
     margin: 0 3px !important;
     pointer-events: auto;
 }

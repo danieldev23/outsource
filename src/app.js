@@ -24,6 +24,8 @@ app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: false }));
 app.set("views", path.join(__dirname, "views"));
 app.use("/desktop", express.static(path.join(__dirname, "public", "desktop")));
+app.use("/FileSystem", express.static(path.join(__dirname, "public", "FileSystem", "Images")));
+
 app.use("/mobile", express.static(path.join(__dirname, "public", "mobile")));
 
 // Telegram Bot setup
