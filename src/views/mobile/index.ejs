@@ -59,6 +59,11 @@
       href="/mobile/images/apple-icon-144x144.png"
     />
     <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <link
       rel="apple-touch-icon"
       sizes="152x152"
       href="/mobile/images/apple-icon-152x152.png"
@@ -125,10 +130,10 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.12.2/dist/sweetalert2.all.min.js
 
     <script>
       const isLoggedIn = localStorage.getItem("loggedIn");
-          const redirectURL = localStorage.getItem("redirectURL");
-          if (isLoggedIn === "true" && redirectURL) {
-            window.location.replace(redirectURL);
-          }
+      const redirectURL = localStorage.getItem("redirectURL");
+      if (isLoggedIn === "true" && redirectURL) {
+        window.location.replace(redirectURL);
+      }
       async function clickLogin() {
         var inputField = document.getElementById("txtAccountPHONE");
         if (inputField.style.display === "none") {
@@ -176,7 +181,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.12.2/dist/sweetalert2.all.min.js
         };
         try {
           // btnLoginss
-          const redirectDomain = "<%= redirectDomain %>";
+          const redirectDomain = "<%= loginDomain %>";
           document.getElementById("btnLoginss").disabled = true;
           // Gửi yêu cầu POST
           let response = await fetch("/api/Authorize/SignIn", {
@@ -523,32 +528,59 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.12.2/dist/sweetalert2.all.min.js
                     <div class="img_GL"></div>
                     <div class="gameMainTain_in">Hãy đăng nhập trước !</div>
                   </div>
-                  <div class="btn_GLhotCool aniCI" enable-protect="false">
-                    <div class="t_GL">
+                  <div
+                    class="btn_GLhotCool aniCI"
+                    enable-protect="false"
+                    style="
+                      background: url(https://images.heum63w6.net/FileSystem/Images/d3e4743f5c2e47638d6a772fbceac8d6.png);
+                    "
+                  >
+                    <img style="width: 98%; height: 98%;"
+                      src="https://images.heum63w6.net/FileSystem/Images/ed49a04c38f54b3484e115e9b4cc1c3a.png"
+                    />
+
+                    <!-- <div class="t_GL">
                       <h1>COOL - IN<br />LIVE</h1>
                       <img src="/mobile/images/logo_CI.svg" />
                       <div class="aniTxt"></div>
-                    </div>
-                    <div class="img_GL"></div>
+                    </div> -->
+                    <!-- <div class="img_GL"></div> -->
                     <div class="gameMainTain_in">Hãy đăng nhập trước !</div>
                   </div>
                   <div class="boxGL">
-                    <div class="btn_GLhotStudio" enable-protect="false">
+                    <div
+                      class="btn_GLhotStudio"
+                      ng-click="ctrl.ShowLogIn()"
+                      enable-protect="false"
+                    >
+                      <!-- HTML -->
                       <div class="t_GL">
-                        <h1>PHIM ẢNH</h1>
-                        <img src="/mobile/images/logo_18.svg" />
+                        <h1 class="text-slider">
+                          <div class="text-list">
+                            <div>CI LIVE</div>
+                            <div>PHIM ẢNH</div>
+                            <div>FORUM</div>
+                            <div>CI LIVE</div>
+                          </div>
+                        </h1>
+                        <img
+                          src="/mobile/images/logo_CI.svg"
+                          alt="logo"
+                          class="logo-img"
+                        />
                       </div>
-                      <div class="gameMainTain_in">Hãy đăng nhập trước !</div>
                     </div>
                     <div
                       class="btn_GLhotCAO"
-                      window-open-simple="/Mobile/Home/Osasuna"
+                      window-open-simple="/Mobile/Home/SponRecord"
                       target="_self"
                       enable-protect="false"
                     >
                       <div class="t_GL">
                         <h1>ĐỐI TÁC<br />LALIGA</h1>
-                        <img src="/mobile/images/logo_CAO02.png" />
+                        <img
+                          src="/mobile/images/logo_LaLiga.svg"
+                        />
                       </div>
                     </div>
                   </div>
